@@ -16,6 +16,15 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
 
+    private enum Orientation
+    {
+        Left, Right, Up, Down, AtPlayer,
+    }
+
+    [SerializeField] private Orientation orientation;
+    
+
+
     private bool isShooting = false;
 
     private void Update()
@@ -104,7 +113,21 @@ public class ProjectileSpawner : MonoBehaviour
 
     private void TargetConeOfInfluence(out float startAngle, out float currentAngle, out float angleStep, out float endAngle)
     {
-        Vector2 targetDirection = PlayerController.instance.transform.position - transform.position;
+        Vector2 targetDirection;
+        switch (orientation)
+        {
+            case Orientation.Left: targetDirection = Vector2.left; break;
+
+            case Orientation.Right: targetDirection = Vector2.right; break;
+
+            case Orientation.Up: targetDirection = Vector2.up; break;
+
+            case Orientation.Down: targetDirection = Vector2.down; break;
+
+            default: targetDirection = PlayerController.instance.transform.position - transform.position; break;
+        }
+
+
         float targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
         startAngle = targetAngle;
         endAngle = targetAngle;
