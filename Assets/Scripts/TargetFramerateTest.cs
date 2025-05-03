@@ -4,7 +4,7 @@ public class TargetFramerateTest : MonoBehaviour
 {
     [SerializeField] private int targetFramerate = 120;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Application.targetFrameRate != targetFramerate) Application.targetFrameRate = targetFramerate;
     }
