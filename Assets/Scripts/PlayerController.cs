@@ -83,8 +83,5 @@ public class PlayerController : MonoBehaviour
         angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg + addedRotation;
         projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle);
         playerRB.AddForce(-shootDirection * .5f, ForceMode2D.Impulse);
-
     }
-
-
 }

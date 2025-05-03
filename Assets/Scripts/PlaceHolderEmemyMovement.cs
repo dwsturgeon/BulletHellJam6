@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class PlaceHolderEmemyMovement : MonoBehaviour
 {
-    private Vector3 firstPoint = new Vector3(7f, 4.23f, 0);
-    private Vector3 secondPoint = new Vector3(-7f, 4.23f, 0);
+    private Vector3 firstPoint = new(7f, 4f, 0);
+    private Vector3 secondPoint = new(-7f, 4f, 0);
     private Vector3 targetPostion;
-    [SerializeField] private float smoothTime = 600f;
+    [SerializeField] private float smoothTime = 1f;
     private float threshhold = 1f;
 
     private Vector3 velocity = Vector3.zero;
