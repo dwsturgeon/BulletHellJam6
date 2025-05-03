@@ -16,6 +16,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 shootDirection;
     private float angle;
 
+    [Header("Movement Bounds")]
+    [SerializeField] private float minX = -10f;
+    [SerializeField] private float maxX = 10f;
+    [SerializeField] private float minY = -10f;
+    [SerializeField] private float maxY = 10f;
+
+
 
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
@@ -50,6 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         rotatePlayerTowardsMouse();
+        ClampPosition();
     }
 
     private void PlayerMovement()
@@ -83,5 +91,24 @@ public class PlayerController : MonoBehaviour
         angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg + addedRotation;
         projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle);
         playerRB.AddForce(-shootDirection * .5f, ForceMode2D.Impulse);
+    }
+
+    private void ClampPosition()
+    {
+        Vector2 pos = playerRB.position;
+        Vector2 velocity = playerRB.linearVelocity;
+
+        float clampedX = Mathf.Clamp(pos.x, minX, maxX);
+        float clampedY = Mathf.Clamp(pos.y, minY, maxY);
+
+        if (pos.x <= minX && velocity.x < 0) velocity.x = 0;
+        if (pos.x >= maxX && velocity.x > 0) velocity.x = 0;
+
+        if (pos.y <= minY && velocity.y < 0) velocity.y = 0;
+        if (pos.y >= maxY && velocity.y > 0) velocity.y = 0;
+
+        playerRB.position = new Vector2(clampedX, clampedY);
+        playerRB.linearVelocity = velocity;
+
     }
 }
