@@ -192,8 +192,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 526019085
-  m_SortingLayer: 2
+  m_SortingLayerID: -507380621
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e78feae0e9d2da843bb75fcf2086d6a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -250,20 +250,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2f6755ee3344c46b5139f921de1bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.4
-  resetY: 6
+  scrollSpeed: 1.6
+  buffer: 0
   minY: -7
   minX: -6
   maxX: 6
   verticalSpacing: 3
   horizontalSpacing: 3
-  maxOffset: 2
-  numVerticalRows: 10
+  maxOffset: 1
+  numVerticalRows: 5
   Prefabs:
   - {fileID: 4600412405454245000, guid: f286c967fdfe0da4fa88d58631c8cf01, type: 3}
   - {fileID: 373678374805350297, guid: 3cc44368d1f3c094e807b6a136792e89, type: 3}
   - {fileID: 1533622449086894525, guid: 9456105d2abea954284c7bf33f5236b9, type: 3}
-  maxPrefabs: 20
+  maxPrefabs: 10
 --- !u!1 &1110118382
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2aa18004202ac3449dd3f6dfb9342fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 1.6
+  scrollSpeed: 0.2
   spriteHeight: 12
 --- !u!1 &1337789348
 GameObject:
@@ -479,8 +479,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 526019085
-  m_SortingLayer: 2
+  m_SortingLayerID: -507380621
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e78feae0e9d2da843bb75fcf2086d6a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

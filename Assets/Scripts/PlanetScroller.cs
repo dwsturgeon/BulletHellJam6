@@ -1,12 +1,15 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlanetScroller : MonoBehaviour
 {
     [SerializeField] private float scrollSpeed = 0.25f;
-    [SerializeField] private float resetY = 10f;
+    [SerializeField] private float buffer = 0f;
     [SerializeField] private float minY = -10f;
-    
+    private float resetY = 10f;
+
 
     [Header("Spawn Area")]
     [SerializeField] private float minX = -8f;
@@ -25,11 +28,14 @@ public class PlanetScroller : MonoBehaviour
     private List<Vector2> spawnSlots = new List<Vector2>();
     private Queue<Vector2> availableSlots = new Queue<Vector2>();
     private List<GameObject> activePrefabs = new List<GameObject>();
+    private Queue<GameObject> shuffledPrefabQueue = new Queue<GameObject>();
 
     private void Start()
     {
         GenerateSpawnSlots();
+        ReshufflePlanetPrefabs();
         SpawnInitialPrefabs();
+        resetY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y + buffer;
     }
 
 
@@ -81,11 +87,22 @@ public class PlanetScroller : MonoBehaviour
 
     GameObject InstantiateRandomPrefab(Vector2 position)
     {
-        GameObject prefab = Prefabs[Random.Range(0, Prefabs.Length)];
+        if (shuffledPrefabQueue.Count == 0) ReshufflePlanetPrefabs();
+
+
+        GameObject prefab = shuffledPrefabQueue.Dequeue();
         GameObject targetPrefab = Instantiate(prefab, position, Quaternion.identity, transform);
         targetPrefab.transform.localScale = Vector3.one * Random.Range(0.5f, 1.5f);
         return targetPrefab;
     }
+
+    void ReshufflePlanetPrefabs()
+    {
+        List<GameObject> tempList = new List<GameObject>(Prefabs);
+        Shuffle(tempList);
+        foreach (GameObject p in tempList) shuffledPrefabQueue.Enqueue(p);
+    }
+    
 
     void ResetPrefab(GameObject _prefab)
     {
