@@ -969,7 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4136a87ae9b562c4aaaf4d8917a33847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetFramerate: 0
+  targetFramerate: 1000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
