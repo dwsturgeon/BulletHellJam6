@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Data.Common;
 using UnityEngine;
 
@@ -7,11 +8,18 @@ public class PlayerController : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float addedRotation;
-    [SerializeField] private bool wantsRecoil = false;
 
     [Header("Projectile VARS")]
     [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private float bulletMoveSpeed;
     [SerializeField] private Transform muzzleTransform;
+    [SerializeField] private int burstCount;
+    [SerializeField] private int projectilesPerBurst;
+    [SerializeField] private float timeBetweenBursts;
+    [SerializeField] private float restTime = 1f;
+    [SerializeField][Range(0, 359)] private float angleSpread;
+    [SerializeField] private float startingDistance = 0.1f;
+    private bool isShooting = false;
     private GameObject projectile;
     private Vector2 shootDirection;
     private float angle;
@@ -51,9 +59,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.Space))
         {
             Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+        if (!isShooting)
+        {
+            StartCoroutine(ShootRoutine());
         }
     }
 
@@ -82,18 +98,71 @@ public class PlayerController : MonoBehaviour
         bodyTransform.rotation = Quaternion.Lerp(bodyTransform.localRotation, targetRotation, Time.fixedDeltaTime * tiltSpeed);
     }
 
-    private void Shoot()
+    private IEnumerator ShootRoutine()
     {
-        shootDirection = transform.up;
+        isShooting = true;
 
-        projectile = Instantiate(projectilePrefab, muzzleTransform.position, Quaternion.identity);
+        float startAngle, currentAngle, angleStep, endAngle;
 
-        projectile.GetComponent<PlayerProjectile>().SetDirection(shootDirection);
+        TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
-        angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg + addedRotation;
-        projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-        if(wantsRecoil) playerRB.AddForce(-shootDirection * .5f, ForceMode2D.Impulse);
+        
+        for (int i = 0; i < burstCount; i++)
+        {           
 
+            for (int j = 0; j < projectilesPerBurst; j++)
+            {
+                Vector2 pos = FindBulletSpawnPos(currentAngle);
+
+                GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
+                newBullet.transform.right = newBullet.transform.position - transform.position;
+
+                if (newBullet.TryGetComponent(out PlayerProjectile projectile))
+                {
+                    projectile.UpdateMoveSpeed(bulletMoveSpeed);
+                }
+
+                currentAngle += angleStep;
+            }
+
+            currentAngle = startAngle;
+            yield return new WaitForSeconds(timeBetweenBursts);
+
+        }
+
+
+        yield return new WaitForSeconds(restTime);
+        isShooting = false;
+
+    }
+
+    private void TargetConeOfInfluence(out float startAngle, out float currentAngle, out float angleStep, out float endAngle)
+    {
+        Vector2 targetDirection = Vector2.up;
+        
+        float targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+        startAngle = targetAngle;
+        endAngle = targetAngle;
+        currentAngle = targetAngle;
+        float halfAngleSpread = 0f;
+        angleStep = 1f;
+        if (angleSpread != 0)
+        {
+            angleStep = angleSpread / (projectilesPerBurst - 1);
+            halfAngleSpread = angleSpread / 2f;
+            startAngle = targetAngle - halfAngleSpread;
+            endAngle = targetAngle + halfAngleSpread;
+            currentAngle = startAngle;
+        }
+    }
+
+    private Vector2 FindBulletSpawnPos(float currentAngle)
+    {
+        float x = muzzleTransform.position.x + startingDistance * Mathf.Cos(currentAngle * Mathf.Deg2Rad);
+        float y = muzzleTransform.position.y + startingDistance * Mathf.Sin(currentAngle * Mathf.Deg2Rad);
+
+        Vector2 pos = new Vector2(x, y);
+        return pos;
     }
 
     private void ClampPosition()

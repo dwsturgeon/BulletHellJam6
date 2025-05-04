@@ -133,7 +133,14 @@ MonoBehaviour:
   moveSpeed: 30
   addedRotation: -90
   projectilePrefab: {fileID: 1308149378601209881, guid: 9030462bd2b32654b87618ce2edff0c7, type: 3}
+  bulletMoveSpeed: 20
   muzzleTransform: {fileID: 1631138831407435371}
+  burstCount: 1
+  projectilesPerBurst: 4
+  timeBetweenBursts: 0
+  restTime: 0.2
+  angleSpread: 90
+  startingDistance: 0.1
   minX: -8.8
   maxX: 8.8
   minY: -4.8
