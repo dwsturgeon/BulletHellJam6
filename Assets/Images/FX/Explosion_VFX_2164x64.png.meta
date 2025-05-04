@@ -103,7 +103,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -141,7 +141,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -697,7 +697,30 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Explosion_VFX_2164x64_0: -4682920838418281886
+      Explosion_VFX_2164x64_1: 4998001877716610160
+      Explosion_VFX_2164x64_10: -4241789738580536616
+      Explosion_VFX_2164x64_11: -8829573324813111880
+      Explosion_VFX_2164x64_12: 5980643071335455381
+      Explosion_VFX_2164x64_13: 2635853165243720938
+      Explosion_VFX_2164x64_14: -1299860383657701845
+      Explosion_VFX_2164x64_15: -5301225289134100529
+      Explosion_VFX_2164x64_16: -9079026479154825920
+      Explosion_VFX_2164x64_17: -8670603962170658419
+      Explosion_VFX_2164x64_18: -5027009283753390948
+      Explosion_VFX_2164x64_19: -5567738975108366515
+      Explosion_VFX_2164x64_2: -385999055752097164
+      Explosion_VFX_2164x64_20: 7316142420063675109
+      Explosion_VFX_2164x64_21: 9102895046221263081
+      Explosion_VFX_2164x64_22: 8007317477786839531
+      Explosion_VFX_2164x64_3: 3177770466459622750
+      Explosion_VFX_2164x64_4: 3682428491572437057
+      Explosion_VFX_2164x64_5: 3181672993217649139
+      Explosion_VFX_2164x64_6: 247668081087917507
+      Explosion_VFX_2164x64_7: 3883035460779817023
+      Explosion_VFX_2164x64_8: 669885817180976064
+      Explosion_VFX_2164x64_9: -576608969674814872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

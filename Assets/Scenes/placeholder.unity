@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &703576508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 703576509}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &703576509
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703576508}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2015595286}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1034301889
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +315,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -604,12 +573,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2015595286}
-  - component: {fileID: 2015595285}
   - component: {fileID: 2015595287}
   - component: {fileID: 2015595288}
+  - component: {fileID: 2015595291}
+  - component: {fileID: 2015595285}
   - component: {fileID: 2015595290}
   - component: {fileID: 2015595289}
-  - component: {fileID: 2015595291}
+  - component: {fileID: 2015595292}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -652,7 +622,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1048046896}
-  - {fileID: 703576509}
   - {fileID: 1470693147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -819,6 +788,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3741124, y: 0.34608793}
   m_EdgeRadius: 0
+--- !u!114 &2015595292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015595284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87775b4179a326343a9961865d7c04f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  visualTarget: {fileID: 1470693146}
+  glitchMaterial: {fileID: 2100000, guid: 5a826d7aeecc7484b9ca0ae132ed4968, type: 2}
 --- !u!1 &2068742856
 GameObject:
   m_ObjectHideFlags: 0
