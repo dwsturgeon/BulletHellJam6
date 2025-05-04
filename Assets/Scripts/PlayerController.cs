@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float rotationSpeed;
     [SerializeField] private float addedRotation;
+    [SerializeField] private bool wantsRecoil = false;
 
     [Header("Projectile VARS")]
     [SerializeField] private GameObject projectilePrefab;
@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float minY = -10f;
     [SerializeField] private float maxY = 10f;
 
+    [Header("PlayerTiltVars")]
+    [SerializeField] private float maxTiltAngle = 15f;
+    [SerializeField] private float tiltSpeed = 5f;
+    [SerializeField] private Transform bodyTransform;
 
 
     private Rigidbody2D playerRB;
@@ -56,7 +60,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         PlayerMovement();
-        rotatePlayerTowardsMouse();
+        tiltSprite();
         ClampPosition();
     }
 
@@ -68,16 +72,14 @@ public class PlayerController : MonoBehaviour
         playerRB.AddForce(moveInput * moveSpeed);
     }
 
-    private void rotatePlayerTowardsMouse()
+    private void tiltSprite()
     {
-        mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = 0f;
-        Vector2 direction = (mouseWorldPos - transform.position).normalized;
+        float horizontalVelocity = playerRB.linearVelocity.x;
+        float tiltAmount = Mathf.Clamp(-horizontalVelocity, -1f, 1f);
+        float targetZ = tiltAmount * maxTiltAngle;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + addedRotation;
-        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed);
+        Quaternion targetRotation = Quaternion.Euler(0, 0, targetZ);
+        bodyTransform.rotation = Quaternion.Lerp(bodyTransform.localRotation, targetRotation, Time.fixedDeltaTime * tiltSpeed);
     }
 
     private void Shoot()
@@ -90,7 +92,8 @@ public class PlayerController : MonoBehaviour
 
         angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg + addedRotation;
         projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-        playerRB.AddForce(-shootDirection * .5f, ForceMode2D.Impulse);
+        if(wantsRecoil) playerRB.AddForce(-shootDirection * .5f, ForceMode2D.Impulse);
+
     }
 
     private void ClampPosition()
