@@ -51,6 +51,7 @@ public class MenuFunctions : MonoBehaviour
     {
         playButton.onClick.AddListener(() => LoadLevel(playButtonLevelName));
         settingsButton.onClick.AddListener(() => LoadSettings());
+        tutorialButton.onClick.AddListener(() => LoadLevel(tutorialButtonLevelName));
 
         settingsObj.SetActive(false);
     }
