@@ -4,11 +4,6 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
 
-    private void Start()
-    {
-        Destroy(this.gameObject, 8f);
-    }
-
     private void Update()
     { 
         MoveProjectile();
@@ -21,10 +16,6 @@ public class Projectile : MonoBehaviour
     public void UpdateMoveSpeed(float speed)
     {
         this.moveSpeed = speed;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 17.6f / moveSpeed);
     }
 }

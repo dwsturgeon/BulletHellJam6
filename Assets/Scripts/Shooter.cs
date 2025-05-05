@@ -15,6 +15,9 @@ public class Shooter : MonoBehaviour
     [SerializeField] private float restTime = 1f;
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
+    [SerializeField] private bool shouldWaitToStop = false;
+
+    private Collider2D thisCollider;
 
     private enum Orientation
     {
@@ -28,6 +31,7 @@ public class Shooter : MonoBehaviour
     private bool isShooting = false;
     private void Start()
     {
+        thisCollider = GetComponent<Collider2D>();
         movementComp = GetComponent<EnemyMovement>();
     }
 
@@ -38,9 +42,19 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
-        if (!isShooting && movementComp.GetWaitStatus())
+        if(shouldWaitToStop)
         {
-            StartCoroutine(ShootRoutine());
+            if (!isShooting && movementComp.GetWaitStatus())
+            {
+                StartCoroutine(ShootRoutine());
+            }
+        }
+        else
+        {
+            if (!isShooting)
+            {
+                StartCoroutine(ShootRoutine());
+            }
         }
     }
 
@@ -62,7 +76,7 @@ public class Shooter : MonoBehaviour
             {
                 TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
             }
-            if (oscillate && i % 2 != 1) 
+            if (oscillate && i % 2 != 1 && timeBetweenBursts !> 0.5f) 
             {
                 TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
             }
@@ -80,6 +94,7 @@ public class Shooter : MonoBehaviour
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
 
                 GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
+                Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
                 newBullet.transform.right = newBullet.transform.position - transform.position;
 
                 if (newBullet.tag == "BulletContainer")
