@@ -22,10 +22,14 @@ public class Shooter : MonoBehaviour
     }
 
     [SerializeField] private Orientation orientation;
-    
+    EnemyMovement movementComp;
 
 
     private bool isShooting = false;
+    private void Start()
+    {
+        movementComp = GetComponent<EnemyMovement>();
+    }
 
     private void Update()
     {
@@ -34,7 +38,7 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
-        if (!isShooting)
+        if (!isShooting && movementComp.GetWaitStatus())
         {
             StartCoroutine(ShootRoutine());
         }
