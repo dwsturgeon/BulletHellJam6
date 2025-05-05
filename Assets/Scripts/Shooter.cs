@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Data;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -18,6 +19,9 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool shouldWaitToStop = false;
 
     private Collider2D thisCollider;
+    private bool stunned = false;
+    private float stunT;
+    [SerializeField] private float stunTimer = 1f;
 
     private enum Orientation
     {
@@ -27,17 +31,36 @@ public class Shooter : MonoBehaviour
     [SerializeField] private Orientation orientation;
     EnemyMovement movementComp;
 
+    IEnumerator coroutine;
+
 
     private bool isShooting = false;
     private void Start()
     {
         thisCollider = GetComponent<Collider2D>();
         movementComp = GetComponent<EnemyMovement>();
+        stunT = stunTimer;
+        coroutine = ShootRoutine();
     }
 
     private void Update()
     {
-        Shoot();
+        if (stunned)
+        {
+            if (isShooting) StopCoroutine(coroutine);
+
+            if (stunT >= 0f)
+            {
+                stunT -= Time.deltaTime;
+            }
+            else
+            {
+                stunned = false;
+                stunT = stunTimer;
+            }
+
+        }
+        else Shoot();
     }
 
     public void Shoot()
@@ -46,14 +69,14 @@ public class Shooter : MonoBehaviour
         {
             if (!isShooting && movementComp.GetWaitStatus())
             {
-                StartCoroutine(ShootRoutine());
+                StartCoroutine(coroutine);
             }
         }
         else
         {
             if (!isShooting)
             {
-                StartCoroutine(ShootRoutine());
+                StartCoroutine(coroutine);
             }
         }
     }
@@ -76,7 +99,7 @@ public class Shooter : MonoBehaviour
             {
                 TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
             }
-            if (oscillate && i % 2 != 1 && timeBetweenBursts !> 0.5f) 
+            if (oscillate && i % 2 != 1) 
             {
                 TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
             }
@@ -147,6 +170,7 @@ public class Shooter : MonoBehaviour
         }
 
 
+
         float targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
         startAngle = targetAngle;
         endAngle = targetAngle;
@@ -172,4 +196,8 @@ public class Shooter : MonoBehaviour
         return pos;
     }
 
+    public void SetStunned()
+    { 
+        stunned = true;
+    }
 }

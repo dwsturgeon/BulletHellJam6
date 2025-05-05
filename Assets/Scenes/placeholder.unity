@@ -597,7 +597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1706360952050080173, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.57
+      value: 12.23
       objectReference: {fileID: 0}
     - target: {fileID: 1706360952050080173, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
       propertyPath: m_LocalPosition.z
@@ -631,37 +631,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5524531256585304181, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
-      propertyPath: m_Name
-      value: FlyEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6980555393023198371, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
-      propertyPath: minMoveDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7641658472471617315, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
-      propertyPath: stagger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7641658472471617315, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
-      propertyPath: restTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7641658472471617315, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
+    - target: {fileID: 4823008501659464852, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7641658472471617315, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
-      propertyPath: burstCount
+    - target: {fileID: 4823008501659464852, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
+      propertyPath: shouldWaitToStop
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7641658472471617315, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
-      propertyPath: timeBetweenBursts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7641658472471617315, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
-      propertyPath: projectilesPerBurst
-      value: 1
+    - target: {fileID: 5524531256585304181, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
+      propertyPath: m_Name
+      value: FlyEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -736,6 +716,14 @@ PrefabInstance:
       propertyPath: maxY
       value: 4.8
       objectReference: {fileID: 0}
+    - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: bulletMoveSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 3159813568762862433, guid: bae7139fa70b5dd418aac17a00f7af81, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
