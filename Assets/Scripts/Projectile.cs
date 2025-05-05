@@ -16,6 +16,6 @@ public class Projectile : MonoBehaviour
     public void UpdateMoveSpeed(float speed)
     {
         this.moveSpeed = speed;
-        Destroy(this.gameObject, 17.6f / moveSpeed);
+        Destroy(this.gameObject, 20f / moveSpeed);
     }
 }

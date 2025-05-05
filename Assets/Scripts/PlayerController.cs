@@ -35,11 +35,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private Transform bodyTransform;
 
-
+    private Collider2D thisCollider;
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
     private Vector3 mouseWorldPos;
     public static PlayerController instance;
+
 
 
     //add audio for gunshot
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        thisCollider = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -115,6 +117,7 @@ public class PlayerController : MonoBehaviour
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
 
                 GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
+                Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
                 newBullet.transform.right = newBullet.transform.position - transform.position;
 
                 if (newBullet.TryGetComponent(out PlayerProjectile projectile))

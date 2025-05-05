@@ -24,15 +24,10 @@ public class PlayerProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       GameObject enemy = collision.gameObject;
-       if(enemy.tag == "Enemy")
-        {
-            //do damage
-        }
+       //do damage
 
        //explode the projectile
-
-       Destroy(this.gameObject);
+       //collision will be disabled with the player at instantiate 
     }
 
 }
