@@ -18,7 +18,7 @@ public class LoadPlayerPrefsScene : MonoBehaviour
     private Slider musicSlider;
     private Slider sfxSlider;
 
-    public void Awake()
+    private void Awake()
     {
         title = GameObject.Find("Title");
         settings = GameObject.Find("SettingsPanel");
@@ -46,45 +46,46 @@ public class LoadPlayerPrefsScene : MonoBehaviour
 
         title.SetActive(false);
         settings.SetActive(false);
+        menuActive = false;
 
     }
 
     //Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Start()
+    private void Start()
     {
 
         musicSlider.onValueChanged.AddListener(delegate { UpdateFloatInPlayerCache("musicVolume", musicSlider.value); });
         sfxSlider.onValueChanged.AddListener(delegate { UpdateFloatInPlayerCache("sfxVolume", sfxSlider.value); });
     }
 
-    public void Update()
+    private void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (menuActive)
             {
-                title.SetActive(true);
-                settings.SetActive(true);
-                Time.timeScale = 0;
-                menuActive = true;
-            }
-            else
-            {
                 title.SetActive(false);
                 settings.SetActive(false);
                 Time.timeScale = 1;
                 menuActive = false;
             }
+            else
+            {
+                title.SetActive(true);
+                settings.SetActive(true);
+                Time.timeScale = 0;
+                menuActive = true;
+            }
         }
     }
 
-    public void UpdateFloatInPlayerCache(String cacheName, float value)
+    private void UpdateFloatInPlayerCache(String cacheName, float value)
     {
         PlayerPrefs.SetFloat(cacheName, value);
     }
 
-    public void UpdateIntInPlayerCache (String cacheName, int value)
+    private void UpdateIntInPlayerCache (String cacheName, int value)
     {
         PlayerPrefs.SetFloat(cacheName, value);
     }
