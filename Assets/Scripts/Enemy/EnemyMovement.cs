@@ -1,24 +1,32 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     [Header("Range")]
     [SerializeField] private float minX;
     [SerializeField] private float maxX;
     [SerializeField] private float minY;
     [SerializeField] private float maxY;
-    [SerializeField] private float waitTime;
-    [SerializeField] private float minMoveDistance;
+    
     private float elapsedTime = 0f;
     private bool isWaiting = false;
     private bool gotHit = false;
+    
 
-    [Header("Smooth Settings")]
+    [Header("Movement Settings")]
     [SerializeField] private float smoothTime = 1f;
     [SerializeField] private float threshhold = 1f;
+    [SerializeField] private float waitTime;
+    [SerializeField] private float minMoveDistance;
 
+    [Header("Stun Settings")]
+    [SerializeField] private float recoveryMult = 1f;
+    private bool stunned = false;
+    private float stunTimer = 1f;
 
+    [Header("Animator")]
+    [SerializeField] Animator animator;
 
     private Vector3 velocity = Vector3.zero;
 
@@ -30,28 +38,54 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
-
-        if(Vector3.Distance(transform.position, targetPos) < threshhold)
+        if (stunned)
         {
-            elapsedTime += Time.deltaTime;
-            isWaiting = true;
-            if (elapsedTime >= waitTime && !gotHit)
+            animator.SetBool("isStunned", true);
+            if (stunTimer >= 0f)
             {
-                elapsedTime = 0;
-                targetPos = GetRandomPoint();
+                stunTimer -= (recoveryMult * Time.deltaTime);
             }
-            else if(elapsedTime >= waitTime && gotHit)
+            else
             {
-                OnHit(minMoveDistance);
+                stunned = false;
+                animator.SetBool("isStunned", false);
             }
-        } 
-        else isWaiting = false;
+
+
+        }
+        else
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
+
+            if(Vector3.Distance(transform.position, targetPos) < threshhold)
+            {
+                elapsedTime += Time.deltaTime;
+                isWaiting = true;
+                if (elapsedTime >= waitTime && !gotHit)
+                {
+                    elapsedTime = 0;
+                    targetPos = GetRandomPoint();
+                }
+                else if(elapsedTime >= waitTime && gotHit)
+                {
+                    OnHit(minMoveDistance);
+                }
+            } 
+            else isWaiting = false;
+        }
+
+
     }
 
     public bool GetWaitStatus()
     {
         return isWaiting;
+    }
+
+    public void SetStunned(float _stunT)
+    {
+        stunTimer = _stunT;
+        stunned = true;
     }
 
     private void OnHit(float minDistance)
@@ -83,8 +117,6 @@ public class EnemyMovement : MonoBehaviour
     {
         gotHit = true;
     }
-
-
 
     private Vector3 GetRandomPoint()
     {

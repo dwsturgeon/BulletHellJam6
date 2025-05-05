@@ -2,6 +2,7 @@ using System.Collections;
 using System.Data;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 
 public class Shooter : MonoBehaviour
@@ -17,11 +18,12 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
     [SerializeField] private bool shouldWaitToStop = false;
+    [SerializeField] private Transform muzzleTransform;
 
     private Collider2D thisCollider;
     private bool stunned = false;
-    private float stunT;
-    [SerializeField] private float stunTimer = 1f;
+    private float stunTimer;
+    [SerializeField] private float recoverMult = 1f;
 
     private enum Orientation
     {
@@ -29,38 +31,40 @@ public class Shooter : MonoBehaviour
     }
 
     [SerializeField] private Orientation orientation;
-    EnemyMovement movementComp;
+    EnemyController movementComp;
 
-    IEnumerator coroutine;
 
 
     private bool isShooting = false;
     private void Start()
     {
         thisCollider = GetComponent<Collider2D>();
-        movementComp = GetComponent<EnemyMovement>();
-        stunT = stunTimer;
-        coroutine = ShootRoutine();
+        movementComp = GetComponent<EnemyController>();
+        if(muzzleTransform == null ) muzzleTransform.position = transform.position;
+        
     }
 
     private void Update()
     {
         if (stunned)
         {
-            if (isShooting) StopCoroutine(coroutine);
-
-            if (stunT >= 0f)
+            if (isShooting)
             {
-                stunT -= Time.deltaTime;
+                StopAllCoroutines();
+                isShooting=false;
+            }
+
+            if (stunTimer >= 0f)
+            {
+                stunTimer -= (recoverMult * Time.deltaTime);
             }
             else
             {
                 stunned = false;
-                stunT = stunTimer;
             }
 
         }
-        else Shoot();
+        else Shoot();    
     }
 
     public void Shoot()
@@ -69,14 +73,14 @@ public class Shooter : MonoBehaviour
         {
             if (!isShooting && movementComp.GetWaitStatus())
             {
-                StartCoroutine(coroutine);
+                StartCoroutine(ShootRoutine());
             }
         }
         else
         {
             if (!isShooting)
             {
-                StartCoroutine(coroutine);
+                StartCoroutine(ShootRoutine());
             }
         }
     }
@@ -118,7 +122,7 @@ public class Shooter : MonoBehaviour
 
                 GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
                 Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
-                newBullet.transform.right = newBullet.transform.position - transform.position;
+                newBullet.transform.right = newBullet.transform.position - muzzleTransform.position;
 
                 if (newBullet.tag == "BulletContainer")
                 {
@@ -166,7 +170,7 @@ public class Shooter : MonoBehaviour
 
             case Orientation.Down: targetDirection = Vector2.down; break;
 
-            default: targetDirection = PlayerController.instance.transform.position - transform.position; break;
+            default: targetDirection = PlayerController.instance.transform.position - muzzleTransform.position; break;
         }
 
 
@@ -189,15 +193,18 @@ public class Shooter : MonoBehaviour
 
     private Vector2 FindBulletSpawnPos(float currentAngle)
     {
-        float x = transform.position.x + startingDistance * Mathf.Cos(currentAngle * Mathf.Deg2Rad);
-        float y = transform.position.y + startingDistance * Mathf.Sin(currentAngle * Mathf.Deg2Rad);
-
+        
+        float x = muzzleTransform.position.x + startingDistance * Mathf.Cos(currentAngle * Mathf.Deg2Rad);
+        float y = muzzleTransform.position.y + startingDistance * Mathf.Sin(currentAngle * Mathf.Deg2Rad);
+        
+        
         Vector2 pos = new Vector2(x, y);
         return pos;
     }
 
-    public void SetStunned()
-    { 
+    public void SetStunned(float _stunT)
+    {
+        stunTimer = _stunT;
         stunned = true;
     }
 }

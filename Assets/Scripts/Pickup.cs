@@ -7,7 +7,9 @@ public class Pickup : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private Animator animator;
     [SerializeField] PickupType pickupType;
+    [SerializeField] private float stunTime;
     private bool usedPickup;
+
 
     private enum PickupType
     { 
@@ -17,8 +19,7 @@ public class Pickup : MonoBehaviour
         FireRate,
         ProjectileCount,
         Burst,
-        ProjectileSpeed
-        
+        ProjectileSpeed       
     }
 
 
@@ -63,14 +64,16 @@ public class Pickup : MonoBehaviour
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         for(int i = 0; i < enemyArray.Length; i++)
         {
-            
+            #region DisableShooter
             Shooter[] instance = enemyArray[i].GetComponents<Shooter>();
-            print(instance.Length);
             foreach (Shooter shooter in instance)
             {
-                shooter.SetStunned();
+                shooter.SetStunned(stunTime);
             }
-            
+            #endregion
+
+            EnemyController movementInstance = enemyArray[i].GetComponent<EnemyController>();
+            movementInstance.SetStunned(stunTime);
         }
     }
 
