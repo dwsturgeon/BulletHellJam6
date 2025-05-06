@@ -35,7 +35,7 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!usedPickup)
+        if (!usedPickup && collision.tag == "Player")
         {
             //usedPickup = true;
             animator.Play("Pickup");
@@ -58,7 +58,7 @@ public class Pickup : MonoBehaviour
         Destroy(this.gameObject, 2f);
     }
 
-    #region Apply's
+    #region Applys
     private void ApplyHijack()
     {
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
