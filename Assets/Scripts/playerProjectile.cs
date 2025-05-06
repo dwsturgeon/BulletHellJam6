@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] public float damageAmount = 10f;
 
     private void Start()
     {

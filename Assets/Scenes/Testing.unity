@@ -421,6 +421,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed37e7d20157bb43b8750a8dba297dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &345106168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345106170}
+  - component: {fileID: 345106169}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &345106169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345106168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d0e085aa0d0224583468383689ecb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AdsPrefabs:
+  - {fileID: 5524531256585304181, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
+  BossPrefab: {fileID: 0}
+  minX: -8
+  maxX: 8
+  verticalSpacing: 3
+  horizontalSpacing: 3
+  maxOffset: 0
+  numVerticalRows: 3
+  spawnRate: 0
+  maxPrefabs: 3
+--- !u!4 &345106170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345106168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.112357, y: 116.32916, z: 0.11551195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &361833323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2204,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1291216932}
   - {fileID: 1715927693}
+  - {fileID: 345106170}
   - {fileID: 1100449833}
   - {fileID: 837210639}
   - {fileID: 270898655}
