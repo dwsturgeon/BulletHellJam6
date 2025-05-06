@@ -989,6 +989,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1015892699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5524531256585304181, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
+  m_PrefabInstance: {fileID: 1764207518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1129271070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,6 +1833,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2068423505805478123, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1015892699}
     - target: {fileID: 5524531256585304181, guid: c7c504b9061555a4ca347a1effeb8512, type: 3}
       propertyPath: m_Name
       value: FlyEnemy
