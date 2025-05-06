@@ -10,20 +10,32 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage(float _damage)
+    private void Start()
     {
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+        UpdateHealthUI(currentHealth);
+    }
 
-        if (currentHealth < 0)
+    public void RemoveHealth(float amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth - amount, 0, startingHealth);
+        UpdateHealthUI(currentHealth);
+
+        if (currentHealth <= 0)
         {
             //kill player
         }
 
     }
 
-    public void AddHealth(float _health)
+    public void AddHealth(float amount)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _health, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, startingHealth);
+        UpdateHealthUI(currentHealth);
+    }
+
+    private void UpdateHealthUI(float healthValue)
+    {
+        //update health on UI
     }
 
 

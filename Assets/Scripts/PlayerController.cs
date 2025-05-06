@@ -2,15 +2,20 @@ using System;
 using System.Collections;
 using System.Data.Common;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeedMax;
     [SerializeField] private float addedRotation;
+    [SerializeField] private float damageMult = 1f;
+    [SerializeField] private float damageMultMax = 4f;
+    [SerializeField] private float damageMultMin = 1f;
 
     [Header("Projectile VARS")]
-    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] ProjectileType currentProjectileType;
     [SerializeField] private float bulletMoveSpeed;
     [SerializeField] private Transform muzzleTransform;
     [SerializeField] private int burstCount;
@@ -20,9 +25,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField][Range(0, 359)] private float angleSpread;
     [SerializeField] private float startingDistance = 0.1f;
     private bool isShooting = false;
-    private GameObject projectile;
-    private Vector2 shootDirection;
-    private float angle;
+
+    
+
 
     [Header("Movement Bounds")]
     [SerializeField] private float minX = -10f;
@@ -38,10 +43,42 @@ public class PlayerController : MonoBehaviour
     private Collider2D thisCollider;
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
-    private Vector3 mouseWorldPos;
     public static PlayerController instance;
 
 
+    #region Projectile Changing
+
+    public enum ProjectileType
+    {
+        Normal,
+        Explosive,
+        Laser,
+        Moon
+    }
+
+    [System.Serializable]
+    private struct ProjectileEntry 
+    {
+        public ProjectileType type;
+        public GameObject prefab;
+    }
+    [Header("Projectile Types")]
+    [SerializeField] private ProjectileEntry[] projectileEntries;
+
+    private Dictionary<ProjectileType, GameObject> projectileMap;
+    private ProjectileType currentType;
+
+
+    public void ChangeProjectile(ProjectileType newType)
+    {
+        if (projectileMap.ContainsKey(newType))
+        {
+            currentType = newType;
+            Debug.Log("Projectile Changed to " + newType);
+        }
+        else Debug.Log("did not work");
+    }
+    #endregion
 
     //add audio for gunshot
 
@@ -57,6 +94,14 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         thisCollider = GetComponent<Collider2D>();
+
+        projectileMap = new Dictionary<ProjectileType, GameObject>();
+        foreach (var entry in projectileEntries)
+        {
+            projectileMap[entry.type] = entry.prefab;
+        }
+        currentType = ProjectileType.Normal;
+
     }
 
     private void Update()
@@ -87,7 +132,7 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(moveX, moveY).normalized;
-        playerRB.AddForce(moveInput * moveSpeed);
+        playerRB.AddForce(moveInput * moveSpeed * 100 * Time.deltaTime);
     }
 
     private void tiltSprite()
@@ -115,14 +160,21 @@ public class PlayerController : MonoBehaviour
             for (int j = 0; j < projectilesPerBurst; j++)
             {
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
-
-                GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
-                Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
-                newBullet.transform.right = newBullet.transform.position - transform.position;
-
-                if (newBullet.TryGetComponent(out PlayerProjectile projectile))
+                if(projectileMap.TryGetValue(currentType, out GameObject projectilePrefab))
                 {
-                    projectile.UpdateMoveSpeed(bulletMoveSpeed);
+                    GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
+                    Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
+                    
+                    PlayerProjectile bulletDamage = newBullet.GetComponent<PlayerProjectile>();
+                    bulletDamage.Damage = bulletDamage.Damage * damageMult;
+
+                    newBullet.transform.right = newBullet.transform.position - transform.position;
+
+                    if (newBullet.TryGetComponent(out PlayerProjectile projectile))
+                    {
+                        projectile.UpdateMoveSpeed(bulletMoveSpeed);
+                    }
+
                 }
 
                 currentAngle += angleStep;
@@ -186,4 +238,21 @@ public class PlayerController : MonoBehaviour
         playerRB.linearVelocity = velocity;
 
     }
+
+    #region vars upgrade
+    public float Speed 
+    {
+        get => moveSpeed;
+        set
+        {
+            moveSpeed = Mathf.Clamp(moveSpeed + value, 0, moveSpeedMax);
+        }
+    }
+
+    public float DamageMult
+    {
+        get => damageMult;
+        set { damageMult = Mathf.Clamp(DamageMult, damageMultMin, damageMultMax); }
+    }
+    #endregion
 }

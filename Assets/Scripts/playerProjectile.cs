@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] public float damageAmount = 10f;
+    [SerializeField] private float damageAmount = 10f;
+
 
     private void Start()
     {
@@ -22,6 +23,13 @@ public class PlayerProjectile : MonoBehaviour
     {
         this.moveSpeed = speed;
     }
+
+    public float Damage
+    { 
+        get => damageAmount;
+        set { damageAmount = value; }
+    }
+            
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

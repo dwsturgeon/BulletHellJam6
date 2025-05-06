@@ -47,7 +47,7 @@ public class HealthManager : MonoBehaviour
     {
         if (collision.CompareTag(targetTag))
         {
-            TakeDamage(collision.GetComponent<PlayerProjectile>().damageAmount);
+            TakeDamage(collision.GetComponent<PlayerProjectile>().Damage);
         }
     }
 
