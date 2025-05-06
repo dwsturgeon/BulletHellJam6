@@ -7,22 +7,35 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     [Header("Variables")]
+    [Header("Move Settings")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveSpeedMax;
     [SerializeField] private float addedRotation;
+    [Header("Damage Settings")]
     [SerializeField] private float damageMult = 1f;
     [SerializeField] private float damageMultMax = 4f;
     [SerializeField] private float damageMultMin = 1f;
 
     [Header("Projectile VARS")]
-    [SerializeField] ProjectileType currentProjectileType;
+    [Header("Bullet Move Settings")]
     [SerializeField] private float bulletMoveSpeed;
-    [SerializeField] private Transform muzzleTransform;
+    [SerializeField] private float bulletMoveSpeedMax = 40f;
+    [SerializeField] private float bulletMoveSpeedMin = 10f;
+    [Header("Burst Settings")]
     [SerializeField] private int burstCount;
+    [SerializeField] private int burstCountMax;
     [SerializeField] private int projectilesPerBurst;
+    [SerializeField] private int projectilesPerBurstMax;
     [SerializeField] private float timeBetweenBursts;
+    [Header("Rest Settings")]
     [SerializeField] private float restTime = 1f;
+    [SerializeField] private float minRestTime = 0.01f;
+    [SerializeField] private float maxRestTime = 1f;
+    [Header("Spawning Settings")]
+    [SerializeField] ProjectileType currentProjectileType;
     [SerializeField][Range(0, 359)] private float angleSpread;
+    [SerializeField] private float angleIncreasePerProjectile;
+    [SerializeField] private Transform muzzleTransform;
     [SerializeField] private float startingDistance = 0.1f;
     private bool isShooting = false;
 
@@ -168,7 +181,7 @@ public class PlayerController : MonoBehaviour
                     PlayerProjectile bulletDamage = newBullet.GetComponent<PlayerProjectile>();
                     bulletDamage.Damage = bulletDamage.Damage * damageMult;
 
-                    newBullet.transform.right = newBullet.transform.position - transform.position;
+                    newBullet.transform.right = newBullet.transform.position - muzzleTransform.position;
 
                     if (newBullet.TryGetComponent(out PlayerProjectile projectile))
                     {
@@ -252,7 +265,57 @@ public class PlayerController : MonoBehaviour
     public float DamageMult
     {
         get => damageMult;
-        set { damageMult = Mathf.Clamp(DamageMult, damageMultMin, damageMultMax); }
+        set { damageMult = Mathf.Clamp(value, damageMultMin, damageMultMax); }
+    }
+
+    public float FireRate 
+    { 
+        get => restTime;
+        set { restTime = Mathf.Clamp(value, minRestTime, maxRestTime); } 
+    }
+
+    public int ProjectileCount
+    {
+        get => projectilesPerBurst;
+        set 
+        {
+            projectilesPerBurst = Mathf.Clamp(value, 1, projectilesPerBurstMax);
+            if(projectilesPerBurst == 1)
+            {
+                Angle = 0;
+            }
+            else
+            {
+                Angle = ProjectileCount * AnglePerProj;
+            }
+        }
+    }
+
+    public float Angle
+    {
+        get => angleSpread;
+        set
+        {
+            angleSpread = Mathf.Clamp(value, 0f, 80f);
+        }
+    }
+
+    public float AnglePerProj //if we ever think it should be an upgrade
+    {
+        get => angleIncreasePerProjectile;
+        set { angleIncreasePerProjectile = Mathf.Clamp(value, 0f, 20f); }
+    }
+
+    public int BurstCount
+    {
+        get => burstCount;
+        set { burstCount = Mathf.Clamp(value, 0, burstCountMax); }
+    }
+
+    public float ProjectileSpeed
+    {
+        get => bulletMoveSpeed;
+        set { bulletMoveSpeed = Mathf.Clamp(value, bulletMoveSpeedMin, bulletMoveSpeedMax); }
     }
     #endregion
 }

@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1644205999
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -193,6 +193,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  shouldMove: 0
   animator: {fileID: 7139136251752403316}
-  pickupType: 0
+  pickupType: 7
+  projectileType: 0
   stunTime: 4
+  healthAmount: 30
+  SpeedIncreaseAmount: 5
+  damageMultIncrease: 0.25
+  increaseType: 0
+  fireRateRemoveAmount: 0.04
+  projectileIncreaseAmount: 1
+  burstIncrease: 1
+  projectileSpeedIncrease: 10

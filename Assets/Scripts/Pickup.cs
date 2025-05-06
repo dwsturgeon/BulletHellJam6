@@ -6,7 +6,7 @@ using static PlayerController;
 
 public class Pickup : MonoBehaviour
 {
-
+    #region Settings
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private bool shouldMove; 
     [SerializeField] private Animator animator;
@@ -25,6 +25,26 @@ public class Pickup : MonoBehaviour
     [Header("Damage Setting")]
     [SerializeField] float damageMultIncrease = 1.25f;
     [SerializeField] IncreaseType increaseType;
+
+
+    [Header("Firerate Setting")]
+    [SerializeField] float fireRateRemoveAmount = 0.04f;
+    
+    [Header("ProjectileCount Setting")]
+    [SerializeField] private int projectileIncreaseAmount = 1;
+
+    [Header("ProjectileCount Setting")]
+    [SerializeField] private int burstIncrease = 1;
+
+    [Header("ProjectileSpeed Setting")]
+    [SerializeField] private float projectileSpeedIncrease = 5f;
+
+
+    #endregion
+
+
+
+
 
     private enum IncreaseType
     {
@@ -121,10 +141,10 @@ public class Pickup : MonoBehaviour
 
     private void ApplyHealth()
     {
-        Health healthComp = GetComponent<Health>();
+        HealthManager healthComp = GetComponent<HealthManager>();
         if(healthComp != null)
         {
-            healthComp.AddHealth(healthAmount);
+            healthComp.Heal(healthAmount);
         }
     }
 
@@ -141,28 +161,28 @@ public class Pickup : MonoBehaviour
         }
         else
         {
-            PlayerController.instance.DamageMult *= damageMultIncrease;
+            PlayerController.instance.DamageMult *= 1 + damageMultIncrease;
         }     
     }
 
     private void ApplyFireRate()
     {
-
+        PlayerController.instance.FireRate -= fireRateRemoveAmount;
     }
 
     private void ApplyProjectileCount()
     {
-
+        PlayerController.instance.ProjectileCount += projectileIncreaseAmount;
     }
 
     private void ApplyBurst()
     {
-
+        PlayerController.instance.BurstCount += burstIncrease;
     }
 
     private void ApplyProjectileSpeed()
     {
-
+        PlayerController.instance.ProjectileSpeed += projectileSpeedIncrease;
     }
     
     private void ApplyProjectileType()

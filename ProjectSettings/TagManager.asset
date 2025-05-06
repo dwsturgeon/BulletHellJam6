@@ -53,5 +53,17 @@ TagManager:
   - name: Foreground
     uniqueID: 3942718547
     locked: 0
+  - name: ------------------------------------
+    uniqueID: 3489889589
+    locked: 0
+  - name: Pickup
+    uniqueID: 1644205999
+    locked: 0
+  - name: Controller
+    uniqueID: 721145321
+    locked: 0
+  - name: Projectile
+    uniqueID: 2895884133
+    locked: 0
   m_RenderingLayers:
   - Default
