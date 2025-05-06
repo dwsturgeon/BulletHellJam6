@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     public float maxHealth = 100f;
 
     [SerializeField] private string targetTag = "PlayerProjectile";
-    [SerializeField] private GameObject enemy;
+    //[SerializeField] private GameObject enemy;
 
     public static HealthManager instance;
 
@@ -39,7 +39,7 @@ public class HealthManager : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
-            Destroy(enemy);
+            Destroy(gameObject);
         }
     }
 
