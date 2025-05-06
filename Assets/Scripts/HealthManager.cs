@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour
     public float maxHealth = 100f;
 
     [SerializeField] private string targetTag = "PlayerProjectile";
+    [SerializeField] private GameObject enemy;
 
     public static HealthManager instance;
 
@@ -36,7 +37,10 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (healthAmount <= 0)
+        {
+            Destroy(enemy);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
