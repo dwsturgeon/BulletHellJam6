@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8950779779872952187}
   - component: {fileID: 545316345938949087}
   - component: {fileID: 1253741141036635116}
+  - component: {fileID: 5746897580096463659}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -130,16 +131,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bbf1b48201281479db026e65131779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 20
+  moveSpeedMax: 80
   addedRotation: -90
-  projectilePrefab: {fileID: 3159813568762862433, guid: bae7139fa70b5dd418aac17a00f7af81, type: 3}
+  damageMult: 1
+  damageMultMax: 4
+  damageMultMin: 1
+  angleIncreasePerProjectile: 5
+  currentProjectileType: 0
   bulletMoveSpeed: 20
   muzzleTransform: {fileID: 1631138831407435371}
   burstCount: 1
   projectilesPerBurst: 4
+  projectilesPerBurstMax: 20
   timeBetweenBursts: 0
   restTime: 0.2
-  angleSpread: 90
+  minRestTime: 0.01
+  maxRestTime: 1
+  angleSpread: 20
   startingDistance: 0.1
   minX: -8.8
   maxX: 8.8
@@ -148,6 +157,11 @@ MonoBehaviour:
   maxTiltAngle: 20
   tiltSpeed: 5
   bodyTransform: {fileID: 5016608340262260218}
+  projectileEntries:
+  - type: 0
+    prefab: {fileID: 3159813568762862433, guid: bae7139fa70b5dd418aac17a00f7af81, type: 3}
+  - type: 1
+    prefab: {fileID: 3159813568762862433, guid: 5a91fb8f836174747adaf2a1e1e1e2c3, type: 3}
 --- !u!114 &8950779779872952187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +212,19 @@ MonoBehaviour:
   glitchDuration: 1
   cooldownTime: 4
   dodgeForce: 10
+--- !u!114 &5746897580096463659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333554388335723408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b442c3df130ca284893f0477f9d8f1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
 --- !u!1 &6487022416853971280
 GameObject:
   m_ObjectHideFlags: 0
