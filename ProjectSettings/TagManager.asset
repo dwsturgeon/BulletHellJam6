@@ -7,6 +7,7 @@ TagManager:
   - PlayerProjectile
   - Projectile
   - Enemy
+  - Wave
   layers:
   - Default
   - TransparentFX
