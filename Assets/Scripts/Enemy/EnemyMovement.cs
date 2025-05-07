@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     private float elapsedTime = 0f;
     private bool isWaiting = false;
     private bool gotHit = false;
+    public ProjType projectileType;
     
 
     [Header("Movement Settings")]
@@ -32,6 +33,12 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 targetPos;
 
+    public enum ProjType
+    {
+        Basic,
+        Explosive,
+        Laser
+    }
     private void Start()
     {
         targetPos = GetRandomPoint();
@@ -113,7 +120,7 @@ public class EnemyController : MonoBehaviour
         elapsedTime = 0;                             
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         gotHit = true;
     }

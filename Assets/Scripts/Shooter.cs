@@ -24,6 +24,8 @@ public class Shooter : MonoBehaviour
     private bool stunned = false;
     private float stunTimer;
     [SerializeField] private float recoverMult = 1f;
+    [SerializeField] Animator animator;
+    [SerializeField] private bool useAnimator;
 
     private enum Orientation
     {
@@ -99,6 +101,11 @@ public class Shooter : MonoBehaviour
 
         for (int i = 0; i < burstCount; i++)
         {
+            if (useAnimator) animator.SetBool("bAttack", true);
+            
+
+            
+
             if(!oscillate)
             {
                 TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
@@ -147,6 +154,7 @@ public class Shooter : MonoBehaviour
             }
 
             currentAngle = startAngle;
+            if (useAnimator) animator.SetBool("bAttack", false);
             yield return new WaitForSeconds(timeBetweenBursts);
             
         }

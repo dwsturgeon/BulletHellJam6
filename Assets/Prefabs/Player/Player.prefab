@@ -137,18 +137,21 @@ MonoBehaviour:
   damageMult: 1
   damageMultMax: 4
   damageMultMin: 1
-  angleIncreasePerProjectile: 5
-  currentProjectileType: 0
   bulletMoveSpeed: 20
-  muzzleTransform: {fileID: 1631138831407435371}
+  bulletMoveSpeedMax: 50
+  bulletMoveSpeedMin: 10
   burstCount: 1
+  burstCountMax: 10
   projectilesPerBurst: 4
   projectilesPerBurstMax: 20
-  timeBetweenBursts: 0
+  timeBetweenBursts: 0.05
   restTime: 0.2
   minRestTime: 0.01
   maxRestTime: 1
+  currentProjectileType: 0
   angleSpread: 20
+  angleIncreasePerProjectile: 5
+  muzzleTransform: {fileID: 1631138831407435371}
   startingDistance: 0.1
   minX: -8.8
   maxX: 8.8
@@ -330,8 +333,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -352248749
-  m_SortingLayer: 3
+  m_SortingLayerID: 721145321
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 8764508510872180361, guid: af38e816b72341b42a794a35510bea96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -4,11 +4,23 @@ public class PlayerProjectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float damageAmount = 10f;
+    [SerializeField] private float killTimer = 12f;
+    [SerializeField] private ProjectileType type;
+
+    public enum ProjectileType
+    {
+        Basic,
+        Explosive,
+        Laser
+    }
 
 
     private void Start()
     {
-        Destroy(this.gameObject, 5f);
+        if (type != ProjectileType.Laser)
+        {
+            Destroy(this.gameObject, killTimer);
+        }
     }
     private void Update()
     {
@@ -29,14 +41,15 @@ public class PlayerProjectile : MonoBehaviour
         get => damageAmount;
         set { damageAmount = value; }
     }
-            
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public ProjectileType ProjType
     {
-       //do damage
-
-       //explode the projectile
-       //collision will be disabled with the player at instantiate 
+        get => type;
+        set => type = value;
     }
+        
+    
+
+
 
 }

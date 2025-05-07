@@ -17,7 +17,7 @@ public class ShakeOnCollision : MonoBehaviour
         originalPosition = visualTarget.localPosition;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag(targetTag))
         {

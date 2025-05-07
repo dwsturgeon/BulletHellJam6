@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
@@ -39,9 +40,11 @@ public class Pickup : MonoBehaviour
     [Header("ProjectileSpeed Setting")]
     [SerializeField] private float projectileSpeedIncrease = 5f;
 
-
+    [Header("Boss Setting")]
+    [SerializeField] private bool isBoss;
+    [SerializeField] private float bossMult;
     #endregion
-
+    
 
 
 
@@ -144,45 +147,45 @@ public class Pickup : MonoBehaviour
         HealthManager healthComp = GetComponent<HealthManager>();
         if(healthComp != null)
         {
-            healthComp.Heal(healthAmount);
+            healthComp.Heal(healthAmount * BossMult());
         }
     }
 
     private void ApplySpeed()
     {
-        PlayerController.instance.Speed = SpeedIncreaseAmount;
+        PlayerController.instance.Speed = SpeedIncreaseAmount * BossMult();
     }
 
     private void ApplyDamage()
     {
         if (increaseType == IncreaseType.Additive)
         {
-            PlayerController.instance.DamageMult += damageMultIncrease;
+            PlayerController.instance.DamageMult += damageMultIncrease * BossMult();
         }
         else
         {
-            PlayerController.instance.DamageMult *= 1 + damageMultIncrease;
+            PlayerController.instance.DamageMult *= 1 + damageMultIncrease * BossMult();
         }     
     }
 
     private void ApplyFireRate()
     {
-        PlayerController.instance.FireRate -= fireRateRemoveAmount;
+        PlayerController.instance.FireRate -= fireRateRemoveAmount * BossMult();
     }
 
     private void ApplyProjectileCount()
     {
-        PlayerController.instance.ProjectileCount += projectileIncreaseAmount;
+        PlayerController.instance.ProjectileCount += projectileIncreaseAmount * (int)Math.Round(BossMult());
     }
 
     private void ApplyBurst()
     {
-        PlayerController.instance.BurstCount += burstIncrease;
+        PlayerController.instance.BurstCount += burstIncrease * (int)Math.Round(BossMult());
     }
 
     private void ApplyProjectileSpeed()
     {
-        PlayerController.instance.ProjectileSpeed += projectileSpeedIncrease;
+        PlayerController.instance.ProjectileSpeed += projectileSpeedIncrease * BossMult();
     }
     
     private void ApplyProjectileType()
@@ -192,6 +195,18 @@ public class Pickup : MonoBehaviour
 
     #endregion
 
+    public bool Boss 
+    { 
+        get => isBoss;
+        set => isBoss = value;
+    }
 
-
+    private float BossMult()
+    {
+        if (isBoss)
+        {
+            return bossMult;
+        }
+        else return 1f; 
+    }
 }

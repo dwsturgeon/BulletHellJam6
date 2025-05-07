@@ -7,10 +7,12 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     [Header("Variables")]
+
     [Header("Move Settings")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveSpeedMax;
     [SerializeField] private float addedRotation;
+
     [Header("Damage Settings")]
     [SerializeField] private float damageMult = 1f;
     [SerializeField] private float damageMultMax = 4f;
@@ -21,16 +23,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bulletMoveSpeed;
     [SerializeField] private float bulletMoveSpeedMax = 40f;
     [SerializeField] private float bulletMoveSpeedMin = 10f;
+    private GameObject laser;
+
     [Header("Burst Settings")]
     [SerializeField] private int burstCount;
     [SerializeField] private int burstCountMax;
     [SerializeField] private int projectilesPerBurst;
     [SerializeField] private int projectilesPerBurstMax;
     [SerializeField] private float timeBetweenBursts;
+
     [Header("Rest Settings")]
     [SerializeField] private float restTime = 1f;
     [SerializeField] private float minRestTime = 0.01f;
     [SerializeField] private float maxRestTime = 1f;
+
     [Header("Spawning Settings")]
     [SerializeField] ProjectileType currentProjectileType;
     [SerializeField][Range(0, 359)] private float angleSpread;
@@ -52,6 +58,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxTiltAngle = 15f;
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private Transform bodyTransform;
+
+    private AudioSource shotSound;
 
     private Collider2D thisCollider;
     private Rigidbody2D playerRB;
@@ -79,21 +87,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ProjectileEntry[] projectileEntries;
 
     private Dictionary<ProjectileType, GameObject> projectileMap;
-    private ProjectileType currentType;
 
 
     public void ChangeProjectile(ProjectileType newType)
     {
         if (projectileMap.ContainsKey(newType))
         {
-            currentType = newType;
+            currentProjectileType = newType;
             Debug.Log("Projectile Changed to " + newType);
         }
         else Debug.Log("did not work");
     }
     #endregion
-
-    //add audio for gunshot
 
     private void Awake()
     {
@@ -107,22 +112,47 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         thisCollider = GetComponent<Collider2D>();
+        shotSound = GetComponent<AudioSource>();
 
         projectileMap = new Dictionary<ProjectileType, GameObject>();
         foreach (var entry in projectileEntries)
         {
             projectileMap[entry.type] = entry.prefab;
         }
-        currentType = ProjectileType.Normal;
+
+        if(ProjectileCount == 1)
+        {
+            Angle = 0;
+        }
 
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if(currentProjectileType == ProjectileType.Laser)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if(Input.GetKeyDown(KeyCode.Space) && laser == null)
+                {
+                    if (projectileMap.TryGetValue(currentProjectileType, out var prefab))
+                    {
+                        laser = Instantiate(prefab, muzzleTransform.position, transform.rotation, transform);
+                        Physics2D.IgnoreCollision(laser.GetComponent<Collider2D>(), thisCollider);
+                    }
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.Space) && laser != null)
+            {
+                Destroy(laser);
+                laser = null;
+            }
+        }
+        else if (Input.GetKey(KeyCode.Space))
         {
             Shoot();
         }
+
     }
 
     public void Shoot()
@@ -162,9 +192,12 @@ public class PlayerController : MonoBehaviour
     {
         isShooting = true;
 
-        float startAngle, currentAngle, angleStep, endAngle;
+        
+        
 
-        TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            float startAngle, currentAngle, angleStep, endAngle;
+
+            TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
         
         for (int i = 0; i < burstCount; i++)
@@ -173,9 +206,11 @@ public class PlayerController : MonoBehaviour
             for (int j = 0; j < projectilesPerBurst; j++)
             {
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
-                if(projectileMap.TryGetValue(currentType, out GameObject projectilePrefab))
+                if(projectileMap.TryGetValue(currentProjectileType, out GameObject projectilePrefab))
                 {
+
                     GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
+                    PlayShotSound();
                     Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
                     
                     PlayerProjectile bulletDamage = newBullet.GetComponent<PlayerProjectile>();
@@ -198,10 +233,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
         yield return new WaitForSeconds(restTime);
-        isShooting = false;
+        
+        
 
+        isShooting = false;
     }
 
     private void TargetConeOfInfluence(out float startAngle, out float currentAngle, out float angleStep, out float endAngle)
@@ -252,7 +288,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    #region vars upgrade
+    private void PlayShotSound()
+    {
+        shotSound.pitch = UnityEngine.Random.Range(1f, 1.25f);
+        shotSound.Play();
+    }
+
+    #region Var SET GET
     public float Speed 
     {
         get => moveSpeed;
