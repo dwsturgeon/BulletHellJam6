@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5482066840531458176, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
       propertyPath: wavePrefabs.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5482066840531458176, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
       propertyPath: 'WavePrefabs.Array.data[0]'
@@ -1865,6 +1865,14 @@ PrefabInstance:
       objectReference: {fileID: 496099689098460361, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
     - target: {fileID: 5482066840531458176, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
       propertyPath: 'wavePrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 496099689098460361, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
+    - target: {fileID: 5482066840531458176, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
+      propertyPath: 'wavePrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 496099689098460361, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
+    - target: {fileID: 5482066840531458176, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
+      propertyPath: 'wavePrefabs.Array.data[2]'
       value: 
       objectReference: {fileID: 496099689098460361, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}
     - target: {fileID: 7845071953175254962, guid: 722d047cf3312914dbbb2b1b373dcbdc, type: 3}

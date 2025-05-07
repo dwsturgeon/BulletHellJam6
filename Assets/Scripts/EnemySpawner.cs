@@ -16,7 +16,8 @@ public class EnemySpawner : MonoBehaviour
     
     public static EnemySpawner instance;
 
-
+    private float timeToWait = 2f;
+    private float timeElapsed = 0;
 
     private void Awake()
     {
@@ -28,23 +29,34 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        //init first wave
         LoadNextWave();
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentWave = GetCurrentWave();
-        if (currentWave != null)
+        //every 2 seconds check and init/destroy waves
+        timeElapsed += Time.deltaTime;
+        if (timeElapsed > timeToWait)
         {
-            Debug.Log(currentWave.name);
-        }
+            timeElapsed = 0;
 
-        currentEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(currentEnemies.Length == 0)
-        {
-            Destroy(instantiatedObject);
-            LoadNextWave();
+            //grab current wave
+            currentWave = GetCurrentWave();
+            if (currentWave != null)
+            {
+                Debug.Log(currentWave.name);
+            }
+            //grab current enemies
+            currentEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            //destroy wave gameobject and load next
+            if (currentEnemies.Length == 0)
+            {
+                Destroy(instantiatedObject);
+                LoadNextWave();
+            }
         }
     }
 
