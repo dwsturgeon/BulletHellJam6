@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8960227418266948258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,13 +47,13 @@ GameObject:
   - component: {fileID: 674399647575135621}
   - component: {fileID: 1293991473972828244}
   - component: {fileID: 2364980681085909917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Heavy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8730270048476144382
 Transform:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 5057999440229021019}
   - component: {fileID: 4834786949012198355}
   - component: {fileID: 1015492341643738899}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 8632288131471446455}
   - component: {fileID: 4568999279076828080}
   - component: {fileID: 1682878864193868444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 7540716642197719380}
   - component: {fileID: 3431391814663007518}
   - component: {fileID: 1034691740675294929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 515861314659109482}
   - component: {fileID: 9027776223926720518}
   - component: {fileID: 4079623275863763618}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 5996540907668241186}
   - component: {fileID: 3145270636801557763}
   - component: {fileID: 4155801056144118774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

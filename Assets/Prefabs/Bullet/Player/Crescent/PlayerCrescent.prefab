@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7314969109186698334}
   - component: {fileID: 8596369764983882752}
   - component: {fileID: 959664278767284683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2067448259432449341}
   - component: {fileID: 9202017740379580316}
   - component: {fileID: 8964097612123045012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerCrescent
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
@@ -158,6 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   damageAmount: 10
+  killTimer: 12
+  type: 0
 --- !u!58 &8964097612123045012
 CircleCollider2D:
   m_ObjectHideFlags: 0

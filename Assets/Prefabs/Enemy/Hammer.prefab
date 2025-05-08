@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4908960749261684994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GruntMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5732486801921757408}
   - component: {fileID: 3890334142712312275}
   - component: {fileID: 6435498357367475761}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5160093848183588551}
   - component: {fileID: 55852506377421801}
   - component: {fileID: 2844130824772748476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 5136752935147364000}
   - component: {fileID: 8770060685522531674}
   - component: {fileID: 5168355981586818152}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HammerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 4812153480690951467}
   - component: {fileID: 4003240038548857437}
   - component: {fileID: 7149713702673568970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,13 +382,13 @@ GameObject:
   - component: {fileID: 953823884832899399}
   - component: {fileID: 1878853508646078860}
   - component: {fileID: 6323736893171333941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hammer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6466277469715127538
 Transform:
   m_ObjectHideFlags: 0
@@ -486,6 +486,7 @@ MonoBehaviour:
   maxX: 8.8
   minY: 2.5
   maxY: 4.5
+  projectileType: 0
   smoothTime: 1
   threshhold: 0.2
   waitTime: 2
@@ -549,6 +550,8 @@ MonoBehaviour:
   shouldWaitToStop: 1
   muzzleTransform: {fileID: 4908960749261684994}
   recoverMult: 2
+  animator: {fileID: 0}
+  useAnimator: 0
   orientation: 3
 --- !u!114 &6323736893171333941
 MonoBehaviour:
@@ -565,6 +568,7 @@ MonoBehaviour:
   healthBar: {fileID: 2844130824772748476}
   healthAmount: 250
   maxHealth: 250
+  gracePeriod: 0.5
   isBoss: 0
   targetTag: PlayerProjectile
   drops: []
@@ -580,7 +584,7 @@ GameObject:
   - component: {fileID: 2067279686826540608}
   - component: {fileID: 255774003345090213}
   - component: {fileID: 5411568494396815554}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

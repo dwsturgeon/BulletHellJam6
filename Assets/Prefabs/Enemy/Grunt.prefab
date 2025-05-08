@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6014904718271296219}
   - component: {fileID: 8700230734097703504}
   - component: {fileID: 6622595342552578476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,13 +91,13 @@ GameObject:
   - component: {fileID: 8812917907930200495}
   - component: {fileID: 7003779114686138578}
   - component: {fileID: 1201981424695735614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grunt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8222105764612330024
 Transform:
   m_ObjectHideFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   maxX: 8.8
   minY: 2.5
   maxY: 4.5
+  projectileType: 0
   smoothTime: 1
   threshhold: 0.2
   waitTime: 0
@@ -258,6 +259,8 @@ MonoBehaviour:
   shouldWaitToStop: 1
   muzzleTransform: {fileID: 650495178335608692}
   recoverMult: 1
+  animator: {fileID: 0}
+  useAnimator: 0
   orientation: 3
 --- !u!114 &1201981424695735614
 MonoBehaviour:
@@ -274,6 +277,7 @@ MonoBehaviour:
   healthBar: {fileID: 1865463719567777745}
   healthAmount: 100
   maxHealth: 100
+  gracePeriod: 0.5
   isBoss: 0
   targetTag: PlayerProjectile
   drops: []
@@ -288,7 +292,7 @@ GameObject:
   - component: {fileID: 3417549466195038905}
   - component: {fileID: 4128310653594382584}
   - component: {fileID: 7981305413177272775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +368,7 @@ GameObject:
   - component: {fileID: 4381764223526188493}
   - component: {fileID: 8883617279728767006}
   - component: {fileID: 8354534070940426903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +471,7 @@ GameObject:
   - component: {fileID: 6255713838925200744}
   - component: {fileID: 4591298319948527437}
   - component: {fileID: 6554295384029738023}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GruntSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 650495178335608692}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GruntMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +612,7 @@ GameObject:
   - component: {fileID: 1750158434272384589}
   - component: {fileID: 7811674746784977971}
   - component: {fileID: 1865463719567777745}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}

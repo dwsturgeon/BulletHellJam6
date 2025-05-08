@@ -22,9 +22,11 @@ public class FlashOnCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        
         if (collision.CompareTag(targetTag))
         {
-            if(flashCoroutine != null)
+            Debug.Log(collision.gameObject.name);
+            if (flashCoroutine != null)
             {
                 StopCoroutine(flashCoroutine);
                 sp.color = flashColor;

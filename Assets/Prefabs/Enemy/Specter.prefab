@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6914963740807244616}
   - component: {fileID: 6613755336488686801}
   - component: {fileID: 2218472627040071267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1409560371366306324}
   - component: {fileID: 8991031644276195708}
   - component: {fileID: 3791691838067969574}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 1865319249010206323}
   - component: {fileID: 166848227251146507}
   - component: {fileID: 3050660283666592858}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,13 +270,13 @@ GameObject:
   - component: {fileID: 4516593693863741996}
   - component: {fileID: 1096286753466314191}
   - component: {fileID: 4567485269918277517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Specter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3617799086743673992
 Transform:
   m_ObjectHideFlags: 0
@@ -374,6 +374,7 @@ MonoBehaviour:
   maxX: 8.8
   minY: 2.5
   maxY: 4.5
+  projectileType: 0
   smoothTime: 1
   threshhold: 1
   waitTime: 0
@@ -437,6 +438,8 @@ MonoBehaviour:
   shouldWaitToStop: 1
   muzzleTransform: {fileID: 3626323104396321398}
   recoverMult: 2
+  animator: {fileID: 0}
+  useAnimator: 0
   orientation: 3
 --- !u!114 &4567485269918277517
 MonoBehaviour:
@@ -453,6 +456,7 @@ MonoBehaviour:
   healthBar: {fileID: 3791691838067969574}
   healthAmount: 200
   maxHealth: 200
+  gracePeriod: 0.5
   isBoss: 0
   targetTag: PlayerProjectile
   drops:
@@ -466,7 +470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3626323104396321398}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GruntMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +503,7 @@ GameObject:
   - component: {fileID: 8821221920885348778}
   - component: {fileID: 4572079733628426460}
   - component: {fileID: 1716028957245885351}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +578,7 @@ GameObject:
   - component: {fileID: 4375151689921309668}
   - component: {fileID: 5155588506306787916}
   - component: {fileID: 6340122959314116525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpecterSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8062437168836894559}
   - component: {fileID: 8507877019700882061}
   - component: {fileID: 7806350102483441660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5143817308273793017}
   - component: {fileID: 1095842046522859554}
   - component: {fileID: 6614632934571107460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBasic
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
@@ -158,6 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   damageAmount: 10
+  killTimer: 12
+  type: 0
 --- !u!58 &6614632934571107460
 CircleCollider2D:
   m_ObjectHideFlags: 0

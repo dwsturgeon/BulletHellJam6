@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         Normal,
         Explosive,
         Laser,
-        Moon
+        Crescent
     }
 
     [System.Serializable]
@@ -210,8 +210,7 @@ public class PlayerController : MonoBehaviour
                 {
 
                     GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
-                    PlayShotSound();
-                    Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
+                    PlaySound(shotSound);
                     
                     PlayerProjectile bulletDamage = newBullet.GetComponent<PlayerProjectile>();
                     bulletDamage.Damage = bulletDamage.Damage * damageMult;
@@ -288,10 +287,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void PlayShotSound()
+    private void PlaySound(AudioSource audio)
     {
-        shotSound.pitch = UnityEngine.Random.Range(1f, 1.25f);
-        shotSound.Play();
+        audio.pitch = UnityEngine.Random.Range(1f, 1.25f);
+        audio.Play();
     }
 
     #region Var SET GET

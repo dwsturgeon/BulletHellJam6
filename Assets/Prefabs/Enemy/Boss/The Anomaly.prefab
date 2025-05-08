@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8643176717700724809}
   - component: {fileID: 7726824884148533546}
   - component: {fileID: 5735789484223958959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3340984139010467855}
   - component: {fileID: 3396041352238292543}
   - component: {fileID: 2942560577946007748}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AnomalySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 3855774177245017163}
   - component: {fileID: 7171520200185304485}
   - component: {fileID: 648638701803102833}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: The Anomaly
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 6550751182779814151}
   - component: {fileID: 2367443301190654847}
   - component: {fileID: 4370370888832386065}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 5796372648086227473}
   - component: {fileID: 5408527163546246351}
   - component: {fileID: 7155728550130493326}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 1537769537018687240}
   - component: {fileID: 5616125742006228902}
   - component: {fileID: 8450084848657074409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488195637338993732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GruntMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
