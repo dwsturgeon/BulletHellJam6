@@ -72,8 +72,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource pickupSource;
 
 
-    private AudioSource gunAudioSource;
-
     private Collider2D thisCollider;
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
