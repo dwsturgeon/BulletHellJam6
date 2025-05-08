@@ -59,12 +59,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private Transform bodyTransform;
 
-    [Header("Audio")]
-    private AudioSource shotSound;
+    [Header("Gun Sound Effect")]
     [SerializeField] private AudioClip basicClip;
     [SerializeField] private AudioClip explosiveClip;
     [SerializeField] private AudioClip laserClip;
     [SerializeField] private AudioClip crescentClip;
+    [SerializeField] private AudioSource gunSound;
+
+    [Header("Pickup Sound")]
+    [SerializeField] private AudioSource pickupSource;
+
 
     private Collider2D thisCollider;
     private Rigidbody2D playerRB;
@@ -117,7 +121,6 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         thisCollider = GetComponent<Collider2D>();
-        shotSound = GetComponent<AudioSource>();
 
         projectileMap = new Dictionary<ProjectileType, GameObject>();
         foreach (var entry in projectileEntries)
@@ -215,7 +218,7 @@ public class PlayerController : MonoBehaviour
                 {
 
                     GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
-                    PlaySound(shotSound);
+                    PlaySound(gunSound);
                     
                     PlayerProjectile bulletDamage = newBullet.GetComponent<PlayerProjectile>();
                     bulletDamage.Damage = bulletDamage.Damage * damageMult;
@@ -292,6 +295,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void PlayPickupSound()
+    {
+        float volume = 0.1f;
+        pickupSource.volume = volume;
+        pickupSource.Play();
+    }
+
     private void PlaySound(AudioSource audio)
     {
         //audio.pitch = UnityEngine.Random.Range(1f, 1.1f);
@@ -301,14 +311,14 @@ public class PlayerController : MonoBehaviour
             case ProjectileType.Normal: 
             {
                 audio.clip = basicClip;
-                audio.volume = 1f;
+                audio.volume = 1.5f;
                 break;
             }
 
             case ProjectileType.Crescent:
             { 
                 audio.clip = crescentClip;
-                audio.volume = 1f;
+                audio.volume = 0.5f;
                 break;
             }
 
@@ -322,7 +332,7 @@ public class PlayerController : MonoBehaviour
             case ProjectileType.Laser:  
             {
                 audio.clip = laserClip;
-                    audio.volume = 1f;
+                audio.volume = 1f;
                 break;
             }
 

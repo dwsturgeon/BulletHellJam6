@@ -200,7 +200,10 @@ GameObject:
   - component: {fileID: 2424991983449804216}
   - component: {fileID: 3855774177245017163}
   - component: {fileID: 7171520200185304485}
+  - component: {fileID: 1274102025788654309}
+  - component: {fileID: 238554419435024942}
   - component: {fileID: 648638701803102833}
+  - component: {fileID: 7198266443393789314}
   m_Layer: 7
   m_Name: The Anomaly
   m_TagString: Enemy
@@ -305,12 +308,11 @@ MonoBehaviour:
   maxX: 8.8
   minY: 2.5
   maxY: 3.6
-  projectileType: 0
-  smoothTime: 1
-  threshhold: 1
-  waitTime: 0
+  smoothTime: 2
+  threshhold: 2
+  waitTime: 2
   minMoveDistance: 10
-  recoveryMult: 2
+  recoveryMult: 3
   animator: {fileID: 2942560577946007748}
 --- !u!114 &2424991983449804216
 MonoBehaviour:
@@ -358,11 +360,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
   bulletMoveSpeed: 3
-  burstCount: 2
-  projectilesPerBurst: 15
-  angleSpread: 75
+  burstCount: 4
+  projectilesPerBurst: 9
+  angleSpread: 90
   startingDistance: 0.1
-  timeBetweenBursts: 0.47
+  timeBetweenBursts: 0.1
   restTime: 2
   stagger: 1
   oscillate: 1
@@ -372,6 +374,62 @@ MonoBehaviour:
   animator: {fileID: 2942560577946007748}
   useAnimator: 1
   orientation: 3
+--- !u!114 &1274102025788654309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229286068497340757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c40642a706d4eb4291422a1f956de5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
+  bulletMoveSpeed: 2
+  burstCount: 6
+  projectilesPerBurst: 40
+  angleSpread: 359
+  startingDistance: 0.1
+  timeBetweenBursts: 0.2
+  restTime: 10
+  stagger: 1
+  oscillate: 1
+  shouldWaitToStop: 1
+  muzzleTransform: {fileID: 1488195637338993732}
+  recoverMult: 3
+  animator: {fileID: 2942560577946007748}
+  useAnimator: 1
+  orientation: 3
+--- !u!114 &238554419435024942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229286068497340757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c40642a706d4eb4291422a1f956de5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
+  bulletMoveSpeed: 6
+  burstCount: 5
+  projectilesPerBurst: 3
+  angleSpread: 20
+  startingDistance: 0.1
+  timeBetweenBursts: 0.1
+  restTime: 1
+  stagger: 0
+  oscillate: 0
+  shouldWaitToStop: 1
+  muzzleTransform: {fileID: 1488195637338993732}
+  recoverMult: 3
+  animator: {fileID: 2942560577946007748}
+  useAnimator: 1
+  orientation: 4
 --- !u!114 &648638701803102833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,8 +448,104 @@ MonoBehaviour:
   gracePeriod: 0.1
   isBoss: 1
   targetTag: PlayerProjectile
-  drops:
-  - {fileID: 8336642334648128047, guid: 6c0a55ff3a28a7349b2d8ed189922576, type: 3}
+  dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
+--- !u!82 &7198266443393789314
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229286068497340757}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f673a3a91812ce44dad2f668ae21921b, type: 3}
+  m_Resource: {fileID: 8300000, guid: f673a3a91812ce44dad2f668ae21921b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1.25
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8047826598615708591
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488195637338993732}
   m_Layer: 7
-  m_Name: GruntMuzzle
+  m_Name: BossMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

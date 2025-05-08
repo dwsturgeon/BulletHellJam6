@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.Rendering;
 using UnityEngine;
 using static PlayerController;
 
@@ -119,6 +118,8 @@ public class Pickup : MonoBehaviour
             default: break;
 
         }
+        
+        PlayerController.instance.PlayPickupSound();
 
         Destroy(this.gameObject, 2f);
     }
