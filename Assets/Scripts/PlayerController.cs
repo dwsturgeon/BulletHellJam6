@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform bodyTransform;
 
     [Header("Gun Sound Effect")]
+    [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioClip basicClip;
     [SerializeField] private AudioClip explosiveClip;
     [SerializeField] private AudioClip laserClip;
@@ -70,10 +72,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource pickupSource;
 
 
+    private AudioSource gunAudioSource;
+
     private Collider2D thisCollider;
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
     public static PlayerController instance;
+
+    
 
 
     #region Projectile Changing
@@ -115,6 +121,7 @@ public class PlayerController : MonoBehaviour
         {
             instance = this;
         }
+
     }
 
     void Start()

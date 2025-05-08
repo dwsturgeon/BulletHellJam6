@@ -51,12 +51,13 @@ public class SoundManager : MonoBehaviour
     void SetMusicVolume()
     {
         PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
-        audioMixer.SetFloat(MIXER_MUSIC, ((float)Math.Log10(musicSlider.value) * 20));
+        audioMixer.SetFloat(MIXER_MUSIC, (Mathf.Log10(musicSlider.value) * 20));
     }
 
     void SetSFXVolume()
     {
         PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
-        audioMixer.SetFloat(MIXER_MUSIC, ((float)Math.Log10(sfxSlider.value) * 20));
+        audioMixer.SetFloat(MIXER_SFX, (Mathf.Log10(sfxSlider.value) * 20));
+        Debug.Log((Mathf.Log10(sfxSlider.value) * 20));
     }
 }

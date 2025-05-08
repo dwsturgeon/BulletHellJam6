@@ -1,20 +1,13 @@
 using System;
-using System.ComponentModel;
-using System.Threading.Tasks;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneFunctions : MonoBehaviour
 {
 
     private GameObject settingsObj;
-
-
-    public string playButtonLevelName;
-    public string tutorialButtonLevelName;
 
 
     void Awake()
@@ -35,17 +28,14 @@ public class SceneFunctions : MonoBehaviour
             if (settingsObj.activeSelf)
             {
                 settingsObj.SetActive(false);
+                Time.timeScale = 1f;
             }
             else
             {
                 settingsObj.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
-    }
-
-    void LoadLevel(string levelName)
-    {
-        SceneManager.LoadScene(levelName);
     }
 
 }
