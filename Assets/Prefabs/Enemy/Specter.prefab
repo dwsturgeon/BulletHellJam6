@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 4516593693863741996}
   - component: {fileID: 1096286753466314191}
   - component: {fileID: 4567485269918277517}
+  - component: {fileID: 5993025186519600599}
   m_Layer: 7
   m_Name: Specter
   m_TagString: Enemy
@@ -463,6 +464,21 @@ MonoBehaviour:
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
+--- !u!114 &5993025186519600599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494210303431688822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d6b019724127441a8af59775e7cd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveMat: {fileID: 2100000, guid: aa6b0a1f49e309b4ca5c132f47906619, type: 2}
+  maxDissolve: 0.8
+  visualTarget: {fileID: 5155588506306787916}
 --- !u!1 &6034078175686609088
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +641,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: aa6b0a1f49e309b4ca5c132f47906619, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 8093471828408240022}
   - component: {fileID: 175046607618507423}
   - component: {fileID: 5339420350966314203}
-  - component: {fileID: 6102839865381508660}
+  - component: {fileID: 4822116606990221206}
   - component: {fileID: 5662407543369446175}
   - component: {fileID: 2424991983449804216}
   - component: {fileID: 3855774177245017163}
@@ -303,7 +303,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.89}
   m_EdgeRadius: 0.15
---- !u!114 &6102839865381508660
+--- !u!114 &4822116606990221206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveMat: {fileID: 2100000, guid: aa6b0a1f49e309b4ca5c132f47906619, type: 2}
   maxDissolve: 0.65
+  visualTarget: {fileID: 3396041352238292543}
 --- !u!114 &5662407543369446175
 MonoBehaviour:
   m_ObjectHideFlags: 0
