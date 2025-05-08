@@ -96,7 +96,7 @@ public class EnemyController : MonoBehaviour
         int attempts = 0;
         Vector2 newTarget = targetPos;
 
-        while (attempts < maxAttempts)
+        while (attempts <= maxAttempts)
         {
             float randomX = Random.Range(minX, maxX);
             float randomY = Random.Range(minY, maxY);
@@ -106,6 +106,11 @@ public class EnemyController : MonoBehaviour
             { 
                 newTarget = candidate;
                 break;
+            }
+            else if(attempts == maxAttempts)
+            {  
+                newTarget = GetRandomPoint();
+                break;  
             }
             attempts++;
         }

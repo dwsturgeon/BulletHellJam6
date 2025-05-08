@@ -168,7 +168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3325675971192836011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -269,8 +269,6 @@ GameObject:
   - component: {fileID: 3053399819803824001}
   - component: {fileID: 8509452708419232425}
   - component: {fileID: 7641658472471617315}
-  - component: {fileID: 8172890702600180068}
-  - component: {fileID: 4823008501659464852}
   - component: {fileID: 2068423505805478123}
   m_Layer: 7
   m_Name: FlyEnemy
@@ -432,7 +430,7 @@ MonoBehaviour:
   projectilesPerBurst: 5
   angleSpread: 30
   startingDistance: 0.2
-  timeBetweenBursts: 0.5
+  timeBetweenBursts: 0.2
   restTime: 1
   stagger: 1
   oscillate: 1
@@ -441,63 +439,11 @@ MonoBehaviour:
   recoverMult: 1
   animator: {fileID: 0}
   useAnimator: 0
+  bUseZone: 0
+  zone: {fileID: 0}
+  zoneCooldown: 1
+  zoneLifetime: 1
   orientation: 4
---- !u!114 &8172890702600180068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5524531256585304181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c40642a706d4eb4291422a1f956de5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
-  bulletMoveSpeed: 2
-  burstCount: 2
-  projectilesPerBurst: 60
-  angleSpread: 359
-  startingDistance: 0.2
-  timeBetweenBursts: 1
-  restTime: 10
-  stagger: 1
-  oscillate: 1
-  shouldWaitToStop: 1
-  muzzleTransform: {fileID: 8928145453973012851}
-  recoverMult: 1
-  animator: {fileID: 0}
-  useAnimator: 0
-  orientation: 3
---- !u!114 &4823008501659464852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5524531256585304181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c40642a706d4eb4291422a1f956de5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
-  bulletMoveSpeed: 2
-  burstCount: 1
-  projectilesPerBurst: 10
-  angleSpread: 90
-  startingDistance: 0.1
-  timeBetweenBursts: 1
-  restTime: 10
-  stagger: 0
-  oscillate: 0
-  shouldWaitToStop: 1
-  muzzleTransform: {fileID: 8928145453973012851}
-  recoverMult: 1
-  animator: {fileID: 0}
-  useAnimator: 0
-  orientation: 3
 --- !u!114 &2068423505805478123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,8 +457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 4060862859402280826}
-  healthAmount: 100
-  maxHealth: 100
+  healthAmount: 200
+  maxHealth: 200
   gracePeriod: 0.1
   isBoss: 0
   targetTag: PlayerProjectile

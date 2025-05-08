@@ -21,7 +21,6 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool shouldWaitToStop = false;
     [SerializeField] private Transform muzzleTransform;
 
-    private Collider2D thisCollider;
     private bool stunned = false;
     private float stunTimer;
     [SerializeField] private float recoverMult = 1f;
@@ -32,8 +31,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool bUseZone = false;
     [SerializeField] GameObject zone;
     [SerializeField] float zoneCooldown = 1f;
-    [SerializeField] float zoneLifetime = 1f;    
-
+    [SerializeField] float zoneLifetime = 1f;
+    private float elapsed;
     private enum Orientation
     {
         Left, Right, Up, Down, AtPlayer,
@@ -47,7 +46,6 @@ public class Shooter : MonoBehaviour
     private bool isShooting = false;
     private void Start()
     {
-        thisCollider = GetComponent<Collider2D>();
         movementComp = GetComponent<EnemyController>();
         if(muzzleTransform == null ) muzzleTransform.position = transform.position;
         
@@ -73,7 +71,9 @@ public class Shooter : MonoBehaviour
             }
 
         }
-        else Shoot();    
+        else Shoot();
+
+        
     }
 
     public void Shoot()
@@ -90,6 +90,17 @@ public class Shooter : MonoBehaviour
             if (!isShooting)
             {
                 StartCoroutine(ShootRoutine());
+            }
+        }
+
+        if (bUseZone)
+        {
+            elapsed += Time.deltaTime;
+
+            if (elapsed > zoneCooldown)
+            {
+                SpawnZone();
+                elapsed = 0;
             }
         }
     }
@@ -220,5 +231,24 @@ public class Shooter : MonoBehaviour
     {
         stunTimer = _stunT;
         stunned = true;
+    }
+
+    private void SpawnZone()
+    {
+        Vector3 centerPosition = new Vector3(0f, 0f, 0f);
+
+        float influenceFactor = 0.1f;
+        centerPosition.x += PlayerController.instance.transform.position.x * influenceFactor;
+
+        System.Array values = System.Enum.GetValues(typeof(AnomalyZone.ZoneType));
+        AnomalyZone.ZoneType randomValue = (AnomalyZone.ZoneType)values.GetValue(UnityEngine.Random.Range(0, values.Length - 1));
+        GameObject spawnedZone = Instantiate(zone, centerPosition, Quaternion.identity);
+
+        spawnedZone.GetComponent<AnomalyZone>().Zone = randomValue;
+
+        
+        
+        Destroy(spawnedZone, zoneLifetime);
+        
     }
 }
