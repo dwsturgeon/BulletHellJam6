@@ -9,7 +9,7 @@ public class AnomalyZone : MonoBehaviour
     [SerializeField] private float redirectAngleSpread = 30f;
     [SerializeField] private ZoneType zoneType;
 
-    private enum ZoneType
+    public enum ZoneType
     {
         Slow,
         SuperSlow,
@@ -78,5 +78,11 @@ public class AnomalyZone : MonoBehaviour
         }
         projectilesInZone.Clear();
     }
+
+    public ZoneType Zone 
+    {
+        get => zoneType; set => zoneType = value; 
+    }
+
 }
 
