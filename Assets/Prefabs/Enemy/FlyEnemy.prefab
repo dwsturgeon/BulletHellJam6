@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1109038509966033126}
   - component: {fileID: 5193892733468233237}
   - component: {fileID: 2077779973200356524}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 8869694401174410167}
   - component: {fileID: 3979262440685278298}
   - component: {fileID: 1526321244535419948}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 7763731954010712687}
   - component: {fileID: 1548504669439331545}
   - component: {fileID: 8888090681501987188}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 8172890702600180068}
   - component: {fileID: 4823008501659464852}
   - component: {fileID: 2068423505805478123}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlyEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 9087082492079255881}
   - component: {fileID: 9203212150113022948}
   - component: {fileID: 4060862859402280826}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 30791138186468781}
   - component: {fileID: 3763631473981307931}
   - component: {fileID: 8901228441405638195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8928145453973012851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlyMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
