@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
-using System.Data.Common;
 using UnityEngine;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -59,7 +59,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float tiltSpeed = 5f;
     [SerializeField] private Transform bodyTransform;
 
+    [Header("Audio")]
     private AudioSource shotSound;
+    [SerializeField] private AudioClip basicClip;
+    [SerializeField] private AudioClip explosiveClip;
+    [SerializeField] private AudioClip laserClip;
+    [SerializeField] private AudioClip crescentClip;
 
     private Collider2D thisCollider;
     private Rigidbody2D playerRB;
@@ -289,7 +294,42 @@ public class PlayerController : MonoBehaviour
 
     private void PlaySound(AudioSource audio)
     {
-        audio.pitch = UnityEngine.Random.Range(1f, 1.25f);
+        //audio.pitch = UnityEngine.Random.Range(1f, 1.1f);
+        switch (currentProjectileType) 
+        {
+
+            case ProjectileType.Normal: 
+            {
+                audio.clip = basicClip;
+                audio.volume = 1f;
+                break;
+            }
+
+            case ProjectileType.Crescent:
+            { 
+                audio.clip = crescentClip;
+                audio.volume = 1f;
+                break;
+            }
+
+            case ProjectileType.Explosive:
+            {
+                audio.clip = explosiveClip;
+                audio.volume = 0.35f;
+                break;
+            }
+
+            case ProjectileType.Laser:  
+            {
+                audio.clip = laserClip;
+                    audio.volume = 1f;
+                break;
+            }
+
+            default: break;
+        }
+
+        audio.pitch = Random.Range(0.95f, 1.05f);
         audio.Play();
     }
 

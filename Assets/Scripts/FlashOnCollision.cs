@@ -25,7 +25,6 @@ public class FlashOnCollision : MonoBehaviour
         
         if (collision.CompareTag(targetTag))
         {
-            Debug.Log(collision.gameObject.name);
             if (flashCoroutine != null)
             {
                 StopCoroutine(flashCoroutine);

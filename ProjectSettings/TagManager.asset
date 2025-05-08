@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Enemy
   - Wave
+  - DeathBarrier
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Enemy
   - PlayerProjectile
   - Projectile
-  - 
+  - DeathBarrier
   - 
   - 
   - 

@@ -128,7 +128,6 @@ public class Shooter : MonoBehaviour
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
 
                 GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
-                Physics2D.IgnoreCollision(newBullet.GetComponent<Collider2D>(), thisCollider);
                 newBullet.transform.right = newBullet.transform.position - muzzleTransform.position;
 
                 if (newBullet.tag == "BulletContainer")

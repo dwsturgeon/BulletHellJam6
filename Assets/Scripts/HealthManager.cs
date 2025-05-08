@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     public Image healthBar;
     public float healthAmount = 100f;
     public float maxHealth = 100f;
-    public float gracePeriod = 0.5f;
+    public float gracePeriod = .1f;
     private float elapsed;
     [SerializeField] private bool isBoss = false;
 

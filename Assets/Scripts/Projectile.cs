@@ -23,7 +23,6 @@ public class Projectile : MonoBehaviour
     public void UpdateMoveSpeed(float speed)
     {
         this.moveSpeed = speed;
-        //Destroy(this.gameObject, 20f / moveSpeed);
     }
 
     public void ResetValue()
@@ -59,6 +58,14 @@ public class Projectile : MonoBehaviour
         angle += Random.Range(-randAngle, randAngle);
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "DeathBarrier")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 

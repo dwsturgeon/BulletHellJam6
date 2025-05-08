@@ -6,11 +6,14 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] private float damageAmount = 10f;
     [SerializeField] private float killTimer = 12f;
     [SerializeField] private ProjectileType type;
+    private Animator anim;
+    private AudioSource exploAudio;
 
     public enum ProjectileType
     {
         Basic,
         Explosive,
+        Crescent,
         Laser
     }
 
@@ -21,6 +24,7 @@ public class PlayerProjectile : MonoBehaviour
         {
             Destroy(this.gameObject, killTimer);
         }
+        exploAudio = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -47,9 +51,23 @@ public class PlayerProjectile : MonoBehaviour
         get => type;
         set => type = value;
     }
+
+    public void Explode()
+    {
+        anim = this.gameObject.GetComponentInChildren<Animator>();
+        if (anim)
+        {
+            moveSpeed = 0f;
+            this.GetComponent<Collider2D>().enabled = false;
+            anim.SetBool("bExplode", true);
+            exploAudio.Play();
+            DestroyExplosive();
+        }
+    }
+
+    public void DestroyExplosive()
+    {
+        Destroy(this.gameObject, 2f);
+    }
         
-    
-
-
-
 }
