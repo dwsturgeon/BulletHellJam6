@@ -40,7 +40,9 @@ public class EnemyController : MonoBehaviour
     {
         if (stunned)
         {
-            animator.SetBool("isStunned", true);
+            if (animator) animator.SetBool("isStunned", true);
+
+
             if (stunTimer >= 0f)
             {
                 stunTimer -= (recoveryMult * Time.deltaTime);
@@ -48,7 +50,7 @@ public class EnemyController : MonoBehaviour
             else
             {
                 stunned = false;
-                animator.SetBool("isStunned", false);
+                if (animator) animator.SetBool("isStunned", false);
             }
 
 
@@ -117,7 +119,7 @@ public class EnemyController : MonoBehaviour
     {
         gotHit = true;
 
-        if(collision.GetComponent<PlayerProjectile>().ProjType == PlayerProjectile.ProjectileType.Explosive)
+        if(collision.gameObject.GetComponent<PlayerProjectile>().ProjType == PlayerProjectile.ProjectileType.Explosive)
         {
             PlayerProjectile projectile = collision.GetComponent<PlayerProjectile>();
             projectile.Explode();

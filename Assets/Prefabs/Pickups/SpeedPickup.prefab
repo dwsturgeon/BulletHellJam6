@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8479226050084398861}
   - component: {fileID: 8070288401908124444}
   - component: {fileID: 77387973987195987}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4366933065153210450, guid: 0766ef9197d226549ae4c0f2d8926a58, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9864793, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,8 +121,8 @@ GameObject:
   - component: {fileID: 8778872088664095652}
   - component: {fileID: 830281868073063808}
   - component: {fileID: 2195493796289206920}
-  m_Layer: 0
-  m_Name: Pickup
+  m_Layer: 11
+  m_Name: SpeedPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   moveSpeed: 1
   shouldMove: 1
   animator: {fileID: 77387973987195987}
-  pickupType: 1
+  pickupType: 2
   projectileType: 0
   stunTime: 4
   healthAmount: 30

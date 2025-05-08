@@ -16,7 +16,7 @@ AnimatorStateMachine:
     m_State: {fileID: 5746481639794452787}
     m_Position: {x: 280, y: 130, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1304879121860290781}
+    m_State: {fileID: 4266361035889796473}
     m_Position: {x: 510, y: 130, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
@@ -60,7 +60,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pickup
+  m_Name: ExplosivePickup
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -76,14 +76,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &1304879121860290781
+--- !u!1102 &4266361035889796473
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: ExplosiveIdlePickup
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -96,7 +96,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0990fe31631cdb447afe30690ec1cf3a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 567ac8edac6c17f45853ff61cf9c257e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -113,7 +113,7 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 6592845452824997654}
+  - {fileID: 8346750721658995231}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -129,7 +129,7 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1101 &6592845452824997654
+--- !u!1101 &8346750721658995231
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,14 +138,14 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1304879121860290781}
+  m_DstState: {fileID: 4266361035889796473}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.54903215
-  m_TransitionOffset: 0.50139976
-  m_ExitTime: 0.2506996
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.7
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

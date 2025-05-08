@@ -18,7 +18,9 @@ public class HealthManager : MonoBehaviour
 
     [SerializeField] private string targetTag = "PlayerProjectile";
 
-    [SerializeField] GameObject[] drops;
+    private GameObject[] drops;
+    [SerializeField] private DropConfig dropConfig;
+    
     //[SerializeField] private GameObject enemy;
 
     public static HealthManager instance;
@@ -27,6 +29,12 @@ public class HealthManager : MonoBehaviour
 
     private void Awake()
     {
+        if(dropConfig == null)
+        {
+            Debug.Log("Add Config In Inspector");
+        }
+        drops = dropConfig.Drops;
+
         if (instance == null)
         {
             instance = this;
@@ -76,13 +84,11 @@ public class HealthManager : MonoBehaviour
 
     private void SpawnRandomDrop()
     {
-        int dropNum = Random.Range(0, drops.Length - 1);
-        if (isBoss)
-        {
-            GameObject drop = Instantiate(drops[dropNum], transform.position, Quaternion.identity);
-            Pickup pickup = drop.GetComponent<Pickup>();
-            pickup.Boss = true;
-        }
-        else Instantiate(drops[dropNum], transform.position, Quaternion.identity);
+        int dropNum = Random.Range(0, drops.Length - 1);  
+        GameObject drop = Instantiate(drops[dropNum], transform.position, Quaternion.identity);
+        Pickup pickup = drop.GetComponent<Pickup>();
+
+        if (isBoss) pickup.Boss = true;
+        else pickup.Boss = false;
     }
 }

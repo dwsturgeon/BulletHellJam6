@@ -1,7 +1,6 @@
 using UnityEngine;
-
+[CreateAssetMenu(menuName = "DropConfig", fileName = "DropConfig")]
 public class DropConfig :ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
+    [field:SerializeField] public GameObject[] Drops { get; private set; }
 }

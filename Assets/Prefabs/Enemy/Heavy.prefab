@@ -53,7 +53,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8730270048476144382
 Transform:
   m_ObjectHideFlags: 0
@@ -151,7 +151,6 @@ MonoBehaviour:
   maxX: 8.8
   minY: 2.5
   maxY: 4.5
-  projectileType: 0
   smoothTime: 1
   threshhold: 0.2
   waitTime: 0
@@ -236,7 +235,7 @@ MonoBehaviour:
   gracePeriod: 0.5
   isBoss: 0
   targetTag: PlayerProjectile
-  drops: []
+  dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
 --- !u!1 &1338341633662332981
 GameObject:
   m_ObjectHideFlags: 0

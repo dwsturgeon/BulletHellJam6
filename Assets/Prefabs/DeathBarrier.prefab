@@ -115,9 +115,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3115502810325778250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DeathBarrier
-  m_TagString: Untagged
+  m_TagString: DeathBarrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

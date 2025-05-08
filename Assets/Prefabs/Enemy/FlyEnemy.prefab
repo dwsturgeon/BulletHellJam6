@@ -439,6 +439,8 @@ MonoBehaviour:
   shouldWaitToStop: 1
   muzzleTransform: {fileID: 8928145453973012851}
   recoverMult: 1
+  animator: {fileID: 0}
+  useAnimator: 0
   orientation: 4
 --- !u!114 &8172890702600180068
 MonoBehaviour:
@@ -465,6 +467,8 @@ MonoBehaviour:
   shouldWaitToStop: 1
   muzzleTransform: {fileID: 8928145453973012851}
   recoverMult: 1
+  animator: {fileID: 0}
+  useAnimator: 0
   orientation: 3
 --- !u!114 &4823008501659464852
 MonoBehaviour:
@@ -491,6 +495,8 @@ MonoBehaviour:
   shouldWaitToStop: 1
   muzzleTransform: {fileID: 8928145453973012851}
   recoverMult: 1
+  animator: {fileID: 0}
+  useAnimator: 0
   orientation: 3
 --- !u!114 &2068423505805478123
 MonoBehaviour:
@@ -507,10 +513,10 @@ MonoBehaviour:
   healthBar: {fileID: 4060862859402280826}
   healthAmount: 100
   maxHealth: 100
+  gracePeriod: 0.1
   isBoss: 0
   targetTag: PlayerProjectile
-  drops:
-  - {fileID: 8336642334648128047, guid: 6c0a55ff3a28a7349b2d8ed189922576, type: 3}
+  dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
 --- !u!1 &6793121225227227179
 GameObject:
   m_ObjectHideFlags: 0
