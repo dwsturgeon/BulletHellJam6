@@ -58,6 +58,5 @@ public class SoundManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
         audioMixer.SetFloat(MIXER_SFX, (Mathf.Log10(sfxSlider.value) * 20));
-        Debug.Log((Mathf.Log10(sfxSlider.value) * 20));
     }
 }
