@@ -118,6 +118,8 @@ public class Pickup : MonoBehaviour
             default: break;
 
         }
+        
+        PlayerController.instance.PlayPickupSound();
 
         Destroy(this.gameObject, 2f);
     }

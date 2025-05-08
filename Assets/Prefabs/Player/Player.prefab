@@ -146,6 +146,10 @@ MonoBehaviour:
   maxTiltAngle: 20
   tiltSpeed: 5
   bodyTransform: {fileID: 5016608340262260218}
+  basicClip: {fileID: 8300000, guid: 72eff2c6716129f4f9dbfe4a6f6bbc49, type: 3}
+  explosiveClip: {fileID: 8300000, guid: 32ff918ebc6efa746af53f512e515e34, type: 3}
+  laserClip: {fileID: 0}
+  crescentClip: {fileID: 8300000, guid: 129d4a1ca7c22a54c9a42d6e196158fc, type: 3}
   projectileEntries:
   - type: 0
     prefab: {fileID: 1933609438498028294, guid: a6d78097ec2fe654b8d1f5959573600f, type: 3}
@@ -228,8 +232,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 976c7e66c363ece4096ab86b1d868a22, type: 3}
-  m_Resource: {fileID: 8300000, guid: 976c7e66c363ece4096ab86b1d868a22, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 72eff2c6716129f4f9dbfe4a6f6bbc49, type: 3}
+  m_Resource: {fileID: 8300000, guid: 72eff2c6716129f4f9dbfe4a6f6bbc49, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

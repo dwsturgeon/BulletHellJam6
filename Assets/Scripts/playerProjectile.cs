@@ -69,5 +69,13 @@ public class PlayerProjectile : MonoBehaviour
     {
         Destroy(this.gameObject, 2f);
     }
-        
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "DeathBarrier" && type != ProjectileType.Laser)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

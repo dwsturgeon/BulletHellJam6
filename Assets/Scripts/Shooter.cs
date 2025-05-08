@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Data;
 using System.Runtime.CompilerServices;
+using System.Security;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
@@ -26,6 +27,12 @@ public class Shooter : MonoBehaviour
     [SerializeField] private float recoverMult = 1f;
     [SerializeField] Animator animator;
     [SerializeField] private bool useAnimator;
+
+    [Header("Anomaly Zone")]
+    [SerializeField] private bool bUseZone = false;
+    [SerializeField] GameObject zone;
+    [SerializeField] float zoneCooldown = 1f;
+    [SerializeField] float zoneLifetime = 1f;    
 
     private enum Orientation
     {
