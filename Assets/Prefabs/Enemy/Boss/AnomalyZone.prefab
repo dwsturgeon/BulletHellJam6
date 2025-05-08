@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5659480769184213503}
   - component: {fileID: 7031096352045524480}
   - component: {fileID: 5276345863639737154}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AnomalyZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

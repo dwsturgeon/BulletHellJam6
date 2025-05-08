@@ -202,20 +202,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
-  bulletMoveSpeed: 8
-  burstCount: 1
+  bulletMoveSpeed: 2
+  burstCount: 4
   projectilesPerBurst: 40
   angleSpread: 359
   startingDistance: 0.1
   timeBetweenBursts: 0.5
-  restTime: 1
+  restTime: 2
   stagger: 1
   oscillate: 1
-  shouldWaitToStop: 1
+  shouldWaitToStop: 0
   muzzleTransform: {fileID: 8960227418266948258}
   recoverMult: 2
   animator: {fileID: 0}
   useAnimator: 0
+  bUseZone: 0
+  zone: {fileID: 0}
+  zoneCooldown: 1
+  zoneLifetime: 1
   orientation: 4
 --- !u!114 &2364980681085909917
 MonoBehaviour:
@@ -232,7 +236,7 @@ MonoBehaviour:
   healthBar: {fileID: 4079623275863763618}
   healthAmount: 400
   maxHealth: 400
-  gracePeriod: 0.5
+  gracePeriod: 0.2
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}

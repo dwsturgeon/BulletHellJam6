@@ -248,8 +248,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
   bulletMoveSpeed: 3
   burstCount: 4
-  projectilesPerBurst: 15
-  angleSpread: 75
+  projectilesPerBurst: 9
+  angleSpread: 90
   startingDistance: 0.1
   timeBetweenBursts: 0.5
   restTime: 1
@@ -280,7 +280,7 @@ MonoBehaviour:
   healthBar: {fileID: 1865463719567777745}
   healthAmount: 200
   maxHealth: 200
-  gracePeriod: 0.5
+  gracePeriod: 0.2
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}

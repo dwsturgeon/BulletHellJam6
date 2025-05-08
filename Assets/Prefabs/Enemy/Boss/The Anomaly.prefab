@@ -131,7 +131,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: aa6b0a1f49e309b4ca5c132f47906619, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,7 +195,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8093471828408240022}
   - component: {fileID: 175046607618507423}
-  - component: {fileID: 3233344111508184172}
+  - component: {fileID: 5339420350966314203}
+  - component: {fileID: 6102839865381508660}
   - component: {fileID: 5662407543369446175}
   - component: {fileID: 2424991983449804216}
   - component: {fileID: 3855774177245017163}
@@ -256,8 +257,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &3233344111508184172
-CircleCollider2D:
+--- !u!61 &5339420350966314203
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -290,8 +291,32 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0.35}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1.89}
+  m_EdgeRadius: 0.15
+--- !u!114 &6102839865381508660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229286068497340757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d6b019724127441a8af59775e7cd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolveMat: {fileID: 2100000, guid: aa6b0a1f49e309b4ca5c132f47906619, type: 2}
+  maxDissolve: 0.65
 --- !u!114 &5662407543369446175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +398,10 @@ MonoBehaviour:
   recoverMult: 2
   animator: {fileID: 2942560577946007748}
   useAnimator: 1
+  bUseZone: 0
+  zone: {fileID: 0}
+  zoneCooldown: 1
+  zoneLifetime: 1
   orientation: 3
 --- !u!114 &1274102025788654309
 MonoBehaviour:
@@ -401,6 +430,10 @@ MonoBehaviour:
   recoverMult: 3
   animator: {fileID: 2942560577946007748}
   useAnimator: 1
+  bUseZone: 0
+  zone: {fileID: 0}
+  zoneCooldown: 1
+  zoneLifetime: 1
   orientation: 3
 --- !u!114 &238554419435024942
 MonoBehaviour:
@@ -429,6 +462,10 @@ MonoBehaviour:
   recoverMult: 3
   animator: {fileID: 2942560577946007748}
   useAnimator: 1
+  bUseZone: 0
+  zone: {fileID: 0}
+  zoneCooldown: 1
+  zoneLifetime: 1
   orientation: 4
 --- !u!114 &648638701803102833
 MonoBehaviour:
@@ -445,7 +482,7 @@ MonoBehaviour:
   healthBar: {fileID: 5735789484223958959}
   healthAmount: 2000
   maxHealth: 2000
-  gracePeriod: 0.1
+  gracePeriod: 0.2
   isBoss: 1
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
