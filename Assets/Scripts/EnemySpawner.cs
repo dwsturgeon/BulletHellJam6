@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+   
     [SerializeField] GameObject[] wavePrefabs;
+    private int wavePrefabPos = 0;
 
 
     private GameObject currentWave = null;
@@ -44,10 +44,7 @@ public class EnemySpawner : MonoBehaviour
 
             //grab current wave
             currentWave = GetCurrentWave();
-            if (currentWave != null)
-            {
-                Debug.Log(currentWave.name);
-            }
+            
             //grab current enemies
             currentEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -63,11 +60,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void LoadNextWave()
     {
-        if (wavePrefabs.Length > 0)
+        if (wavePrefabPos + 1 <= wavePrefabs.Length)
         {
-            instantiatedObject = Instantiate(wavePrefabs[0]);
+            instantiatedObject = Instantiate(wavePrefabs[wavePrefabPos]);
             instantiatedObject.transform.SetParent(gameObject.transform);
+            wavePrefabPos += 1;
         }
+        
     }
     private GameObject GetCurrentWave()
     {
@@ -77,12 +76,15 @@ public class EnemySpawner : MonoBehaviour
 
 
         //get first wave should only have 1 at a time.
-        for (int i = 0; i < waves.Length; i++) 
+        if (waves != null)
         {
-            if (waves[i].tag == "Wave")
+            for (int i = 0; i < waves.Length; i++)
             {
-                wave = waves[i];
-                break;
+                if (waves[i].tag == "Wave")
+                {
+                    wave = waves[i];
+                    break;
+                }
             }
         }
 
