@@ -5,6 +5,8 @@ public class Projectile : MonoBehaviour
 {
 
     [SerializeField] private float moveSpeed = 0f;
+    [SerializeField] public float damageAmount = 10f;
+ 
 
     private float originalMoveSpeed;
     private void Start()
@@ -15,6 +17,14 @@ public class Projectile : MonoBehaviour
     { 
         MoveProjectile();
     }
+
+
+    public float Damage
+    {
+        get => damageAmount;
+        set { damageAmount = value; }
+    }
+
     private void MoveProjectile()
     {
         transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
