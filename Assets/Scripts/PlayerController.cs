@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -70,6 +72,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Pickup Sound")]
     [SerializeField] private AudioSource pickupSource;
+
+    [Header("UI")]
+
+    [SerializeField] private TextMeshProUGUI damageUpgradeCountText;
+    [SerializeField] private TextMeshProUGUI firerateUpgradeCountText;
+    [SerializeField] private TextMeshProUGUI projectileUpgradeCountText;
+    [SerializeField] private TextMeshProUGUI speedUpgradeCountText;
 
     private int DamageUpgradeCount = 0;
     private int FirerateUpgradeCount = 0;
@@ -365,6 +374,7 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = Mathf.Clamp(moveSpeed + value, 0, moveSpeedMax);
             SpeedUpgradeCount++;
+            speedUpgradeCountText.text = SpeedUpgradeCount.ToString();
         }
     }
 
@@ -375,6 +385,7 @@ public class PlayerController : MonoBehaviour
         {
             damageMult = Mathf.Clamp(value, damageMultMin, damageMultMax);
             DamageUpgradeCount++;
+            damageUpgradeCountText.text = DamageUpgradeCount.ToString();
         }
     }
 
@@ -385,6 +396,7 @@ public class PlayerController : MonoBehaviour
         {
             restTime = Mathf.Clamp(value, minRestTime, maxRestTime);
             FirerateUpgradeCount++;
+            firerateUpgradeCountText.text = FirerateUpgradeCount.ToString();
         } 
     }
 
@@ -403,6 +415,7 @@ public class PlayerController : MonoBehaviour
                 Angle = ProjectileCount * AnglePerProj;
             }
             ProjectileUpgradeCount++;
+            projectileUpgradeCountText.text = ProjectileUpgradeCount.ToString();
         }
     }
 

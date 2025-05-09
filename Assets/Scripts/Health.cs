@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
+        HealthBar.maxValue = startingHealth;
     }
 
     private void Start()
@@ -39,7 +40,7 @@ public class Health : MonoBehaviour
                 if (!bGodMode)
                 {
                     RemoveHealth(collision.GetComponent<Projectile>().Damage);
-                    Debug.Log(currentHealth);
+                    //Debug.Log(currentHealth);
             
                     elapsed = 0;
                 }
@@ -73,7 +74,7 @@ public class Health : MonoBehaviour
 
     private void UpdateHealthUI(float healthValue)
     {
-        //HealthBar.value = healthValue;
+        HealthBar.value = currentHealth;
     }
 
     public int HealthUpgradeC { get => healthUpgradeCount; }
