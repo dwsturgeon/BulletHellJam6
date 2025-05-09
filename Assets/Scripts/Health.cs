@@ -11,10 +11,11 @@ public class Health : MonoBehaviour
     [SerializeField] private float gracePeriod = 0.2f;
     [SerializeField] private bool bGodMode = false;
 
+    private int healthUpgradeCount = 0;
+
     private void Awake()
     {
         currentHealth = startingHealth;
-        HealthBar.maxValue = startingHealth;
     }
 
     private void Start()
@@ -66,13 +67,15 @@ public class Health : MonoBehaviour
     public void AddHealth(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, startingHealth);
+        healthUpgradeCount++;
         UpdateHealthUI(currentHealth);
     }
 
     private void UpdateHealthUI(float healthValue)
     {
-        HealthBar.value = healthValue;
+        //HealthBar.value = healthValue;
     }
 
+    public int HealthUpgradeC { get => healthUpgradeCount; }
 
 }

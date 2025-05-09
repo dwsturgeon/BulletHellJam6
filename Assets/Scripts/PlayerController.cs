@@ -71,6 +71,12 @@ public class PlayerController : MonoBehaviour
     [Header("Pickup Sound")]
     [SerializeField] private AudioSource pickupSource;
 
+    private int DamageUpgradeCount = 0;
+    private int FirerateUpgradeCount = 0;
+    private int ProjectileUpgradeCount = 0;
+    private int SpeedUpgradeCount = 0;
+
+
 
     private AudioSource gunAudioSource;
 
@@ -357,19 +363,28 @@ public class PlayerController : MonoBehaviour
         set
         {
             moveSpeed = Mathf.Clamp(moveSpeed + value, 0, moveSpeedMax);
+            SpeedUpgradeCount++;
         }
     }
 
     public float DamageMult
     {
         get => damageMult;
-        set { damageMult = Mathf.Clamp(value, damageMultMin, damageMultMax); }
+        set 
+        {
+            damageMult = Mathf.Clamp(value, damageMultMin, damageMultMax);
+            DamageUpgradeCount++;
+        }
     }
 
     public float FireRate 
     { 
         get => restTime;
-        set { restTime = Mathf.Clamp(value, minRestTime, maxRestTime); } 
+        set 
+        {
+            restTime = Mathf.Clamp(value, minRestTime, maxRestTime);
+            FirerateUpgradeCount++;
+        } 
     }
 
     public int ProjectileCount
@@ -386,6 +401,7 @@ public class PlayerController : MonoBehaviour
             {
                 Angle = ProjectileCount * AnglePerProj;
             }
+            ProjectileUpgradeCount++;
         }
     }
 
@@ -416,4 +432,14 @@ public class PlayerController : MonoBehaviour
         set { bulletMoveSpeed = Mathf.Clamp(value, bulletMoveSpeedMin, bulletMoveSpeedMax); }
     }
     #endregion
+
+    #region UpgradeCount Get 
+
+    public int DamageUpgadeC { get => DamageUpgradeCount; }
+    public int FirerateUpgadeC { get => FirerateUpgradeCount; }
+    public int SpeedUpgadeC { get => SpeedUpgradeCount; }
+    public int ProjectileUpgadeC { get => ProjectileUpgradeCount; }
+    #endregion
+
+
 }

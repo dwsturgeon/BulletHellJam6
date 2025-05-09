@@ -464,7 +464,7 @@ MonoBehaviour:
   SpeedIncreaseAmount: 5
   damageMultIncrease: 0.25
   increaseType: 0
-  fireRateRemoveAmount: 0.04
+  fireRateRemoveAmount: 0.02
   projectileIncreaseAmount: 1
   burstIncrease: 1
   projectileSpeedIncrease: 10
