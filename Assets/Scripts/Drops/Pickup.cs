@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using static PlayerController;
+
 
 public class Pickup : MonoBehaviour
 {
@@ -43,10 +45,6 @@ public class Pickup : MonoBehaviour
     [SerializeField] private bool isBoss;
     [SerializeField] private float bossMult;
     #endregion
-    
-
-
-
 
     private enum IncreaseType
     {
