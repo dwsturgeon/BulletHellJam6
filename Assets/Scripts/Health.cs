@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     [SerializeField] private string targetTag = "Projectile";
+    [SerializeField] private Slider HealthBar;
     private float currentHealth;
 
     private void Awake()
     {
         currentHealth = startingHealth;
+        HealthBar.maxValue = startingHealth;
     }
 
     private void Start()
@@ -55,8 +58,7 @@ public class Health : MonoBehaviour
 
     private void UpdateHealthUI(float healthValue)
     {
-        //update health on UI
-        //wip
+        HealthBar.value = currentHealth;
     }
 
 
