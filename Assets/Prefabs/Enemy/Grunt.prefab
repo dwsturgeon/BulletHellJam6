@@ -265,11 +265,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
   bulletMoveSpeed: 3
   burstCount: 4
-  projectilesPerBurst: 9
-  angleSpread: 90
+  projectilesPerBurst: 3
+  angleSpread: 20
   startingDistance: 0.1
   timeBetweenBursts: 0.5
-  restTime: 1
+  restTime: 1.25
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 1
@@ -281,7 +281,7 @@ MonoBehaviour:
   zone: {fileID: 0}
   zoneCooldown: 1
   zoneLifetime: 1
-  orientation: 3
+  orientation: 4
 --- !u!114 &1201981424695735614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +301,7 @@ MonoBehaviour:
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
+  dropProjectileConfig: {fileID: 11400000, guid: df854795e50b0ba42920952fc768930a, type: 2}
 --- !u!1 &6287033363557792210
 GameObject:
   m_ObjectHideFlags: 0

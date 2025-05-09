@@ -4156,7 +4156,7 @@ MonoBehaviour:
   moveSpeed: 0
   damageAmount: 10
   killTimer: 12
-  type: 2
+  type: 3
 --- !u!68 &5195142242660788215
 EdgeCollider2D:
   m_ObjectHideFlags: 0

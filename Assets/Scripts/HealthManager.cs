@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -20,10 +21,14 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private string targetTag = "PlayerProjectile";
 
     private GameObject[] drops;
+    private List<GameObject> dropProjectiles;
     [SerializeField] private DropConfig dropConfig;
+    [SerializeField] private DropProjectileConfig dropProjectileConfig;
+    private int hasBestProj;
+    private int currentProjIndex;
 
     //[SerializeField] private GameObject enemy;
-    
+
 
     public static HealthManager instance;
 
@@ -31,11 +36,12 @@ public class HealthManager : MonoBehaviour
 
     private void Awake()
     {
-        if(dropConfig == null)
+        if(dropConfig == null || dropProjectileConfig == null)
         {
             Debug.Log("Add Config In Inspector");
         }
         drops = dropConfig.Drops;
+        dropProjectiles = new List<GameObject>(dropProjectileConfig.dropProjectiles);
 
         if (instance == null)
         {
@@ -44,14 +50,10 @@ public class HealthManager : MonoBehaviour
 
         enemyCollider = GetComponent<CircleCollider2D>();
     }
-    // Update is called once per frame
+
     void Update()
     {
         elapsed += Time.deltaTime;
-        if (healthAmount <= 0)
-        {           
-            Die();
-        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -73,6 +75,10 @@ public class HealthManager : MonoBehaviour
     {
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / maxHealth;
+        if (healthAmount <= 0)
+        {
+            Die();
+        }
 
     }
 
@@ -85,21 +91,49 @@ public class HealthManager : MonoBehaviour
 
     private void SpawnRandomDrop()
     {
-        int dropNum = Random.Range(0, drops.Length - 1);  
-        GameObject drop = Instantiate(drops[dropNum], transform.position, Quaternion.identity);
-        Pickup pickup = drop.GetComponent<Pickup>();
+        int dropNum;
+        if(PlayerController.instance.BestProj == 0)
+        {
+            dropNum = Random.Range(0, drops.Length + 1);
+        }
+        else
+        {
+            dropNum = Random.Range(0, drops.Length);
+        }
 
-        if (isBoss) pickup.Boss = true;
-        else pickup.Boss = false;
+        if (dropNum == drops.Length)
+        {
+
+            GameObject drop = Instantiate(dropProjectiles[PlayerController.instance.ProjectileIndex], transform.position, Quaternion.identity);
+            PlayerController.instance.ProjectileIndex += 1;
+            if (PlayerController.instance.ProjectileIndex > 2)
+            {
+                PlayerController.instance.BestProj = 1;
+            }
+
+
+
+        }
+        else
+        {
+
+            GameObject drop = Instantiate(drops[dropNum], transform.position, Quaternion.identity);
+            Pickup pickup = drop.GetComponent<Pickup>();
+
+            if (isBoss) pickup.Boss = true;
+            else pickup.Boss = false;
+        }
     }
 
     void Die()
     {
         if(!isDead)
         {
+            SpawnRandomDrop();
+
             FadeFromDamage fadeFromDamage = GetComponent<FadeFromDamage>();
             fadeFromDamage.isDying = true;
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 1f);
             isDead = true;
 
             //PLAY DEATH SOUND
@@ -114,7 +148,6 @@ public class HealthManager : MonoBehaviour
 
             EnemyController enemyController = GetComponent<EnemyController>();
             enemyController.enabled = false;
-            SpawnRandomDrop();
         }
     }
 

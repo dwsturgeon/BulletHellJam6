@@ -136,7 +136,7 @@ MonoBehaviour:
   maxRestTime: 1
   currentProjectileType: 0
   angleSpread: 20
-  angleIncreasePerProjectile: 5
+  angleIncreasePerProjectile: 7.5
   muzzleTransform: {fileID: 1631138831407435371}
   startingDistance: 0.1
   minX: -8.8
@@ -152,7 +152,7 @@ MonoBehaviour:
   laserClip: {fileID: 0}
   crescentClip: {fileID: 8300000, guid: 129d4a1ca7c22a54c9a42d6e196158fc, type: 3}
   gunSound: {fileID: 813829078450456076}
-  pickupSource: {fileID: 2087420035337428138}
+  pickupSource: {fileID: 4320424107838929623}
   projectileEntries:
   - type: 0
     prefab: {fileID: 1933609438498028294, guid: a6d78097ec2fe654b8d1f5959573600f, type: 3}
@@ -225,6 +225,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 200
+  targetTag: Projectile
+  HealthBar: {fileID: 0}
+  gracePeriod: 0.4
+  bGodMode: 0
 --- !u!82 &813829078450456076
 AudioSource:
   m_ObjectHideFlags: 0

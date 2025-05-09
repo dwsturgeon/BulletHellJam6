@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459ede2a8f43d8c43bcc62fc70d86e22, type: 3}
+  m_Name: DropProjectileConfig
+  m_EditorClassIdentifier: 
+  <dropProjectiles>k__BackingField:
+  - {fileID: 5433927565753701744, guid: cf80d8e00f579634a8bc9d328ab50976, type: 3}
+  - {fileID: 8336642334648128047, guid: ef264431b497dc348828c3a15e2d9586, type: 3}
+  - {fileID: 6679748939777903526, guid: 60a6bd2dbc9d3ba43950951c779a9d0b, type: 3}

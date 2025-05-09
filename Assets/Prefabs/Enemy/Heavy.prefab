@@ -257,6 +257,7 @@ MonoBehaviour:
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
+  dropProjectileConfig: {fileID: 11400000, guid: df854795e50b0ba42920952fc768930a, type: 2}
 --- !u!1 &1338341633662332981
 GameObject:
   m_ObjectHideFlags: 0

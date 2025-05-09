@@ -461,8 +461,9 @@ MonoBehaviour:
   projectileType: 0
   stunTime: 4
   healthAmount: 30
+  maxHealthIncrease: 25
   SpeedIncreaseAmount: 5
-  damageMultIncrease: 0.25
+  damageMultIncrease: 0.05
   increaseType: 0
   fireRateRemoveAmount: 0.04
   projectileIncreaseAmount: 1

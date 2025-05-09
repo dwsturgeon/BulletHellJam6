@@ -241,7 +241,7 @@ public class Shooter : MonoBehaviour
         centerPosition.x += PlayerController.instance.transform.position.x * influenceFactor;
 
         System.Array values = System.Enum.GetValues(typeof(AnomalyZone.ZoneType));
-        AnomalyZone.ZoneType randomValue = (AnomalyZone.ZoneType)values.GetValue(UnityEngine.Random.Range(0, values.Length - 1));
+        AnomalyZone.ZoneType randomValue = (AnomalyZone.ZoneType)values.GetValue(UnityEngine.Random.Range(0, values.Length));
         GameObject spawnedZone = Instantiate(zone, centerPosition, Quaternion.identity);
 
         spawnedZone.GetComponent<AnomalyZone>().Zone = randomValue;

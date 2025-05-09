@@ -18,8 +18,9 @@ public class Pickup : MonoBehaviour
     [Header("Stun Setting")]
     [SerializeField] private float stunTime;
 
-    [Header("Health Setting")]
+    [Header("Health Settings")]
     [SerializeField] private float healthAmount;
+    [SerializeField] private float maxHealthIncrease = 25f;
 
     [Header("Speed Setting")]
     [SerializeField] private float SpeedIncreaseAmount;
@@ -135,9 +136,10 @@ public class Pickup : MonoBehaviour
                 shooter.SetStunned(stunTime);
             }
             #endregion
-
+            #region DisableMovement
             EnemyController movementInstance = enemyArray[i].GetComponent<EnemyController>();
             movementInstance.SetStunned(stunTime);
+            #endregion
         }
     }
 
@@ -146,6 +148,7 @@ public class Pickup : MonoBehaviour
         HealthManager healthComp = GetComponent<HealthManager>();
         if(healthComp != null)
         {
+            healthComp.maxHealth += maxHealthIncrease;
             healthComp.Heal(healthAmount * BossMult());
         }
     }

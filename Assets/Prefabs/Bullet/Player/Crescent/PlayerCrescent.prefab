@@ -159,7 +159,7 @@ MonoBehaviour:
   moveSpeed: 1
   damageAmount: 15
   killTimer: 12
-  type: 0
+  type: 2
 --- !u!58 &8964097612123045012
 CircleCollider2D:
   m_ObjectHideFlags: 0

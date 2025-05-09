@@ -61,7 +61,7 @@ public class RogueLikeSpawner : MonoBehaviour
     {
         GameObject[] enemyArray = GetEnemyArrayForWave();
 
-        int enemiesToSpawn = Mathf.Min(2+ currentWave / 5, 5);
+        int enemiesToSpawn = Mathf.Min(3 + currentWave / 5, 5);
 
         for(int i = 0; i < enemiesToSpawn; i++)
         {
@@ -105,10 +105,9 @@ public class RogueLikeSpawner : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawCube(new Vector3((minX + maxX) / 2f, (minY + maxY) / 2f, 0f), new Vector3(maxX - minX, maxY - minY, 0));
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(new Vector3((minX + maxX) / 2f, (minY + maxY) / 2f, 0f), new Vector3(maxX - minX, maxY - minY, 0));
     }
-
 
 }
 

@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
     private int FirerateUpgradeCount = 0;
     private int ProjectileUpgradeCount = 0;
     private int SpeedUpgradeCount = 0;
+    private int hasBestProjectile = 0;
+    private int projIndex = 0;
 
 
 
@@ -317,7 +319,6 @@ public class PlayerController : MonoBehaviour
 
     private void PlaySound(AudioSource audio)
     {
-        //audio.pitch = UnityEngine.Random.Range(1f, 1.1f);
         switch (currentProjectileType) 
         {
 
@@ -439,6 +440,14 @@ public class PlayerController : MonoBehaviour
     public int FirerateUpgadeC { get => FirerateUpgradeCount; }
     public int SpeedUpgadeC { get => SpeedUpgradeCount; }
     public int ProjectileUpgadeC { get => ProjectileUpgradeCount; }
+
+    public int BestProj 
+    {
+        get => hasBestProjectile;
+        set => hasBestProjectile = value;      
+    }
+
+    public int ProjectileIndex { get => projIndex; set => projIndex = value; }
     #endregion
 
 
