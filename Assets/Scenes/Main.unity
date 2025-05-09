@@ -786,7 +786,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &341224197
+=======
+--- !u!95 &316111832 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6414886566721970271, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+  m_PrefabInstance: {fileID: 2360747507083168334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &348965222
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2826,7 +2835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1219250601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4214,6 +4223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 1782005188333060306, guid: 9256e011f00a0584b9d478a462b166dc, type: 3}
+      propertyPath: scrollSpeed
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4108454723369621933, guid: 9256e011f00a0584b9d478a462b166dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4271,6 +4284,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 316111832}
+    - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: startingHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6679789913070077674, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4312,6 +4333,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+<<<<<<< Updated upstream
       propertyPath: speedUpgradeCountText
       value: 
       objectReference: {fileID: 1008755335}
@@ -4327,6 +4349,15 @@ PrefabInstance:
       propertyPath: projectileUpgradeCountText
       value: 
       objectReference: {fileID: 97753444}
+=======
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: efa019cf66cd8be458e82ac58cff818c, type: 2}
+    - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: currentProjectileType
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4641,6 +4672,119 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be4dce84f55ff0346ac9d6f2c81a08da, type: 3}
+--- !u!1001 &8032073353655617758
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3272906904240536685, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765377388883064905, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: restTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765377388883064905, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765377388883064905, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: angleSpread
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765377388883064905, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: orientation
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765377388883064905, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: projectilesPerBurst
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744783130515008252, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_Name
+      value: BossyJoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744783130515008252, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974805826354415190, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858971145417603309, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: restTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858971145417603309, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: burstCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858971145417603309, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: angleSpread
+      value: 359
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858971145417603309, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: bulletMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858971145417603309, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: shouldWaitToStop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858971145417603309, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: timeBetweenBursts
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858971145417603309, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
+      propertyPath: projectilesPerBurst
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60051bd3a17626846a9b0961b27204e3, type: 3}
 --- !u!1001 &8443264087209862468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4708,6 +4852,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 2068742859}
   - {fileID: 2116396458}
+  - {fileID: 1219250602}
   - {fileID: 2650548078007818481}
   - {fileID: 383256832240490520}
   - {fileID: 2360747507083168334}
@@ -4716,7 +4861,7 @@ SceneRoots:
   - {fileID: 7735558599374001409}
   - {fileID: 2470269529958910183}
   - {fileID: 7639122903385572758}
+  - {fileID: 8032073353655617758}
   - {fileID: 52784647}
   - {fileID: 643459265}
   - {fileID: 222391586}
-  - {fileID: 1219250602}
