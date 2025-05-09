@@ -1127,6 +1127,7 @@ MonoBehaviour:
   maxX: 8.63
   minY: 6.29
   maxY: 11.23
+  timeBetweenWaves: 3
 --- !u!4 &1219250602
 Transform:
   m_ObjectHideFlags: 0
@@ -2039,7 +2040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: bGodMode
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: gracePeriod
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6679789913070077674, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2089,6 +2094,10 @@ PrefabInstance:
       propertyPath: pickupSource
       value: 
       objectReference: {fileID: 886097627}
+    - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: angleIncreasePerProjectile
+      value: 7.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
