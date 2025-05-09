@@ -432,7 +432,7 @@ MonoBehaviour:
   angleSpread: 40
   startingDistance: 0.1
   timeBetweenBursts: 0.25
-  restTime: 0.5
+  restTime: 1.5
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 0
