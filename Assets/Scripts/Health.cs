@@ -49,7 +49,10 @@ public class Health : MonoBehaviour
                 {
                     RemoveHealth(collision.GetComponent<Projectile>().Damage);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     //Debug.Log(currentHealth);
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             
