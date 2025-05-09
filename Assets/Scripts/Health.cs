@@ -3,6 +3,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
+    [SerializeField] private string targetTag = "Projectile";
     private float currentHealth;
 
     private void Awake()
@@ -15,6 +16,24 @@ public class Health : MonoBehaviour
         UpdateHealthUI(currentHealth);
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag(targetTag))
+        {
+            /*if (elapsed >= gracePeriod)
+            {*/
+                RemoveHealth(collision.GetComponent<Projectile>().Damage);
+            /*
+                elapsed = 0;
+             }
+            */
+
+        }
+
+    }
+
     public void RemoveHealth(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth - amount, 0, startingHealth);
@@ -22,7 +41,8 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            //kill player
+            //for now
+            gameObject.SetActive(false);
         }
 
     }
@@ -36,6 +56,7 @@ public class Health : MonoBehaviour
     private void UpdateHealthUI(float healthValue)
     {
         //update health on UI
+        //wip
     }
 
 
