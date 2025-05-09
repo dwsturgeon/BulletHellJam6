@@ -477,8 +477,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dissolveMat: {fileID: 2100000, guid: aa6b0a1f49e309b4ca5c132f47906619, type: 2}
-  maxDissolve: 0.8
+  maxDissolve: 0.6
   visualTarget: {fileID: 5155588506306787916}
+  isDying: 0
 --- !u!1 &6034078175686609088
 GameObject:
   m_ObjectHideFlags: 0

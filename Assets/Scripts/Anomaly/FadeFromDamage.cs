@@ -7,9 +7,14 @@ public class FadeFromDamage : MonoBehaviour
     [SerializeField] float maxDissolve = .65f;
     [SerializeField] SpriteRenderer visualTarget;
 
-    Material dissolveMatInstance;
+    private Material dissolveMatInstance;
     float maxHp;
     HealthManager healthComp;
+    private float maxDieDissolve = 1.1f;
+
+
+    public bool isDying = false;
+    
 
     private void Start()
     {
@@ -19,16 +24,22 @@ public class FadeFromDamage : MonoBehaviour
         if(visualTarget == null) Debug.Log("Assign the mat for " + this.gameObject);   
 
         dissolveMatInstance = new Material(dissolveMat);
-        visualTarget.material = dissolveMatInstance;
-        
-
-        
+        visualTarget.material = dissolveMatInstance;        
     }
 
     private void Update()
     {
-        float healthPercentage = Mathf.Clamp01(healthComp.healthAmount / maxHp);
-        float dissolveValue = Mathf.Lerp(maxDissolve, 0f, healthPercentage);
-        dissolveMatInstance.SetFloat("_DissolveAmount", dissolveValue);
-    }
+        if (!isDying)
+        {
+            float healthPercentage = Mathf.Clamp01(healthComp.healthAmount / maxHp);
+            float dissolveValue = Mathf.Lerp(maxDissolve, 0f, healthPercentage);
+            dissolveMatInstance.SetFloat("_DissolveAmount", dissolveValue);
+        }
+        else
+        {
+            float currentDissolve = dissolveMatInstance.GetFloat("_DissolveAmount");
+            float newDissolve = Mathf.MoveTowards(currentDissolve, maxDieDissolve, 0.4f *Time.deltaTime);
+            dissolveMatInstance.SetFloat("_DissolveAmount", newDissolve);
+        }
+    }  
 }

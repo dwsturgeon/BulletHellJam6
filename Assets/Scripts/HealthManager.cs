@@ -14,14 +14,16 @@ public class HealthManager : MonoBehaviour
     public float maxHealth = 100f;
     public float gracePeriod = .1f;
     private float elapsed;
+    private bool isDead = false;
     [SerializeField] private bool isBoss = false;
 
     [SerializeField] private string targetTag = "PlayerProjectile";
 
     private GameObject[] drops;
     [SerializeField] private DropConfig dropConfig;
-    
+
     //[SerializeField] private GameObject enemy;
+    
 
     public static HealthManager instance;
 
@@ -47,9 +49,8 @@ public class HealthManager : MonoBehaviour
     {
         elapsed += Time.deltaTime;
         if (healthAmount <= 0)
-        {
-            SpawnRandomDrop();
-            Destroy(gameObject);
+        {           
+            Die();
         }
     }
 
@@ -91,4 +92,28 @@ public class HealthManager : MonoBehaviour
         if (isBoss) pickup.Boss = true;
         else pickup.Boss = false;
     }
+
+    void Die()
+    {
+        if(!isDead)
+        {
+            FadeFromDamage fadeFromDamage = GetComponent<FadeFromDamage>();
+            fadeFromDamage.isDying = true;
+            Destroy(this.gameObject, 2f);
+            isDead = true;
+
+            //PLAY DEATH SOUND
+   
+            Shooter[] shooters = GetComponents<Shooter>();
+            for(int i = 0; i < shooters.Length; i++)
+            {
+                shooters[i].enabled = false;
+            }
+
+            EnemyController enemyController = GetComponent<EnemyController>();
+            enemyController.enabled = false;
+        }
+    }
+
+    
 }
