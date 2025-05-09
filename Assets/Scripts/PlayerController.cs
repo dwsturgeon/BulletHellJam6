@@ -374,15 +374,7 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = Mathf.Clamp(moveSpeed + value, 0, moveSpeedMax);
             SpeedUpgradeCount++;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             speedUpgradeCountText.text = SpeedUpgradeCount.ToString();
-=======
-            //update UI
->>>>>>> Stashed changes
-=======
-            //update UI
->>>>>>> Stashed changes
         }
     }
 
@@ -393,15 +385,7 @@ public class PlayerController : MonoBehaviour
         {
             damageMult = Mathf.Clamp(value, damageMultMin, damageMultMax);
             DamageUpgradeCount++;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             damageUpgradeCountText.text = DamageUpgradeCount.ToString();
-=======
-            //updateUI
->>>>>>> Stashed changes
-=======
-            //updateUI
->>>>>>> Stashed changes
         }
     }
 
@@ -412,18 +396,9 @@ public class PlayerController : MonoBehaviour
         {
             restTime = Mathf.Clamp(value, minRestTime, maxRestTime);
             FirerateUpgradeCount++;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             firerateUpgradeCountText.text = FirerateUpgradeCount.ToString();
         } 
-=======
-            //updateUI
-        }
->>>>>>> Stashed changes
-=======
-            //updateUI
-        }
->>>>>>> Stashed changes
+
     }
 
     public int ProjectileCount
@@ -441,15 +416,8 @@ public class PlayerController : MonoBehaviour
                 Angle = ProjectileCount * AnglePerProj;
             }
             ProjectileUpgradeCount++;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             projectileUpgradeCountText.text = ProjectileUpgradeCount.ToString();
-=======
-            //updateUI
->>>>>>> Stashed changes
-=======
-            //updateUI
->>>>>>> Stashed changes
+
         }
     }
 
