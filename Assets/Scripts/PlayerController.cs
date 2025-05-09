@@ -398,7 +398,6 @@ public class PlayerController : MonoBehaviour
             FirerateUpgradeCount++;
             firerateUpgradeCountText.text = FirerateUpgradeCount.ToString();
         } 
-
     }
 
     public int ProjectileCount
@@ -417,7 +416,6 @@ public class PlayerController : MonoBehaviour
             }
             ProjectileUpgradeCount++;
             projectileUpgradeCountText.text = ProjectileUpgradeCount.ToString();
-
         }
     }
 
