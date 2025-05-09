@@ -108,7 +108,9 @@ public class HealthManager : MonoBehaviour
             for(int i = 0; i < shooters.Length; i++)
             {
                 shooters[i].enabled = false;
+                shooters[i].StopAllCoroutines();
             }
+
 
             EnemyController enemyController = GetComponent<EnemyController>();
             enemyController.enabled = false;
