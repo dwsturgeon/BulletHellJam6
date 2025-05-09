@@ -112,6 +112,7 @@ public class HealthManager : MonoBehaviour
 
             EnemyController enemyController = GetComponent<EnemyController>();
             enemyController.enabled = false;
+            SpawnRandomDrop();
         }
     }
 
