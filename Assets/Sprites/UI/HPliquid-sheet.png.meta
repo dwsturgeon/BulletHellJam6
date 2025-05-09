@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HPliquid-sheet_0: 4762317820044819005
+      HPliquid-sheet_1: -2384714751619870949
+      HPliquid-sheet_2: -147629195121773745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

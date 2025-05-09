@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HPoverlay-Sheet 1_0: -1833688608417316087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

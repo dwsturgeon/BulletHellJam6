@@ -47,15 +47,7 @@ public class Health : MonoBehaviour
             {
                 if (!bGodMode)
                 {
-                    RemoveHealth(collision.GetComponent<Projectile>().Damage);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                    //Debug.Log(currentHealth);
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-            
+                    RemoveHealth(collision.GetComponent<Projectile>().Damage);           
                     elapsed = 0;
                 }
 
