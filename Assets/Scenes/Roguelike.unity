@@ -427,6 +427,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7239941131694823631, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: titleSceneName
+      value: Title
+      objectReference: {fileID: 0}
     - target: {fileID: 7683257128403882799, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -483,6 +487,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8768692751179124137, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -510,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 164221875}
     - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: startingHealth
-      value: 10
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: HealthUpgadeCountText

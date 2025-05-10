@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
+
 
 public class Health : MonoBehaviour
 {
@@ -24,12 +26,16 @@ public class Health : MonoBehaviour
     [SerializeField] AudioSource DeathAudio;
 
 
+    
+
     private int healthUpgradeCount = 0;
+
 
     private void Awake()
     {
         currentHealth = startingHealth;
         HealthBar.maxValue = startingHealth;
+
     }
 
     private void Start()
