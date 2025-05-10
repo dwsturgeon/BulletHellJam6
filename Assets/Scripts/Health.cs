@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     [SerializeField] private bool bGodMode = false;
     [SerializeField] private TextMeshProUGUI HealthUpgadeCountText;
     private int healthUpgadeCount;
+    public bool isGlitching = false;
 
     [Header("DeathSound")]
     [SerializeField] AudioSource DeathAudio;
@@ -46,6 +47,7 @@ public class Health : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+        if (isGlitching) return;
 
         if (collision.CompareTag(targetTag))
         {

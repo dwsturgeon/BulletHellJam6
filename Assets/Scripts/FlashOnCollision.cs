@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FlashOnCollision : MonoBehaviour
 {
-
+    
     private SpriteRenderer sp;
     private Color originalColor;
 
@@ -14,6 +14,8 @@ public class FlashOnCollision : MonoBehaviour
     [SerializeField] private string targetTag = "PlayerProjectile";
     [SerializeField] private GameObject visualTarget;
 
+    public bool isGlitching = false;
+
     private void Start()
     {
         sp = visualTarget.GetComponent<SpriteRenderer>();
@@ -22,7 +24,7 @@ public class FlashOnCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+        if (isGlitching) return;
         if (collision.CompareTag(targetTag))
         {
             if (flashCoroutine != null)

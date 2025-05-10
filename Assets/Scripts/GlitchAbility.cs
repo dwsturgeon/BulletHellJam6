@@ -69,7 +69,7 @@ public class GlitchAbility : MonoBehaviour
         glitchTimer = 0f;
         cooldownTimer = cooldownTime;
         sr.material = glitchMaterial;
-        playerCollider.enabled = false;
+        SetGlitchingStatus(true);
         PushPlayer();
     }
 
@@ -77,7 +77,14 @@ public class GlitchAbility : MonoBehaviour
     {
         isGlitching = false;
         sr.material = defaultMaterial;
-        playerCollider.enabled = true;
+        SetGlitchingStatus(false);
+    }
+
+    private void SetGlitchingStatus(bool status)
+    {
+        this.gameObject.GetComponent<Health>().isGlitching = status;
+        this.gameObject.GetComponent<FlashOnCollision>().isGlitching = status;
+        this.gameObject.GetComponent<ShakeOnCollision>().isGlitching = status;
     }
 
     private void PlayGlitchSound()

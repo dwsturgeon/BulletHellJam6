@@ -6,6 +6,7 @@ public class ShakeOnCollision : MonoBehaviour
     [SerializeField] private string targetTag = "PlayerProjectile";
     [SerializeField] private float shakeDuration = 0.5f;
     [SerializeField] private float shakeMagnitude = 0.05f;
+    public bool isGlitching = false;
 
     [SerializeField] Transform visualTarget;
 
@@ -19,6 +20,8 @@ public class ShakeOnCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (isGlitching) return;
+
         if (collision.CompareTag(targetTag))
         {
             if(shakeCoroutine != null) StopCoroutine(shakeCoroutine);
