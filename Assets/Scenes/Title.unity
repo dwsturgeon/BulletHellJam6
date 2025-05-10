@@ -672,6 +672,10 @@ PrefabInstance:
       propertyPath: playButtonLevelName
       value: Roguelike
       objectReference: {fileID: 0}
+    - target: {fileID: 1970302564789876526, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: tutorialButtonLevelName
+      value: Roguelike
+      objectReference: {fileID: 0}
     - target: {fileID: 4375485803412834477, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
