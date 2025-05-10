@@ -30,8 +30,6 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         HealthBar.maxValue = startingHealth;
-
-        deathScreen = GameObject.Find("EndrunScreen");
     }
 
     private void Start()
