@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         elapsed += Time.fixedDeltaTime;
         if(isDead) 
         {
-            Time.timeScale = Mathf.Clamp(Time.timeScale - Time.deltaTime, 0f, 1f);
+            Time.timeScale = Mathf.Clamp(Time.timeScale - Time.deltaTime, 0.1f, 1f);
         }
     }
 
