@@ -23,6 +23,8 @@ public class SceneFunctions : MonoBehaviour
         endScreenObj.SetActive(false);
 
         currentSceneName = SceneManager.GetActiveScene().name;
+
+        Time.timeScale = 1.0f;
     }
 
     private void Start()
