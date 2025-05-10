@@ -87,18 +87,19 @@ public class Pickup : MonoBehaviour
             usedPickup = true;
             animator.Play("Pickup");
             //play pickup sound
-            ApplyPickup();
+            GameObject obj = collision.gameObject;
+            ApplyPickup(obj);
         }
     }
 
-    public void ApplyPickup()
+    public void ApplyPickup(GameObject obj)
     {
         //apply the pickup based on the effect it has
         switch (pickupType)
         {
             case PickupType.Hijack: ApplyHijack(); break;
 
-            case PickupType.Health: ApplyHealth(); break;
+            case PickupType.Health: ApplyHealth(obj); break;
                
             case PickupType.Speed: ApplySpeed(); break;
 
@@ -143,12 +144,12 @@ public class Pickup : MonoBehaviour
         }
     }
 
-    private void ApplyHealth()
+    private void ApplyHealth(GameObject obj)
     {
-        Health healthComp = GetComponent<Health>();
+        Health healthComp = obj.GetComponent<Health>();
         if(healthComp != null)
         {
-            //healthComp.MaxHealth = maxHealthIncrease;
+            healthComp.MaxHealth += maxHealthIncrease;
             healthComp.AddHealth(healthAmount * BossMult());
         }
     }
