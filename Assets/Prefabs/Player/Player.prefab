@@ -139,8 +139,8 @@ MonoBehaviour:
   angleIncreasePerProjectile: 7.5
   muzzleTransform: {fileID: 1631138831407435371}
   startingDistance: 0.1
-  minX: -8.8
-  maxX: 8.8
+  minX: -7
+  maxX: 7
   minY: -4.8
   maxY: 4.8
   maxTiltAngle: 20
@@ -157,6 +157,7 @@ MonoBehaviour:
   firerateUpgradeCountText: {fileID: 0}
   projectileUpgradeCountText: {fileID: 0}
   speedUpgradeCountText: {fileID: 0}
+  isDead: 0
   projectileEntries:
   - type: 0
     prefab: {fileID: 1933609438498028294, guid: a6d78097ec2fe654b8d1f5959573600f, type: 3}

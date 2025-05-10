@@ -4,9 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 using TMPro;
-using UnityEngine.InputSystem.Processors;
 
 public class PlayerController : MonoBehaviour
 {
@@ -128,9 +126,7 @@ public class PlayerController : MonoBehaviour
         if (projectileMap.ContainsKey(newType))
         {
             currentProjectileType = newType;
-            Debug.Log("Projectile Changed to " + newType);
         }
-        else Debug.Log("did not work");
     }
     #endregion
 

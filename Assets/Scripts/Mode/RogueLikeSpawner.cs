@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class RogueLikeSpawner : MonoBehaviour
@@ -59,9 +58,23 @@ public class RogueLikeSpawner : MonoBehaviour
     {
         GameObject[] enemyArray = GetEnemyArrayForWave();
 
-        int enemiesToSpawn = Mathf.Min(3 + currentWave / 5, 5);
+        int enemiesToSpawn = Mathf.Min(3 + currentWave / 5, 10);
 
         for(int i = 0; i < enemiesToSpawn; i++)
+        {
+            GameObject enemyPrefab = enemyArray[Random.Range(0, enemyArray.Length)];
+            Vector2 spawnPoint = GetRandomPoint();
+            Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
+        }
+    }
+
+    void SpawnEnemiesWithBoss()
+    {
+        GameObject[] enemyArray = GetEnemyArrayForWave();
+
+        int enemiesToSpawn = Mathf.Min(currentWave / 5, 10);
+
+        for (int i = 0; i < enemiesToSpawn; i++)
         {
             GameObject enemyPrefab = enemyArray[Random.Range(0, enemyArray.Length)];
             Vector2 spawnPoint = GetRandomPoint();
@@ -74,6 +87,7 @@ public class RogueLikeSpawner : MonoBehaviour
         GameObject boss = bossLevelEnemies[Random.Range(0, bossLevelEnemies.Length)];
         Vector2 spawnPoint = GetRandomPoint();
         Instantiate(boss, spawnPoint, Quaternion.identity);
+        SpawnEnemiesWithBoss();
     }
 
     GameObject[] GetEnemyArrayForWave()
@@ -82,7 +96,7 @@ public class RogueLikeSpawner : MonoBehaviour
         {
             return lowLevelEnemies;
         }
-        else if (currentWave < 8)
+        else if (currentWave < 7)
         {
             return mediumLevelEnemies;
         }

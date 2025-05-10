@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using static PlayerController;
 

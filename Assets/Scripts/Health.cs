@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ public class Health : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] private float gracePeriod = 0.2f;
     [SerializeField] private bool bGodMode = false;
+    [SerializeField] private TextMeshProUGUI HealthUpgadeCountText;
+    private int healthUpgadeCount;
 
 
     private int healthUpgradeCount = 0;
@@ -81,6 +84,8 @@ public class Health : MonoBehaviour
     public void AddMaxHealth(float amount)
     {
         startingHealth += amount;
+        healthUpgadeCount++;
+        HealthUpgadeCountText.text = healthUpgadeCount.ToString();
         UpdateHealthMaxUI(startingHealth);
 
     }
