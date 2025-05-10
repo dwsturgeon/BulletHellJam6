@@ -112,6 +112,7 @@ public class Health : MonoBehaviour
 
         isDead = true;
         elapsed = 0;
+        //play death sound
 
     }
     

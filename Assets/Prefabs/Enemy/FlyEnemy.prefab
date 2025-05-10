@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ceecd8c0c76a4468e302c20d2a1abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -8.8
-  maxX: 8.8
+  minX: -7
+  maxX: 7
   minY: 2.5
   maxY: 4.5
   smoothTime: 1
@@ -449,6 +449,7 @@ MonoBehaviour:
   startingDistance: 0.2
   timeBetweenBursts: 0.2
   restTime: 1
+  waitFirst: 0
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 1
@@ -460,6 +461,7 @@ MonoBehaviour:
   zone: {fileID: 0}
   zoneCooldown: 1
   zoneLifetime: 1
+  influenceFactor: 0.1
   orientation: 4
 --- !u!114 &2068423505805478123
 MonoBehaviour:
@@ -480,6 +482,7 @@ MonoBehaviour:
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}
+  dropProjectileConfig: {fileID: 0}
 --- !u!1 &6793121225227227179
 GameObject:
   m_ObjectHideFlags: 0

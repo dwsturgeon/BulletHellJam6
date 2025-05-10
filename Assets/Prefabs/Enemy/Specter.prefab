@@ -371,8 +371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ceecd8c0c76a4468e302c20d2a1abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -8.8
-  maxX: 8.8
+  minX: -7
+  maxX: 7
   minY: 0.88
   maxY: 4.5
   smoothTime: 1
@@ -433,6 +433,7 @@ MonoBehaviour:
   startingDistance: 0.1
   timeBetweenBursts: 0.25
   restTime: 1.5
+  waitFirst: 0
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 0
@@ -444,6 +445,7 @@ MonoBehaviour:
   zone: {fileID: 0}
   zoneCooldown: 1
   zoneLifetime: 1
+  influenceFactor: 0.1
   orientation: 4
 --- !u!114 &4567485269918277517
 MonoBehaviour:

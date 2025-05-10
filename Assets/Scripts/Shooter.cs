@@ -11,6 +11,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] private float startingDistance = 0.1f;
     [SerializeField] private float timeBetweenBursts;
     [SerializeField] private float restTime = 1f;
+    [SerializeField] private bool waitFirst = false;
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
     [SerializeField] private bool shouldWaitToStop = false;
@@ -112,7 +113,10 @@ public class Shooter : MonoBehaviour
 
         if (stagger) timeBetweenProjectiles = timeBetweenBursts / projectilesPerBurst;
 
-        yield return new WaitForSeconds(restTime);
+        if (waitFirst)
+        {
+            yield return new WaitForSeconds(restTime);
+        }
 
         for (int i = 0; i < burstCount; i++)
         {
@@ -173,8 +177,11 @@ public class Shooter : MonoBehaviour
             
         }
 
+        if (!waitFirst)
+        {
+            yield return new WaitForSeconds(restTime);
+        }
 
-        
         isShooting = false;
 
     }

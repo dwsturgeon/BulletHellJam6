@@ -678,6 +678,7 @@ MonoBehaviour:
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 2
+  waitFirst: 1
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 1
@@ -711,6 +712,7 @@ MonoBehaviour:
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 10
+  waitFirst: 1
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 1
@@ -744,6 +746,7 @@ MonoBehaviour:
   startingDistance: 0.1
   timeBetweenBursts: 0.33
   restTime: 1.5
+  waitFirst: 1
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 1

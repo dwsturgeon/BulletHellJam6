@@ -331,8 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ceecd8c0c76a4468e302c20d2a1abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -8.8
-  maxX: 8.8
+  minX: -7
+  maxX: 7
   minY: 2.5
   maxY: 3.6
   smoothTime: 2
@@ -393,6 +393,7 @@ MonoBehaviour:
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 2
+  waitFirst: 0
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 1
@@ -404,6 +405,7 @@ MonoBehaviour:
   zone: {fileID: 8741942666602947048, guid: 7d3f05ea3035e0249b00eab4522a114f, type: 3}
   zoneCooldown: 2
   zoneLifetime: 1
+  influenceFactor: 0.1
   orientation: 3
 --- !u!114 &1274102025788654309
 MonoBehaviour:
@@ -425,6 +427,7 @@ MonoBehaviour:
   startingDistance: 0.1
   timeBetweenBursts: 0.2
   restTime: 10
+  waitFirst: 0
   stagger: 1
   oscillate: 1
   shouldWaitToStop: 1
@@ -436,6 +439,7 @@ MonoBehaviour:
   zone: {fileID: 0}
   zoneCooldown: 1
   zoneLifetime: 1
+  influenceFactor: 0.1
   orientation: 3
 --- !u!114 &238554419435024942
 MonoBehaviour:
@@ -457,6 +461,7 @@ MonoBehaviour:
   startingDistance: 0.1
   timeBetweenBursts: 0.1
   restTime: 1
+  waitFirst: 0
   stagger: 0
   oscillate: 0
   shouldWaitToStop: 1
@@ -468,6 +473,7 @@ MonoBehaviour:
   zone: {fileID: 0}
   zoneCooldown: 1
   zoneLifetime: 1
+  influenceFactor: 0.1
   orientation: 4
 --- !u!114 &648638701803102833
 MonoBehaviour:
