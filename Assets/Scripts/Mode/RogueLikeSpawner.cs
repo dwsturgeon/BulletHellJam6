@@ -17,10 +17,13 @@ public class RogueLikeSpawner : MonoBehaviour
     [Header(("Wave Settings"))]
     [SerializeField] float timeBetweenWaves = 2f;
     private float countdown = 0f;
-    private int currentWave = 0;
+    private int currentWave = 4;
     private bool waveInProgress = false;
 
-
+    private void Start()
+    {
+        Debug.Log(highLevelEnemies.Length);
+    }
 
     private void FixedUpdate()
     {
@@ -73,7 +76,7 @@ public class RogueLikeSpawner : MonoBehaviour
 
     void SpawnBoss()
     {
-        GameObject boss = bossLevelEnemies[Random.Range(0, bossLevelEnemies.Length - 1)];
+        GameObject boss = bossLevelEnemies[Random.Range(0, bossLevelEnemies.Length)];
         Vector2 spawnPoint = GetRandomPoint();
         Instantiate(boss, spawnPoint, Quaternion.identity);
     }
