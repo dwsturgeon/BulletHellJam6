@@ -17,6 +17,9 @@ public class Health : MonoBehaviour
     private int healthUpgadeCount;
     public bool isGlitching = false;
 
+
+    [SerializeField] GameObject deathScreen;
+
     [Header("DeathSound")]
     [SerializeField] AudioSource DeathAudio;
 
@@ -27,6 +30,8 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         HealthBar.maxValue = startingHealth;
+
+        deathScreen = GameObject.Find("EndrunScreen");
     }
 
     private void Start()
@@ -121,8 +126,8 @@ public class Health : MonoBehaviour
             isDead = true;
             elapsed = 0;
 
-            GameObject.Find("EndrunScreen").SetActive(true);
             GameObject.Find("Canvas").GetComponent<SceneFunctions>().settingsUseable = false;
+            deathScreen.SetActive(true);
         } 
     }
 
