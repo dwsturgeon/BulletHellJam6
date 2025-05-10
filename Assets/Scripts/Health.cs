@@ -47,7 +47,8 @@ public class Health : MonoBehaviour
             {
                 if (!bGodMode)
                 {
-                    RemoveHealth(collision.GetComponent<Projectile>().Damage);           
+                    RemoveHealth(collision.GetComponent<Projectile>().Damage);
+            
                     elapsed = 0;
                 }
 
@@ -79,7 +80,7 @@ public class Health : MonoBehaviour
 
     private void UpdateHealthUI(float healthValue)
     {
-        HealthBar.value = currentHealth;
+        HealthBar.value = healthValue;
     }
 
     public int HealthUpgradeC { get => healthUpgradeCount; }
@@ -89,6 +90,7 @@ public class Health : MonoBehaviour
     {
         GetComponent<PlayerController>().enabled = false;
         GetComponent<GlitchAbility>().enabled = false;
+        GetComponent<PlayerController>().isDead = true;
         animator.SetBool("Dead", true);
 
         isDead = true;
@@ -96,7 +98,7 @@ public class Health : MonoBehaviour
 
     }
 
-
+    public float MaxHealth { get => startingHealth; set => startingHealth = value; }
 
     
 }

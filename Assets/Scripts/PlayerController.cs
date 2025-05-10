@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem.Processors;
 
 public class PlayerController : MonoBehaviour
 {
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
     private int SpeedUpgradeCount = 0;
     private int hasBestProjectile = 0;
     private int projIndex = 0;
+    public bool isDead = false;
 
 
 
@@ -174,7 +176,7 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.Space) && laser != null)
+            else if (Input.GetKeyUp(KeyCode.Space) && laser != null || isDead)
             {
                 Destroy(laser);
                 laser = null;
@@ -398,6 +400,7 @@ public class PlayerController : MonoBehaviour
             FirerateUpgradeCount++;
             firerateUpgradeCountText.text = FirerateUpgradeCount.ToString();
         } 
+
     }
 
     public int ProjectileCount
@@ -416,6 +419,7 @@ public class PlayerController : MonoBehaviour
             }
             ProjectileUpgradeCount++;
             projectileUpgradeCountText.text = ProjectileUpgradeCount.ToString();
+
         }
     }
 
