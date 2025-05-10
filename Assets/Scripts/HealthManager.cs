@@ -139,7 +139,7 @@ public class HealthManager : MonoBehaviour
 
             FadeFromDamage fadeFromDamage = GetComponent<FadeFromDamage>();
             fadeFromDamage.isDying = true;
-            Destroy(this.gameObject, 4f);
+            Destroy(this.gameObject, 2.5f);
             isDead = true;
 
             //PLAY DEATH SOUND

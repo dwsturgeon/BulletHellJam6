@@ -192,6 +192,7 @@ MonoBehaviour:
   fadeDuration: 0.3
   targetTag: PlayerProjectile
   visualTarget: {fileID: 1338341633662332981}
+  isGlitching: 0
 --- !u!114 &674399647575135621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +208,7 @@ MonoBehaviour:
   targetTag: PlayerProjectile
   shakeDuration: 0.3
   shakeMagnitude: 0.05
+  isGlitching: 0
   visualTarget: {fileID: 5057999440229021019}
 --- !u!114 &1293991473972828244
 MonoBehaviour:
