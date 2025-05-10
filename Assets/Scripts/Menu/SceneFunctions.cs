@@ -3,12 +3,17 @@ using UnityEngine;
 public class SceneFunctions : MonoBehaviour
 {
     private GameObject settingsObj;
+    private GameObject endScreenObj;
 
 
     void Awake()
     {
         settingsObj = GameObject.Find("SettingsPanel");
         settingsObj.SetActive(false);
+
+        endScreenObj = GameObject.Find("EndrunScreen");
+        endScreenObj.SetActive(false);
+
     }
 
 

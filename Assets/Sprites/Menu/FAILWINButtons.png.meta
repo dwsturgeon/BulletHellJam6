@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: 59e0c4cfd89227743a007f53f2b9e0a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5155293623399189829
+    second: FAILWINButtons_0
+  - first:
+      213: -6630404081292061347
+    second: FAILWINButtons_1
+  - first:
+      213: -4849587929124177908
+    second: FAILWINButtons_2
+  - first:
+      213: -139978893282615583
+    second: FAILWINButtons_3
+  - first:
+      213: -8304276344246399002
+    second: FAILWINButtons_4
+  - first:
+      213: 5264138648854911226
+    second: FAILWINButtons_5
+  - first:
+      213: 2960855326976662227
+    second: FAILWINButtons_6
+  - first:
+      213: 4867951839643578482
+    second: FAILWINButtons_7
+  - first:
+      213: 4295999767484566505
+    second: FAILWINButtons_8
+  - first:
+      213: 1851174783140317925
+    second: FAILWINButtons_9
+  - first:
+      213: 6475245482546592058
+    second: FAILWINButtons_10
+  - first:
+      213: -7096821832923945373
+    second: FAILWINButtons_11
+  - first:
+      213: -8448806236446414267
+    second: FAILWINButtons_12
+  - first:
+      213: 512449176291177731
+    second: FAILWINButtons_13
+  - first:
+      213: -7334214451204025895
+    second: FAILWINButtons_14
+  - first:
+      213: 7221428701874062301
+    second: FAILWINButtons_15
+  - first:
+      213: -4737945169405982163
+    second: FAILWINButtons_16
+  - first:
+      213: 978799501239978559
+    second: FAILWINButtons_17
+  - first:
+      213: 3523393970209713962
+    second: FAILWINButtons_18
+  - first:
+      213: 8118922757503833202
+    second: FAILWINButtons_19
+  - first:
+      213: 8278149731273853778
+    second: FAILWINButtons_20
+  - first:
+      213: -5477185686467173866
+    second: FAILWINButtons_21
+  - first:
+      213: 5462871585803989346
+    second: FAILWINButtons_22
+  - first:
+      213: -7455797535376793066
+    second: FAILWINButtons_23
+  - first:
+      213: 2239882754873902158
+    second: FAILWINButtons_24
+  - first:
+      213: 7872716103833353686
+    second: FAILWINButtons_25
+  - first:
+      213: -2194863561424134743
+    second: FAILWINButtons_26
+  - first:
+      213: -1291942161860818192
+    second: FAILWINButtons_27
+  - first:
+      213: -3190187494353197330
+    second: FAILWINButtons_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FAILWINButtons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 146
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e2dc8c20b872746af0f923e9113751
+      internalID: -58929217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FAILWINButtons_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 146
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e8e6105b780a740a7d78c719601dc7
+      internalID: 1850440281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 18f8ac6bfe1f2514ea4adcf646d5e8ec
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FAILWINButtons_0: -58929217
+      FAILWINButtons_1: 1850440281
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
