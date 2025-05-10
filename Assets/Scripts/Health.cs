@@ -121,6 +121,8 @@ public class Health : MonoBehaviour
             isDead = true;
             elapsed = 0;
 
+            GameObject.Find("EndrunScreen").SetActive(true);
+            GameObject.Find("Canvas").GetComponent<SceneFunctions>().settingsUseable = false;
         } 
     }
 
