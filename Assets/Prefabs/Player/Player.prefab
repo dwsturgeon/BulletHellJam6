@@ -138,7 +138,7 @@ MonoBehaviour:
   maxRestTime: 1
   currentProjectileType: 0
   angleSpread: 20
-  angleIncreasePerProjectile: 6
+  angleIncreasePerProjectile: 3
   muzzleTransform: {fileID: 1631138831407435371}
   startingDistance: 0.1
   minX: -7
@@ -186,6 +186,7 @@ MonoBehaviour:
   fadeDuration: 0.3
   targetTag: Projectile
   visualTarget: {fileID: 8020388029522510307}
+  isGlitching: 0
 --- !u!114 &545316345938949087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +202,7 @@ MonoBehaviour:
   targetTag: Projectile
   shakeDuration: 0.3
   shakeMagnitude: 0.05
+  isGlitching: 0
   visualTarget: {fileID: 5016608340262260218}
 --- !u!114 &1253741141036635116
 MonoBehaviour:
@@ -217,9 +219,9 @@ MonoBehaviour:
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   visualTarget: {fileID: 8020388029522510307}
   glitchMaterial: {fileID: 2100000, guid: 5a826d7aeecc7484b9ca0ae132ed4968, type: 2}
-  glitchDuration: 1
+  glitchDuration: 0.5
   cooldownTime: 4
-  dodgeForce: 10
+  dodgeForce: 12.5
   AudioSource: {fileID: 853985763391704556}
 --- !u!114 &5746897580096463659
 MonoBehaviour:
@@ -240,6 +242,8 @@ MonoBehaviour:
   gracePeriod: 0.4
   bGodMode: 0
   HealthUpgadeCountText: {fileID: 0}
+  isGlitching: 0
+  deathScreen: {fileID: 0}
   DeathAudio: {fileID: 241808692331046967}
 --- !u!82 &813829078450456076
 AudioSource:

@@ -332,21 +332,21 @@ public class PlayerController : MonoBehaviour
             case ProjectileType.Normal: 
             {
                 audio.clip = basicClip;
-                audio.volume = 1.5f;
+                audio.volume = 1f;
                 break;
             }
 
             case ProjectileType.Crescent:
             { 
                 audio.clip = crescentClip;
-                audio.volume = 0.5f;
+                audio.volume = 0.4f;
                 break;
             }
 
             case ProjectileType.Explosive:
             {
                 audio.clip = explosiveClip;
-                audio.volume = 0.35f;
+                audio.volume = 0.15f;
                 break;
             }
 

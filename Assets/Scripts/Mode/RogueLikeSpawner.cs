@@ -64,8 +64,25 @@ public class RogueLikeSpawner : MonoBehaviour
         {
             GameObject enemyPrefab = enemyArray[Random.Range(0, enemyArray.Length)];
             Vector2 spawnPoint = GetRandomPoint();
-            Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
+            GameObject target = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
+            SetEnemyHealth(target);
         }
+    }
+
+    void SetEnemyHealth(GameObject modTarget)
+    {
+        float multF = Mathf.Min(1 + currentWave / 5, 5);
+        int mult = Mathf.RoundToInt(multF);
+        modTarget.GetComponent<HealthManager>().maxHealth *= mult;
+        modTarget.GetComponent<HealthManager>().healthAmount *= mult;
+    }
+
+    void SetBossHealth(GameObject modTarget)
+    {
+        float multF = Mathf.Min(1 + currentWave / 10, 4);
+        int mult = Mathf.RoundToInt(multF);
+        modTarget.GetComponent<HealthManager>().maxHealth *= mult;
+        modTarget.GetComponent<HealthManager>().healthAmount *= mult;
     }
 
     void SpawnEnemiesWithBoss()
@@ -86,7 +103,8 @@ public class RogueLikeSpawner : MonoBehaviour
     {
         GameObject boss = bossLevelEnemies[Random.Range(0, bossLevelEnemies.Length)];
         Vector2 spawnPoint = GetRandomPoint();
-        Instantiate(boss, spawnPoint, Quaternion.identity);
+        GameObject target = Instantiate(boss, spawnPoint, Quaternion.identity);
+        SetBossHealth(target);
         SpawnEnemiesWithBoss();
     }
 

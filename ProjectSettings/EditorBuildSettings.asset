@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: ff9eb55526c69e743b13d86f18a972e0
   - enabled: 1
-    path: Assets/Scenes/Main_Test.unity
-    guid: 8763876284026f945bd782a20a46635f
-  - enabled: 1
     path: Assets/Scenes/Roguelike.unity
     guid: 0be521ddbde884a499c7ddfe8eef1033
+  - enabled: 0
+    path: Assets/Scenes/Main_Test.unity
+    guid: 8763876284026f945bd782a20a46635f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

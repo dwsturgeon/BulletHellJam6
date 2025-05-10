@@ -463,7 +463,7 @@ MonoBehaviour:
   healthAmount: 30
   maxHealthIncrease: 25
   SpeedIncreaseAmount: 5
-  damageMultIncrease: 0.05
+  damageMultIncrease: 0.2
   increaseType: 0
   fireRateRemoveAmount: 0.04
   projectileIncreaseAmount: 1

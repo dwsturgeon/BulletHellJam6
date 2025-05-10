@@ -24,9 +24,12 @@ public class Health : MonoBehaviour
 
     [Header("DeathSound")]
     [SerializeField] AudioSource DeathAudio;
+    [SerializeField] AudioSource DeathScreenSound;
+    [SerializeField] AudioSource HurtAudio;
+    private bool playedDeathScreenSound = false;
 
 
-    
+
 
     private int healthUpgradeCount = 0;
 
@@ -48,6 +51,11 @@ public class Health : MonoBehaviour
         elapsed += Time.fixedDeltaTime;
         if(isDead) 
         {
+            if (!playedDeathScreenSound && elapsed >= 0.3f)
+            {
+                DeathScreenSound.Play();
+                playedDeathScreenSound = true;
+            }
             Time.timeScale = Mathf.Clamp(Time.timeScale - Time.deltaTime, 0.1f, 1f);
         }
     }
@@ -96,7 +104,7 @@ public class Health : MonoBehaviour
 
     public void AddMaxHealth(float amount)
     {
-        startingHealth += amount;
+        startingHealth = Mathf.Clamp(startingHealth + amount, 0, 300);
         healthUpgadeCount++;
         HealthUpgadeCountText.text = healthUpgadeCount.ToString();
         UpdateHealthMaxUI(startingHealth);

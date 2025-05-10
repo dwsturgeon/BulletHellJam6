@@ -527,6 +527,7 @@ MonoBehaviour:
   fadeDuration: 0.3
   targetTag: PlayerProjectile
   visualTarget: {fileID: 2281360781583027864}
+  isGlitching: 0
 --- !u!114 &953823884832899399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +543,7 @@ MonoBehaviour:
   targetTag: PlayerProjectile
   shakeDuration: 0.3
   shakeMagnitude: 0.05
+  isGlitching: 0
   visualTarget: {fileID: 5136752935147364000}
 --- !u!114 &1878853508646078860
 MonoBehaviour:
@@ -590,8 +592,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2844130824772748476}
-  healthAmount: 350
-  maxHealth: 350
+  healthAmount: 300
+  maxHealth: 300
   gracePeriod: 0.2
   isBoss: 0
   targetTag: PlayerProjectile
