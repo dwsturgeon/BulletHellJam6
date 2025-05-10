@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
     private int hasBestProjectile = 0;
     private int projIndex = 0;
     public bool isDead = false;
+    public bool isPaused = false;
 
 
 
@@ -187,7 +188,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot()
     {
-        if (!isShooting)
+        if (!isShooting && !isPaused)
         {
             StartCoroutine(ShootRoutine());
         }

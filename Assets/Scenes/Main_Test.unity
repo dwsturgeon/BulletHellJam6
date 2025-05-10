@@ -4222,6 +4222,10 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 421075799}
+    - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: HealthUpgadeCountText
+      value: 
+      objectReference: {fileID: 2060859171}
     - target: {fileID: 6679789913070077674, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.024884611

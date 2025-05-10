@@ -616,8 +616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ceecd8c0c76a4468e302c20d2a1abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -8.8
-  maxX: 8.8
+  minX: -7
+  maxX: 7
   minY: 2.5
   maxY: 3.6
   smoothTime: 2
@@ -686,9 +686,10 @@ MonoBehaviour:
   animator: {fileID: 8802598307494222340}
   useAnimator: 0
   bUseZone: 1
-  zone: {fileID: 8741942666602947048, guid: 7d3f05ea3035e0249b00eab4522a114f, type: 3}
-  zoneCooldown: 2.5
-  zoneLifetime: 2
+  zone: {fileID: 3865773039208179817, guid: 7b307194e1ed63d47a92683d5d355ac2, type: 3}
+  zoneCooldown: 6
+  zoneLifetime: 4
+  influenceFactor: 0.4
   orientation: 3
 --- !u!114 &5765377388883064905
 MonoBehaviour:
@@ -708,7 +709,7 @@ MonoBehaviour:
   projectilesPerBurst: 40
   angleSpread: 359
   startingDistance: 0.1
-  timeBetweenBursts: 0.2
+  timeBetweenBursts: 0.1
   restTime: 10
   stagger: 1
   oscillate: 1
@@ -721,6 +722,7 @@ MonoBehaviour:
   zone: {fileID: 0}
   zoneCooldown: 1
   zoneLifetime: 1
+  influenceFactor: 0.1
   orientation: 3
 --- !u!114 &3272906904240536685
 MonoBehaviour:
@@ -735,15 +737,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
-  bulletMoveSpeed: 6
-  burstCount: 5
-  projectilesPerBurst: 3
-  angleSpread: 20
+  bulletMoveSpeed: 3
+  burstCount: 3
+  projectilesPerBurst: 9
+  angleSpread: 60
   startingDistance: 0.1
-  timeBetweenBursts: 0.1
-  restTime: 1
-  stagger: 0
-  oscillate: 0
+  timeBetweenBursts: 0.33
+  restTime: 1.5
+  stagger: 1
+  oscillate: 1
   shouldWaitToStop: 1
   muzzleTransform: {fileID: 2255902106396856084}
   recoverMult: 3
@@ -753,6 +755,7 @@ MonoBehaviour:
   zone: {fileID: 0}
   zoneCooldown: 1
   zoneLifetime: 1
+  influenceFactor: 0.1
   orientation: 4
 --- !u!114 &7424438128438065276
 MonoBehaviour:

@@ -27,6 +27,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject zone;
     [SerializeField] float zoneCooldown = 1f;
     [SerializeField] float zoneLifetime = 1f;
+    [SerializeField] float influenceFactor = 0.1f;
     private float elapsed;
     private enum Orientation
     {
@@ -110,7 +111,8 @@ public class Shooter : MonoBehaviour
         TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
         if (stagger) timeBetweenProjectiles = timeBetweenBursts / projectilesPerBurst;
-       
+
+        yield return new WaitForSeconds(restTime);
 
         for (int i = 0; i < burstCount; i++)
         {
@@ -172,7 +174,7 @@ public class Shooter : MonoBehaviour
         }
 
 
-        yield return new WaitForSeconds(restTime);
+        
         isShooting = false;
 
     }
@@ -232,7 +234,7 @@ public class Shooter : MonoBehaviour
     {
         Vector3 centerPosition = new Vector3(0f, 0f, 0f);
 
-        float influenceFactor = 0.1f;
+
         centerPosition.x += PlayerController.instance.transform.position.x * influenceFactor;
 
         System.Array values = System.Enum.GetValues(typeof(AnomalyZone.ZoneType));
