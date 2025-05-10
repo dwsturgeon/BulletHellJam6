@@ -6,15 +6,22 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class MenuFunctions : MonoBehaviour
 {
     private GameObject menuObj;
     private GameObject settingsObj;
 
-    private Button playButton;
-    private Button settingsButton;
-    private Button tutorialButton;
+
+
+    [SerializeField] private Image Title;
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button settingsButton;
+    [SerializeField] private Button tutorialButton;
+
+
 
     public string playButtonLevelName;
     public string tutorialButtonLevelName;
@@ -25,35 +32,17 @@ public class MenuFunctions : MonoBehaviour
         menuObj = GameObject.Find("Menu");
         settingsObj = GameObject.Find("SettingsPanel");
 
-
-
-        Button[] childButtons = menuObj.GetComponentsInChildren<Button>();
-
-        foreach (Button button in childButtons)
-        {
-            if (button.gameObject.name == "Play")
-            {
-                playButton = button;
-            }
-
-            if (button.gameObject.name == "Settings")
-            {
-                settingsButton = button;
-            }
-            if (button.gameObject.name == "Tutorial")
-            {
-                tutorialButton = button;
-            }
-        }
+        
     }
 
     public void Start()
     {
-        playButton.onClick.AddListener(() => LoadLevel(playButtonLevelName));
-        settingsButton.onClick.AddListener(() => LoadSettings());
-        tutorialButton.onClick.AddListener(() => LoadLevel(tutorialButtonLevelName));
 
-        settingsObj.SetActive(false);
+        //playButton.onClick.AddListener(() => LoadLevel(playButtonLevelName));
+        //settingsButton.onClick.AddListener(() => LoadSettings());
+        //tutorialButton.onClick.AddListener(() => LoadLevel(tutorialButtonLevelName));
+
+        //settingsObj.SetActive(false);
     }
 
 
@@ -85,5 +74,4 @@ public class MenuFunctions : MonoBehaviour
         menuObj.SetActive(false);
         settingsObj.SetActive(true);
     }
-
 }
