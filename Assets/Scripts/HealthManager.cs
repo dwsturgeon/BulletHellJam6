@@ -24,10 +24,10 @@ public class HealthManager : MonoBehaviour
     private List<GameObject> dropProjectiles;
     [SerializeField] private DropConfig dropConfig;
     [SerializeField] private DropProjectileConfig dropProjectileConfig;
-    private int hasBestProj;
-    private int currentProjIndex;
 
-    //[SerializeField] private GameObject enemy;
+
+    [SerializeField] private AudioSource HurtSource;
+    [SerializeField] private AudioSource DeathSource;
 
 
     public static HealthManager instance;
@@ -59,6 +59,11 @@ public class HealthManager : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
+        if (collision.gameObject.GetComponent<PlayerProjectile>().ProjType == PlayerProjectile.ProjectileType.Explosive)
+        {
+            collision.GetComponent<PlayerProjectile>().Explode();
+        }
+
         if (collision.CompareTag(targetTag))
         {
             if(elapsed >= gracePeriod)
@@ -79,7 +84,7 @@ public class HealthManager : MonoBehaviour
         {
             Die();
         }
-
+        else PlayHurtSound();
     }
 
     public void Heal(float healingAmount)
@@ -129,11 +134,12 @@ public class HealthManager : MonoBehaviour
     {
         if(!isDead)
         {
+            PlayDeathSound();
             SpawnRandomDrop();
 
             FadeFromDamage fadeFromDamage = GetComponent<FadeFromDamage>();
             fadeFromDamage.isDying = true;
-            Destroy(this.gameObject, 1f);
+            Destroy(this.gameObject, 4f);
             isDead = true;
 
             //PLAY DEATH SOUND
@@ -149,6 +155,22 @@ public class HealthManager : MonoBehaviour
             EnemyController enemyController = GetComponent<EnemyController>();
             enemyController.enabled = false;
         }
+    }
+
+    private void PlayDeathSound()
+    {
+        DeathSource.pitch = Random.Range(1f, 1.2f);
+        DeathSource.Play();
+    }
+
+    private void PlayHurtSound()
+    {
+        if (HurtSource.isPlaying)
+        {
+            HurtSource.Stop();
+        }
+        HurtSource.pitch = Random.Range(1f, 1.2f);
+        HurtSource.Play();
     }
 
     

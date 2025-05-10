@@ -123,13 +123,6 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         gotHit = true;
-
-        if(collision.gameObject.GetComponent<PlayerProjectile>().ProjType == PlayerProjectile.ProjectileType.Explosive)
-        {
-            PlayerProjectile projectile = collision.GetComponent<PlayerProjectile>();
-            projectile.Explode();
-        }
-
     }
 
     private Vector3 GetRandomPoint()

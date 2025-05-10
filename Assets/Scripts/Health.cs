@@ -16,6 +16,9 @@ public class Health : MonoBehaviour
     [SerializeField] private TextMeshProUGUI HealthUpgadeCountText;
     private int healthUpgadeCount;
 
+    [Header("DeathSound")]
+    [SerializeField] AudioSource DeathAudio;
+
 
     private int healthUpgradeCount = 0;
 
@@ -105,15 +108,23 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        GetComponent<PlayerController>().enabled = false;
-        GetComponent<GlitchAbility>().enabled = false;
-        GetComponent<PlayerController>().isDead = true;
-        animator.SetBool("Dead", true);
+        if (!isDead)
+        {
+            PlayDeathSound();
+            GetComponent<PlayerController>().enabled = false;
+            GetComponent<GlitchAbility>().enabled = false;
+            GetComponent<PlayerController>().isDead = true;
+            animator.SetBool("Dead", true);
 
-        isDead = true;
-        elapsed = 0;
-        //play death sound
+            isDead = true;
+            elapsed = 0;
 
+        } 
+    }
+
+    public void PlayDeathSound()
+    {
+        DeathAudio.Play();
     }
     
 }

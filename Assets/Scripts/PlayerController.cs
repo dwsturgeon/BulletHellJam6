@@ -241,7 +241,7 @@ public class PlayerController : MonoBehaviour
                 {
 
                     GameObject newBullet = Instantiate(projectilePrefab, pos, Quaternion.identity);
-                    PlaySound(gunSound);
+                    PlayGunSound(gunSound);
                     
                     PlayerProjectile bulletDamage = newBullet.GetComponent<PlayerProjectile>();
                     bulletDamage.Damage = bulletDamage.Damage * damageMult;
@@ -320,12 +320,11 @@ public class PlayerController : MonoBehaviour
 
     public void PlayPickupSound()
     {
-        float volume = 0.1f;
-        pickupSource.volume = volume;
+        pickupSource.pitch = Random.Range(1f, 1.2f);
         pickupSource.Play();
     }
 
-    private void PlaySound(AudioSource audio)
+    private void PlayGunSound(AudioSource audio)
     {
         switch (currentProjectileType) 
         {

@@ -12,6 +12,10 @@ public class GlitchAbility : MonoBehaviour
     [SerializeField] private float cooldownTime = 5f;
     [SerializeField] private float dodgeForce = 10f;
 
+    [Header("Sound")]
+    [SerializeField] AudioSource AudioSource;
+
+
     private float cooldownTimer = 0f;
     private float glitchTimer = 0f;
     private bool isGlitching = false;
@@ -60,6 +64,7 @@ public class GlitchAbility : MonoBehaviour
 
     void ActivateGlitch()
     {
+        PlayGlitchSound();
         isGlitching = true;
         glitchTimer = 0f;
         cooldownTimer = cooldownTime;
@@ -75,6 +80,11 @@ public class GlitchAbility : MonoBehaviour
         playerCollider.enabled = true;
     }
 
+    private void PlayGlitchSound()
+    {
+        AudioSource.pitch = Random.Range(1f, 1.2f);
+        AudioSource.Play();
+    }
     private void PushPlayer()
     {
         Vector2 moveDirection;
