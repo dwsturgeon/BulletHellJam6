@@ -243,8 +243,9 @@ public class Shooter : MonoBehaviour
         System.Array values = System.Enum.GetValues(typeof(AnomalyZone.ZoneType));
         AnomalyZone.ZoneType randomValue = (AnomalyZone.ZoneType)values.GetValue(UnityEngine.Random.Range(0, values.Length));
         GameObject spawnedZone = Instantiate(zone, centerPosition, Quaternion.identity);
-
         spawnedZone.GetComponent<AnomalyZone>().Zone = randomValue;
+        spawnedZone.GetComponent<FadeIn>().lifetime = zoneLifetime;
+
 
         
         

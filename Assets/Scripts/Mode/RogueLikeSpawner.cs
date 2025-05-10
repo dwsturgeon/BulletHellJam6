@@ -20,11 +20,6 @@ public class RogueLikeSpawner : MonoBehaviour
     private int currentWave = 0;
     private bool waveInProgress = false;
 
-    private void Start()
-    {
-        Debug.Log(highLevelEnemies.Length);
-    }
-
     private void FixedUpdate()
     {
         if(!waveInProgress && AllEnemiesDead())

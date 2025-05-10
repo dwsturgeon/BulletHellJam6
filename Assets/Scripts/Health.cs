@@ -78,9 +78,21 @@ public class Health : MonoBehaviour
         UpdateHealthUI(currentHealth);
     }
 
+    public void AddMaxHealth(float amount)
+    {
+        startingHealth += amount;
+        UpdateHealthMaxUI(startingHealth);
+
+    }
+
     private void UpdateHealthUI(float healthValue)
     {
         HealthBar.value = healthValue;
+    }
+
+    private void UpdateHealthMaxUI(float value)
+    {
+        HealthBar.maxValue = value;
     }
 
     public int HealthUpgradeC { get => healthUpgradeCount; }
@@ -97,8 +109,5 @@ public class Health : MonoBehaviour
         elapsed = 0;
 
     }
-
-    public float MaxHealth { get => startingHealth; set => startingHealth = value; }
-
     
 }

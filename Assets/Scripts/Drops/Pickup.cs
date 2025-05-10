@@ -149,7 +149,7 @@ public class Pickup : MonoBehaviour
         Health healthComp = obj.GetComponent<Health>();
         if(healthComp != null)
         {
-            healthComp.MaxHealth += maxHealthIncrease;
+            healthComp.AddMaxHealth(maxHealthIncrease * BossMult());
             healthComp.AddHealth(healthAmount * BossMult());
         }
     }
