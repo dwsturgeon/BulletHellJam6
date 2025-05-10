@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: 74f2367a9cc91184d9139122c9325860
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7022259826441552369
+    second: EndLose_0
+  - first:
+      213: -4254546254063207418
+    second: EndLose_1
+  - first:
+      213: 767859911561518826
+    second: EndLose_2
+  - first:
+      213: -7501451043110737085
+    second: EndLose_3
+  - first:
+      213: -9200420980433856456
+    second: EndLose_4
+  - first:
+      213: -5843277586822815544
+    second: EndLose_5
+  - first:
+      213: 2923741714201758166
+    second: EndLose_6
+  - first:
+      213: -2897534364031538972
+    second: EndLose_7
+  - first:
+      213: 2663381014710565347
+    second: EndLose_8
+  - first:
+      213: 340780015925917171
+    second: EndLose_9
+  - first:
+      213: 6027942380864901624
+    second: EndLose_10
+  - first:
+      213: 5106543520379553193
+    second: EndLose_11
+  - first:
+      213: 6697784786556218077
+    second: EndLose_12
+  - first:
+      213: -7325612847190312275
+    second: EndLose_13
+  - first:
+      213: -254960097386333497
+    second: EndLose_14
+  - first:
+      213: 1078175819844322278
+    second: EndLose_15
+  - first:
+      213: 6395964066491355624
+    second: EndLose_16
+  - first:
+      213: 4033848674167853649
+    second: EndLose_17
+  - first:
+      213: 412162959948885420
+    second: EndLose_18
+  - first:
+      213: 2925808565660412515
+    second: EndLose_19
+  - first:
+      213: 4773982331787609550
+    second: EndLose_20
+  - first:
+      213: -7402630349244845433
+    second: EndLose_21
+  - first:
+      213: 6352177854608038687
+    second: EndLose_22
+  - first:
+      213: -1591651344248922155
+    second: EndLose_23
+  - first:
+      213: 5321208075085950765
+    second: EndLose_24
+  - first:
+      213: -3956482661465905662
+    second: EndLose_25
+  - first:
+      213: 5369672780788407151
+    second: EndLose_26
+  - first:
+      213: -1622922869779759761
+    second: EndLose_27
+  - first:
+      213: -2710737440990061338
+    second: EndLose_28
+  - first:
+      213: 8550531208570325350
+    second: EndLose_29
+  - first:
+      213: 4541634115629175284
+    second: EndLose_30
+  - first:
+      213: -5073900449723428987
+    second: EndLose_31
+  - first:
+      213: 7470681135229921881
+    second: EndLose_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EndLose_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 146
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8187bf4de1e42884d97bf6ff52170cf3
+      internalID: -100544142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EndLose_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 146
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d80b1965c62c3c468d801a77f82ffb1
+      internalID: 452428203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1b310322f97865942b031617b8bfe1ff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EndLose_0: -100544142
+      EndLose_1: 452428203
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

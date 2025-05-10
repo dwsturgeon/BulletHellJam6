@@ -16,11 +16,12 @@ public class MenuFunctions : MonoBehaviour
 
 
 
-    [SerializeField] private Image Title;
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button settingsButton;
-    [SerializeField] private Button tutorialButton;
-
+    [SerializeField]  Image Title;
+    [SerializeField]  Button playButton;
+    [SerializeField]  Button settingsButton;
+    [SerializeField]  Button tutorialButton;
+    [SerializeField]  AudioSource musicSource;
+    [SerializeField]  AudioClip menuMusic;
 
 
     public string playButtonLevelName;
@@ -31,18 +32,16 @@ public class MenuFunctions : MonoBehaviour
     {
         menuObj = GameObject.Find("Menu");
         settingsObj = GameObject.Find("SettingsPanel");
-
-        
     }
 
     public void Start()
     {
+        StartMenuMusic();
+        playButton.onClick.AddListener(() => LoadLevel(playButtonLevelName));
+        settingsButton.onClick.AddListener(() => LoadSettings());
+        tutorialButton.onClick.AddListener(() => LoadLevel(tutorialButtonLevelName));
 
-        //playButton.onClick.AddListener(() => LoadLevel(playButtonLevelName));
-        //settingsButton.onClick.AddListener(() => LoadSettings());
-        //tutorialButton.onClick.AddListener(() => LoadLevel(tutorialButtonLevelName));
-
-        //settingsObj.SetActive(false);
+        settingsObj.SetActive(false);
     }
 
 
@@ -73,5 +72,10 @@ public class MenuFunctions : MonoBehaviour
     {
         menuObj.SetActive(false);
         settingsObj.SetActive(true);
+    }
+    void StartMenuMusic()
+    {
+        musicSource.clip = menuMusic;
+        musicSource.Play();
     }
 }
