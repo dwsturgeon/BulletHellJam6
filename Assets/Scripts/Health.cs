@@ -40,10 +40,9 @@ public class Health : MonoBehaviour
     private void FixedUpdate()
     {
         elapsed += Time.fixedDeltaTime;
-        if(isDead && elapsed > 1f ) 
+        if(isDead) 
         {
-            this.gameObject.SetActive(false);
-            Time.timeScale = 0f;
+            Time.timeScale = Mathf.Clamp(Time.timeScale - Time.deltaTime, 0f, 1f);
         }
     }
 
