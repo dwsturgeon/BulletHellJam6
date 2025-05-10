@@ -17,7 +17,7 @@ public class RogueLikeSpawner : MonoBehaviour
     [Header(("Wave Settings"))]
     [SerializeField] float timeBetweenWaves = 2f;
     private float countdown = 0f;
-    private int currentWave = 4;
+    private int currentWave = 0;
     private bool waveInProgress = false;
 
     private void Start()
