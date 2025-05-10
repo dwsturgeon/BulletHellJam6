@@ -147,11 +147,9 @@ public class Pickup : MonoBehaviour
     private void ApplyHealth(GameObject obj)
     {
         Health healthComp = obj.GetComponent<Health>();
-        Debug.Log(healthComp);
         if(healthComp != null)
         {
-            Debug.Log("healthComp no null");
-            healthComp.MaxHealth = maxHealthIncrease;
+            healthComp.MaxHealth += maxHealthIncrease;
             healthComp.AddHealth(healthAmount * BossMult());
         }
     }
