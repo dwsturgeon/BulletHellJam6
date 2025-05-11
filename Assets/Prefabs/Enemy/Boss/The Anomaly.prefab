@@ -409,7 +409,7 @@ MonoBehaviour:
   zone: {fileID: 8741942666602947048, guid: 7d3f05ea3035e0249b00eab4522a114f, type: 3}
   zoneCooldown: 2
   zoneLifetime: 1
-  influenceFactor: 0.1
+  influenceFactor: 0.25
   orientation: 3
 --- !u!114 &1274102025788654309
 MonoBehaviour:
