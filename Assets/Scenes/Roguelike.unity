@@ -344,6 +344,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1196246258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4479266577346743631, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+  m_PrefabInstance: {fileID: 2135266770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1196246262
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196246258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4bca74728638ce4a959c64301504d6b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1339467286 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6528295095212650829, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
@@ -763,6 +790,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3260706023124018091, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092701389406835078, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005601626745392854, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005601626745392854, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005601626745392854, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6279356228644268861, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
       propertyPath: m_Name
       value: CurrentProjectile
@@ -856,7 +903,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2115457707007660492, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2025387114}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4479266577346743631, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1196246262}
   m_SourcePrefab: {fileID: 100100000, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
 --- !u!1001 &2144280546
 PrefabInstance:

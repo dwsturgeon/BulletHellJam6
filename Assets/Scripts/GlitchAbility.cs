@@ -35,7 +35,7 @@ public class GlitchAbility : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !isGlitching && cooldownTimer <= 0f)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isGlitching && cooldownTimer <= 0f)
         {
             ActivateGlitch();
         }
