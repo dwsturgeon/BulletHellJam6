@@ -489,8 +489,8 @@ MonoBehaviour:
   audioSource: {fileID: 1521027566}
   introClip: {fileID: 8300000, guid: c4ca372d0dc8eb64f97121a0e354f5c0, type: 3}
   loopClip: {fileID: 8300000, guid: d00219c8278a3c34790a6c54fdf95995, type: 3}
-  endIntroClip: {fileID: 0}
-  endLoopClip: {fileID: 0}
+  endIntroClip: {fileID: 8300000, guid: 53db68e0a78c1b14db40f9ba13cfe89c, type: 3}
+  endLoopClip: {fileID: 8300000, guid: bafd3aac236f153479c1a9427dfdcbb0, type: 3}
   isDead: 0
 --- !u!82 &1521027566
 AudioSource:
@@ -867,6 +867,10 @@ PrefabInstance:
       propertyPath: gameplayMusic
       value: 
       objectReference: {fileID: 1521027562}
+    - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: startingHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: HealthUpgadeCountText
       value: 
