@@ -7,6 +7,7 @@ public class ShakeOnCollision : MonoBehaviour
     [SerializeField] private float shakeDuration = 0.5f;
     [SerializeField] private float shakeMagnitude = 0.05f;
     public bool isGlitching = false;
+    public bool isPaused = false;
 
     [SerializeField] Transform visualTarget;
 
@@ -18,22 +19,28 @@ public class ShakeOnCollision : MonoBehaviour
         originalPosition = visualTarget.localPosition;
     }
 
+    private void Update()
+    {
+        if (isPaused)
+        {
+            StopAllCoroutines();
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (isGlitching) return;
-
+        
         if (collision.CompareTag(targetTag))
         {
-            if(shakeCoroutine != null) StopCoroutine(shakeCoroutine);
-
+            if (shakeCoroutine != null) StopAllCoroutines();
             shakeCoroutine = StartCoroutine(Shake());
-
         }
     }
 
     IEnumerator Shake()
     {
         float elapsed = 0f;
+        
         while (elapsed < shakeDuration) 
         {
             elapsed += Time.deltaTime;

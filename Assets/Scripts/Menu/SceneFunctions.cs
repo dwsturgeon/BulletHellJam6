@@ -53,12 +53,14 @@ public class SceneFunctions : MonoBehaviour
                     settingsObj.SetActive(false);
                     Time.timeScale = 1f;
                     PlayerController.instance.isPaused = false;
+                    PlayerController.instance.gameObject.GetComponent<ShakeOnCollision>().isPaused = false;
                 }
                 else
                 {
                     settingsObj.SetActive(true);
                     Time.timeScale = 0f;
                     PlayerController.instance.isPaused = true;
+                    PlayerController.instance.gameObject.GetComponent<ShakeOnCollision>().isPaused = true;
                 }
             }
         }

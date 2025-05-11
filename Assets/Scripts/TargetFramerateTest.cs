@@ -8,8 +8,4 @@ public class TargetFramerateTest : MonoBehaviour
         if (Application.targetFrameRate != targetFramerate) Application.targetFrameRate = targetFramerate;
     }
 
-    private void Start()
-    {
-        Screen.SetResolution(1920, 1080, true);
-    }
 }
