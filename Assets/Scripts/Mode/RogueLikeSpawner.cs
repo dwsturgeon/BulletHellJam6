@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class RogueLikeSpawner : MonoBehaviour
@@ -18,6 +19,7 @@ public class RogueLikeSpawner : MonoBehaviour
     private float countdown = 0f;
     private int currentWave = 0;
     private bool waveInProgress = false;
+    [SerializeField] private TextMeshProUGUI WaveCounterText;
 
     private void FixedUpdate()
     {
@@ -38,6 +40,7 @@ public class RogueLikeSpawner : MonoBehaviour
     void StartWave()
     {
         currentWave++;
+        WaveCounterText.text = currentWave.ToString();
         Debug.Log("Starting Wave " +  currentWave);
 
         waveInProgress = true;

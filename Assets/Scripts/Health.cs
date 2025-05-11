@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Slider HealthBar;
     private float currentHealth;
     private float elapsed;
+    private float hitSoundElapsed;
     private bool isDead = false;
     [SerializeField] Animator animator;
     [SerializeField] private float gracePeriod = 0.2f;
@@ -49,7 +50,8 @@ public class Health : MonoBehaviour
     private void FixedUpdate()
     {
         elapsed += Time.fixedDeltaTime;
-        if(isDead) 
+        hitSoundElapsed += Time.fixedDeltaTime;
+        if (isDead) 
         {
             if (!playedDeathScreenSound && elapsed >= 0.3f)
             {
@@ -67,10 +69,18 @@ public class Health : MonoBehaviour
 
         if (collision.CompareTag(targetTag))
         {
+            if(hitSoundElapsed >= 0.1f)
+            {
+                hitSoundElapsed = 0;
+                HurtAudio.pitch = Random.Range(1f, 1.2f);
+                HurtAudio.Play(); //playing it here because if not it looks weird 
+            }
+            
             if (elapsed >= gracePeriod)
             {
                 if (!bGodMode)
                 {
+                    
                     RemoveHealth(collision.GetComponent<Projectile>().Damage);
             
                     elapsed = 0;
