@@ -126,6 +126,11 @@ public class PlayerController : MonoBehaviour
     {
         if (projectileMap.ContainsKey(newType))
         {
+            if (laser != null) 
+            {
+                Destroy(laser);
+            }
+
             currentProjectileType = newType;
         }
     }
