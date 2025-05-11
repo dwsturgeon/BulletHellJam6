@@ -180,6 +180,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f79447c5094741c45bc2c0206bd35493, type: 3}
+--- !u!1 &386688775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8063131077746267051, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+  m_PrefabInstance: {fileID: 8065295004851832280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &812878288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +429,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539923851618723924, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: SoundManager
+      value: 
+      objectReference: {fileID: 386688775}
+    - target: {fileID: 8120480023769401044, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: SoundManager
+      value: 
+      objectReference: {fileID: 386688775}
     - target: {fileID: 8127682548599802030, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

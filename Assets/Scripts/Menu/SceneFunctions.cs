@@ -46,7 +46,7 @@ public class SceneFunctions : MonoBehaviour
     {
         if (settingsUseable)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 if (settingsObj.activeSelf)
                 {

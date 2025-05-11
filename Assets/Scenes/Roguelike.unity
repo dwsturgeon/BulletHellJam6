@@ -904,10 +904,57 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2025387114}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2361079647646398447, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2135266775}
+    - targetCorrespondingSourceObject: {fileID: 1610377895301784251, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2135266774}
     - targetCorrespondingSourceObject: {fileID: 4479266577346743631, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1196246262}
   m_SourcePrefab: {fileID: 100100000, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+--- !u!1 &2135266771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1610377895301784251, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+  m_PrefabInstance: {fileID: 2135266770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2135266772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670652133763515167, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+  m_PrefabInstance: {fileID: 2135266770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2135266773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2361079647646398447, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+  m_PrefabInstance: {fileID: 2135266770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2135266774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135266771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0dcfabcb853b84082f23aaa81c8559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundManager: {fileID: 2135266772}
+--- !u!114 &2135266775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135266773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0dcfabcb853b84082f23aaa81c8559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundManager: {fileID: 2135266772}
 --- !u!1001 &2144280546
 PrefabInstance:
   m_ObjectHideFlags: 0

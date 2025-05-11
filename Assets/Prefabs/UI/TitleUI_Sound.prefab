@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6988926976769895533}
   - component: {fileID: 6276185438658770755}
+  - component: {fileID: 8120480023769401044}
   m_Layer: 0
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -123,6 +124,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8120480023769401044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258396672271367466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0dcfabcb853b84082f23aaa81c8559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1983829256919221325
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7062648152474703940}
   - component: {fileID: 481194437495546508}
+  - component: {fileID: 7539923851618723924}
   m_Layer: 0
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -1029,6 +1043,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7539923851618723924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909600170868031627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0dcfabcb853b84082f23aaa81c8559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4022205325692098572
 GameObject:
   m_ObjectHideFlags: 0

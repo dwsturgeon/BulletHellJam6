@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
@@ -40,24 +41,21 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        musicSlider.onValueChanged.AddListener(delegate {
-            SetMusicVolume();
-            });
-        sfxSlider.onValueChanged.AddListener(delegate {
-            SetSFXVolume();
-        });
+
     }
 
-    void SetMusicVolume()
+    public void SetMusicVolume()
     {
         PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
         audioMixer.SetFloat(MIXER_MUSIC, (Mathf.Log10(musicSlider.value) * 20));
     }
 
-    void SetSFXVolume()
+    public void SetSFXVolume()
     {
         PlayerPrefs.SetFloat("sfxVolume", sfxSlider.value);
         audioMixer.SetFloat(MIXER_SFX, (Mathf.Log10(sfxSlider.value) * 20));
         //Debug.Log((Mathf.Log10(sfxSlider.value) * 20));
     }
+
+    
 }
