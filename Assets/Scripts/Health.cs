@@ -139,6 +139,7 @@ public class Health : MonoBehaviour
         if (!isDead)
         {
             gameplayMusic.GetComponent<MusicLooper>().isDead = true;
+            gameplayMusic.GetComponent<MusicLooper>().PlayEndMusic();
             PlayDeathSound();
             GetComponent<PlayerController>().enabled = false;
             GetComponent<GlitchAbility>().enabled = false;

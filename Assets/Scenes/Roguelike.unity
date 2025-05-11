@@ -489,6 +489,8 @@ MonoBehaviour:
   audioSource: {fileID: 1521027566}
   introClip: {fileID: 8300000, guid: c4ca372d0dc8eb64f97121a0e354f5c0, type: 3}
   loopClip: {fileID: 8300000, guid: d00219c8278a3c34790a6c54fdf95995, type: 3}
+  endIntroClip: {fileID: 0}
+  endLoopClip: {fileID: 0}
   isDead: 0
 --- !u!82 &1521027566
 AudioSource:
