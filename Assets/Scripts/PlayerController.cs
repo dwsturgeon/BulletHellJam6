@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bulletMoveSpeed;
     [SerializeField] private float bulletMoveSpeedMax = 40f;
     [SerializeField] private float bulletMoveSpeedMin = 10f;
-    private GameObject laser;
+    public GameObject laser;
 
     [Header("Burst Settings")]
     [SerializeField] private int burstCount;
@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(currentProjectileType == ProjectileType.Laser)
+        if (currentProjectileType == ProjectileType.Laser)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -200,11 +200,12 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.Space) && laser != null || isDead)
+            else if (Input.GetKeyUp(KeyCode.Space) && laser != null)
             {
                 Destroy(laser);
                 laser = null;
             }
+            
         }
         else if (Input.GetKey(KeyCode.Space))
         {

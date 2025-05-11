@@ -141,9 +141,16 @@ public class Health : MonoBehaviour
             gameplayMusic.GetComponent<MusicLooper>().isDead = true;
             gameplayMusic.GetComponent<MusicLooper>().PlayEndMusic();
             PlayDeathSound();
+
+            GameObject laser = PlayerController.instance.laser;
+            if (laser != null)
+            {
+                Destroy(laser);
+            }
+
+            GetComponent<PlayerController>().isDead = true;
             GetComponent<PlayerController>().enabled = false;
             GetComponent<GlitchAbility>().enabled = false;
-            GetComponent<PlayerController>().isDead = true;
             GetComponent<Collider2D>().enabled = false;
             animator.SetBool("Dead", true);
 

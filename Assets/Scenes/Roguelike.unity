@@ -883,6 +883,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1521027562}
     - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: startingHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: HealthUpgadeCountText
       value: 
       objectReference: {fileID: 1662282081}
@@ -930,6 +934,10 @@ PrefabInstance:
       propertyPath: Image
       value: 
       objectReference: {fileID: 1990894426}
+    - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: currentProjectileType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: speedUpgradeCountText
       value: 

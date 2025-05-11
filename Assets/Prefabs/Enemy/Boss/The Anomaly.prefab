@@ -494,7 +494,7 @@ MonoBehaviour:
   healthBar: {fileID: 5735789484223958959}
   healthAmount: 2000
   maxHealth: 2000
-  gracePeriod: 0.2
+  gracePeriod: 0.15
   isBoss: 1
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}

@@ -154,9 +154,8 @@ public class Pickup : MonoBehaviour
     private void ApplySpeed(GameObject obj)
     {
         PlayerController.instance.Speed = SpeedIncreaseAmount * BossMult();
-        PlayerController.instance.GetComponent<Rigidbody2D>().linearDamping = (PlayerController.instance.Speed / 4);
+        PlayerController.instance.GetComponent<Rigidbody2D>().linearDamping = (PlayerController.instance.Speed / 3.5f);
         obj.GetComponent<GlitchAbility>().dodgeForce = PlayerController.instance.Speed / 2;
-
     }
 
     private void ApplyDamage()

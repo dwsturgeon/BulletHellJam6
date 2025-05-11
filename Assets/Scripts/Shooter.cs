@@ -24,12 +24,13 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool useAnimator;
 
     [Header("Anomaly Zone")]
-    [SerializeField] private bool bUseZone = false;
+    public bool bUseZone = false;
     [SerializeField] GameObject zone;
     [SerializeField] float zoneCooldown = 1f;
     [SerializeField] float zoneLifetime = 1f;
     [SerializeField] float influenceFactor = 0.1f;
     private float elapsed;
+    private GameObject spawnedZone;
     private enum Orientation
     {
         Left, Right, Up, Down, AtPlayer,
@@ -246,14 +247,19 @@ public class Shooter : MonoBehaviour
 
         System.Array values = System.Enum.GetValues(typeof(AnomalyZone.ZoneType));
         AnomalyZone.ZoneType randomValue = (AnomalyZone.ZoneType)values.GetValue(UnityEngine.Random.Range(0, values.Length));
-        GameObject spawnedZone = Instantiate(zone, centerPosition, Quaternion.identity);
+        spawnedZone = Instantiate(zone, centerPosition, Quaternion.identity);
         spawnedZone.GetComponent<AnomalyZone>().Zone = randomValue;
         spawnedZone.GetComponent<FadeIn>().lifetime = zoneLifetime;
-
-
-        
         
         Destroy(spawnedZone, zoneLifetime);
         
+    }
+
+    public void DestroyActiveZone()
+    {
+        if(spawnedZone != null)
+        {
+            Destroy(spawnedZone);
+        }
     }
 }

@@ -111,7 +111,7 @@ public class HealthManager : MonoBehaviour
 
             GameObject drop = Instantiate(dropProjectiles[PlayerController.instance.ProjectileIndex], transform.position, Quaternion.identity);
             PlayerController.instance.ProjectileIndex += 1;
-            if (PlayerController.instance.ProjectileIndex > 2)
+            if (PlayerController.instance.ProjectileIndex > dropProjectiles.Count - 1)
             {
                 PlayerController.instance.BestProj = 1;
             }
@@ -143,17 +143,19 @@ public class HealthManager : MonoBehaviour
             Destroy(this.gameObject, 2.5f);
             isDead = true;
 
-            //PLAY DEATH SOUND
    
             Shooter[] shooters = GetComponents<Shooter>();
             for(int i = 0; i < shooters.Length; i++)
             {
+                if (shooters[i].bUseZone)
+                {
+                    shooters[i].DestroyActiveZone();
+                }
                 shooters[i].enabled = false;
                 shooters[i].StopAllCoroutines();
             }
 
             GetComponent<Collider2D>().enabled = false;
-            GetComponent<Shooter>().enabled = false;
             GetComponent<EnemyController>().enabled = false;
             
         }
