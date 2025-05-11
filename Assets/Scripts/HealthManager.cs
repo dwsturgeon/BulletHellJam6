@@ -137,6 +137,7 @@ public class HealthManager : MonoBehaviour
             PlayDeathSound();
             SpawnRandomDrop();
 
+
             FadeFromDamage fadeFromDamage = GetComponent<FadeFromDamage>();
             fadeFromDamage.isDying = true;
             Destroy(this.gameObject, 2.5f);
@@ -151,9 +152,10 @@ public class HealthManager : MonoBehaviour
                 shooters[i].StopAllCoroutines();
             }
 
-
-            EnemyController enemyController = GetComponent<EnemyController>();
-            enemyController.enabled = false;
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Shooter>().enabled = false;
+            GetComponent<EnemyController>().enabled = false;
+            
         }
     }
 

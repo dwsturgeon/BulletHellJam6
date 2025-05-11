@@ -161,6 +161,11 @@ MonoBehaviour:
   firerateUpgradeCountText: {fileID: 0}
   projectileUpgradeCountText: {fileID: 0}
   speedUpgradeCountText: {fileID: 0}
+  Image: {fileID: 0}
+  basicSprite: {fileID: 5646086283461294469, guid: 2d1590097e562f5468ee6f456fa7e3a6, type: 3}
+  laserSprite: {fileID: -8371776818459744000, guid: fb98ef88bcb8a89469abd9c40de683fe, type: 3}
+  crescentSprite: {fileID: -2063284755504865105, guid: 3ddf7fdeb3197784a8ec04f88900f690, type: 3}
+  explosiveSprite: {fileID: 7506710136679949543, guid: bb741bb0914208d4393e194e2e63dc38, type: 3}
   isDead: 0
   isPaused: 0
   projectileEntries:
@@ -245,6 +250,7 @@ MonoBehaviour:
   bGodMode: 0
   HealthUpgadeCountText: {fileID: 0}
   isGlitching: 0
+  gameplayMusic: {fileID: 0}
   deathScreen: {fileID: 0}
   DeathAudio: {fileID: 241808692331046967}
   DeathScreenSound: {fileID: 7857750585215605951}

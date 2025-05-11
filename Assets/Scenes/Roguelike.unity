@@ -638,6 +638,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1990894426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3825241787493114033, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+  m_PrefabInstance: {fileID: 2135266770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2006573204 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3206089740718810294, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
@@ -751,6 +762,10 @@ PrefabInstance:
     - target: {fileID: 2269619454897101182, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279356228644268861, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
+      propertyPath: m_Name
+      value: CurrentProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 6742664549332324269, guid: a348a7b8a2720164c8320acf6da16b58, type: 3}
       propertyPath: m_Name
@@ -868,10 +883,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1521027562}
     - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
-      propertyPath: startingHealth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5746897580096463659, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: HealthUpgadeCountText
       value: 
       objectReference: {fileID: 1662282081}
@@ -915,6 +926,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 1990894426}
     - target: {fileID: 9157042261017096503, guid: 7839c7a831196854fab6f1cb9e3ed6da, type: 3}
       propertyPath: speedUpgradeCountText
       value: 

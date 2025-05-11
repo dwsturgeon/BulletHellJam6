@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using UnityEngine.Audio;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -78,6 +79,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI firerateUpgradeCountText;
     [SerializeField] private TextMeshProUGUI projectileUpgradeCountText;
     [SerializeField] private TextMeshProUGUI speedUpgradeCountText;
+    [SerializeField] private Image Image;
+    [SerializeField] private Sprite basicSprite;
+    [SerializeField] private Sprite laserSprite;
+    [SerializeField] private Sprite crescentSprite;
+    [SerializeField] private Sprite explosiveSprite;
 
     private int DamageUpgradeCount = 0;
     private int FirerateUpgradeCount = 0;
@@ -132,7 +138,23 @@ public class PlayerController : MonoBehaviour
             }
 
             currentProjectileType = newType;
+            ChangeProjecileUI();
         }
+    }
+
+    private void ChangeProjecileUI()
+    {
+        switch (currentProjectileType)
+        {
+            case ProjectileType.Normal: Image.sprite = basicSprite; break;
+
+            case ProjectileType.Laser: Image.sprite = laserSprite; break;
+
+            case ProjectileType.Crescent: Image.sprite = crescentSprite; break;
+
+            case ProjectileType.Explosive: Image.sprite = explosiveSprite; break;
+        }
+
     }
     #endregion
 
