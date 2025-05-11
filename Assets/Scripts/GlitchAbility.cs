@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GlitchAbility : MonoBehaviour
 {
@@ -15,10 +16,14 @@ public class GlitchAbility : MonoBehaviour
     [Header("Sound")]
     [SerializeField] AudioSource AudioSource;
 
+    [SerializeField] Slider abilitySlider;
+
 
     private float cooldownTimer = 0f;
     private float glitchTimer = 0f;
     private bool isGlitching = false;
+
+    private float abilitySliderVal = 0f;
 
     private Rigidbody2D playerRB;
 
@@ -30,6 +35,10 @@ public class GlitchAbility : MonoBehaviour
         sr = visualTarget.GetComponent<SpriteRenderer>();
         sr.material = defaultMaterial;
         playerRB = GetComponent<Rigidbody2D>();
+
+        abilitySlider.maxValue = cooldownTime;
+        abilitySliderVal = abilitySlider.maxValue;
+        abilitySlider.value = abilitySlider.maxValue;
     }
 
     private void Update()
@@ -53,18 +62,22 @@ public class GlitchAbility : MonoBehaviour
 
         if (cooldownTimer > 0f)
         {
+            abilitySliderVal += Time.deltaTime;
             cooldownTimer -= Time.deltaTime;
         }
 
-
-
     }
 
+    private void FixedUpdate()
+    {
+        abilitySlider.value = abilitySliderVal;
+    }
     void ActivateGlitch()
     {
         PlayGlitchSound();
         isGlitching = true;
         glitchTimer = 0f;
+        abilitySliderVal = 0f;
         cooldownTimer = cooldownTime;
         sr.material = glitchMaterial;
         SetGlitchingStatus(true);
