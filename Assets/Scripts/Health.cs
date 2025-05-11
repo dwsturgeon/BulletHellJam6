@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     private int healthUpgadeCount;
     public bool isGlitching = false;
 
-
+    [SerializeField] GameObject gameplayMusic;
     [SerializeField] GameObject deathScreen;
 
     [Header("DeathSound")]
@@ -138,10 +138,12 @@ public class Health : MonoBehaviour
     {
         if (!isDead)
         {
+            gameplayMusic.GetComponent<MusicLooper>().isDead = true;
             PlayDeathSound();
             GetComponent<PlayerController>().enabled = false;
             GetComponent<GlitchAbility>().enabled = false;
             GetComponent<PlayerController>().isDead = true;
+            GetComponent<Collider2D>().enabled = false;
             animator.SetBool("Dead", true);
 
             isDead = true;

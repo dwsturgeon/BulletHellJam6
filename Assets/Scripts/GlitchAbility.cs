@@ -10,7 +10,7 @@ public class GlitchAbility : MonoBehaviour
     [Header("Ability Settings")]
     [SerializeField] private float glitchDuration = 1f;
     [SerializeField] private float cooldownTime = 5f;
-    [SerializeField] private float dodgeForce = 10f;
+    public float dodgeForce = 10f;
 
     [Header("Sound")]
     [SerializeField] AudioSource AudioSource;
@@ -21,7 +21,6 @@ public class GlitchAbility : MonoBehaviour
     private bool isGlitching = false;
 
     private Rigidbody2D playerRB;
-    private Collider2D playerCollider;
 
     private SpriteRenderer sr;
     
@@ -30,7 +29,6 @@ public class GlitchAbility : MonoBehaviour
     {
         sr = visualTarget.GetComponent<SpriteRenderer>();
         sr.material = defaultMaterial;
-        playerCollider = GetComponent<Collider2D>();
         playerRB = GetComponent<Rigidbody2D>();
     }
 

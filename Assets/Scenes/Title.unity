@@ -392,6 +392,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: f2d8ecde81e83194996db53fa0d32bbf, type: 3}
+    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f2d8ecde81e83194996db53fa0d32bbf, type: 3}
+    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7362200428367175982, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

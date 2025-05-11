@@ -6,7 +6,7 @@ public class MusicLooper : MonoBehaviour
     [SerializeField] private AudioClip introClip;
     [SerializeField] private AudioClip loopClip;
 
-
+    public bool isDead = false;
     private bool hasStartedLoop = false;
 
     private void Start()
@@ -18,6 +18,7 @@ public class MusicLooper : MonoBehaviour
 
     private void Update()
     {
+        if(isDead) audioSource.Stop();
         if (!audioSource.isPlaying && !hasStartedLoop)
         {
             hasStartedLoop = true;

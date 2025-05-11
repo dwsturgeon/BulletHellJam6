@@ -20,8 +20,6 @@ public class MenuFunctions : MonoBehaviour
     [SerializeField]  Button playButton;
     [SerializeField]  Button settingsButton;
     [SerializeField]  Button tutorialButton;
-    [SerializeField]  AudioSource musicSource;
-    [SerializeField]  AudioClip menuMusic;
 
 
     public string playButtonLevelName;
@@ -36,7 +34,6 @@ public class MenuFunctions : MonoBehaviour
 
     public void Start()
     {
-        StartMenuMusic();
         playButton.onClick.AddListener(() => LoadLevel(playButtonLevelName));
         settingsButton.onClick.AddListener(() => LoadSettings());
         tutorialButton.onClick.AddListener(() => LoadLevel(tutorialButtonLevelName));
@@ -72,10 +69,5 @@ public class MenuFunctions : MonoBehaviour
     {
         menuObj.SetActive(false);
         settingsObj.SetActive(true);
-    }
-    void StartMenuMusic()
-    {
-        musicSource.clip = menuMusic;
-        musicSource.Play();
     }
 }
