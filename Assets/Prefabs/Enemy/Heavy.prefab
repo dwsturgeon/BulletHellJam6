@@ -170,10 +170,10 @@ MonoBehaviour:
   maxX: 7
   minY: 2.5
   maxY: 4.5
-  smoothTime: 1
+  smoothTime: 1.2
   threshhold: 0.2
   waitTime: 0
-  minMoveDistance: 10
+  minMoveDistance: 4
   recoveryMult: 2
   animator: {fileID: 1015492341643738899}
 --- !u!114 &8600763034053305541
@@ -209,6 +209,7 @@ MonoBehaviour:
   shakeDuration: 0.3
   shakeMagnitude: 0.05
   isGlitching: 0
+  isPaused: 0
   visualTarget: {fileID: 5057999440229021019}
 --- !u!114 &1293991473972828244
 MonoBehaviour:
@@ -224,11 +225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8985216826626965858, guid: 9402619f261896544b17067cb4adf393, type: 3}
   bulletMoveSpeed: 2
-  burstCount: 4
-  projectilesPerBurst: 40
+  burstCount: 3
+  projectilesPerBurst: 30
   angleSpread: 359
   startingDistance: 0.1
-  timeBetweenBursts: 0.5
+  timeBetweenBursts: 1.5
   restTime: 3
   waitFirst: 0
   stagger: 1
@@ -259,7 +260,7 @@ MonoBehaviour:
   healthBar: {fileID: 4079623275863763618}
   healthAmount: 400
   maxHealth: 400
-  gracePeriod: 0.2
+  gracePeriod: 0.1
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}

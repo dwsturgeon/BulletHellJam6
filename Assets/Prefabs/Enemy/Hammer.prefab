@@ -505,10 +505,10 @@ MonoBehaviour:
   maxX: 7
   minY: 2.5
   maxY: 4.5
-  smoothTime: 0.75
+  smoothTime: 1.1
   threshhold: 0.1
   waitTime: 4
-  minMoveDistance: 10
+  minMoveDistance: 8
   recoveryMult: 2
   animator: {fileID: 5168355981586818152}
 --- !u!114 &7763924312858686306
@@ -544,6 +544,7 @@ MonoBehaviour:
   shakeDuration: 0.3
   shakeMagnitude: 0.05
   isGlitching: 0
+  isPaused: 0
   visualTarget: {fileID: 5136752935147364000}
 --- !u!114 &1878853508646078860
 MonoBehaviour:
@@ -592,9 +593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2844130824772748476}
-  healthAmount: 300
-  maxHealth: 300
-  gracePeriod: 0.2
+  healthAmount: 250
+  maxHealth: 250
+  gracePeriod: 0.1
   isBoss: 0
   targetTag: PlayerProjectile
   dropConfig: {fileID: 11400000, guid: 4c5d736a7fd929b4d8bcbdce15eec2af, type: 2}

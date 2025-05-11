@@ -217,7 +217,7 @@ MonoBehaviour:
   smoothTime: 1
   threshhold: 0.2
   waitTime: 0
-  minMoveDistance: 10
+  minMoveDistance: 6
   recoveryMult: 1
   animator: {fileID: 6554295384029738023}
 --- !u!114 &5015758150645655045
@@ -236,6 +236,7 @@ MonoBehaviour:
   fadeDuration: 0.3
   targetTag: PlayerProjectile
   visualTarget: {fileID: 6577692056111768086}
+  isGlitching: 0
 --- !u!114 &8812917907930200495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +252,8 @@ MonoBehaviour:
   targetTag: PlayerProjectile
   shakeDuration: 0.3
   shakeMagnitude: 0.05
+  isGlitching: 0
+  isPaused: 0
   visualTarget: {fileID: 6255713838925200744}
 --- !u!114 &7003779114686138578
 MonoBehaviour:

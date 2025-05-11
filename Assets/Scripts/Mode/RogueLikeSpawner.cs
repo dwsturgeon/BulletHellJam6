@@ -74,7 +74,7 @@ public class RogueLikeSpawner : MonoBehaviour
 
     void SetEnemyHealth(GameObject modTarget)
     {
-        float multF = Mathf.Min(1 + currentWave / 5, 5);
+        float multF = Mathf.Min(1 + currentWave / 5, 10);
         int mult = Mathf.RoundToInt(multF);
         modTarget.GetComponent<HealthManager>().maxHealth *= mult;
         modTarget.GetComponent<HealthManager>().healthAmount *= mult;
@@ -82,7 +82,7 @@ public class RogueLikeSpawner : MonoBehaviour
 
     void SetBossHealth(GameObject modTarget)
     {
-        float multF = Mathf.Min(1 + currentWave / 10, 4);
+        float multF = Mathf.Min(1 + currentWave / 8, 10);
         int mult = Mathf.RoundToInt(multF);
         modTarget.GetComponent<HealthManager>().maxHealth *= mult;
         modTarget.GetComponent<HealthManager>().healthAmount *= mult;

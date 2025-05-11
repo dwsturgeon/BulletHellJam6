@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowMult: 4
   fastMult: 10
-  redirectAngleSpread: 30
+  redirectAngleSpread: 50
   zoneType: 5
 --- !u!114 &5921837517365595540
 MonoBehaviour:

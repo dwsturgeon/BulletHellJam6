@@ -460,8 +460,8 @@ MonoBehaviour:
   pickupType: 1
   projectileType: 0
   stunTime: 4
-  healthAmount: 40
-  maxHealthIncrease: 5
+  healthAmount: 30
+  maxHealthIncrease: 1
   SpeedIncreaseAmount: 5
   damageMultIncrease: 0.25
   increaseType: 0

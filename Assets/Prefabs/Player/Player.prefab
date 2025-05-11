@@ -130,17 +130,18 @@ MonoBehaviour:
   bulletMoveSpeed: 10
   bulletMoveSpeedMax: 50
   bulletMoveSpeedMin: 10
+  laser: {fileID: 0}
   burstCount: 1
   burstCountMax: 10
   projectilesPerBurst: 3
-  projectilesPerBurstMax: 20
+  projectilesPerBurstMax: 14
   timeBetweenBursts: 0.05
   restTime: 0.1
   minRestTime: 0.01
   maxRestTime: 1
   currentProjectileType: 0
-  angleSpread: 20
-  angleIncreasePerProjectile: 3
+  angleSpread: 6
+  angleIncreasePerProjectile: 2
   muzzleTransform: {fileID: 1631138831407435371}
   startingDistance: 0.1
   minX: -7
@@ -210,6 +211,7 @@ MonoBehaviour:
   shakeDuration: 0.3
   shakeMagnitude: 0.05
   isGlitching: 0
+  isPaused: 0
   visualTarget: {fileID: 5016608340262260218}
 --- !u!114 &1253741141036635116
 MonoBehaviour:
