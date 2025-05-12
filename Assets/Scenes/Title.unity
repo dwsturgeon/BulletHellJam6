@@ -180,11 +180,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f79447c5094741c45bc2c0206bd35493, type: 3}
---- !u!1 &386688775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8063131077746267051, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-  m_PrefabInstance: {fileID: 8065295004851832280}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &812878288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,14 +336,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitleUI_Sound
       objectReference: {fileID: 0}
-    - target: {fileID: 1970302564789876526, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: playButtonLevelName
-      value: Roguelike
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970302564789876526, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: tutorialButtonLevelName
-      value: Roguelike
-      objectReference: {fileID: 0}
     - target: {fileID: 4375485803412834477, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -397,26 +384,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: m_Volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: f2d8ecde81e83194996db53fa0d32bbf, type: 3}
-    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f2d8ecde81e83194996db53fa0d32bbf, type: 3}
-    - target: {fileID: 6163455064096054817, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7362200428367175982, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -429,14 +396,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7539923851618723924, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: SoundManager
-      value: 
-      objectReference: {fileID: 386688775}
-    - target: {fileID: 8120480023769401044, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: SoundManager
-      value: 
-      objectReference: {fileID: 386688775}
     - target: {fileID: 8127682548599802030, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -449,10 +408,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8349182613773523196, guid: e823fbee21486974d893ffcd5aaa260f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1129140447, guid: d711583b5a31910408d1c02b805525e4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0dcfabcb853b84082f23aaa81c8559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundManager: {fileID: 8063131077746267051}
 --- !u!1 &1983829256919221325
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,8 +471,8 @@ MonoBehaviour:
   playButton: {fileID: 7885705228955777650}
   settingsButton: {fileID: 7505357376235949115}
   tutorialButton: {fileID: 4430126221239900103}
-  playButtonLevelName: Main_Test
-  tutorialButtonLevelName: Testing
+  playButtonLevelName: Roguelike
+  tutorialButtonLevelName: Roguelike
 --- !u!82 &6090428807781999144
 AudioSource:
   m_ObjectHideFlags: 0
@@ -579,12 +580,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4568030235059154729, guid: efa019cf66cd8be458e82ac58cff818c, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: f2d8ecde81e83194996db53fa0d32bbf, type: 3}
+  m_Resource: {fileID: 8300000, guid: f2d8ecde81e83194996db53fa0d32bbf, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1036,7 +1037,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 143830347113031262}
   m_HandleRect: {fileID: 8127682548599802030}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.01
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -1055,6 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0dcfabcb853b84082f23aaa81c8559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundManager: {fileID: 8063131077746267051}
 --- !u!1 &4022205325692098572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5044596713200232319, guid: 7ba6a61de7bdaa24b8d6e0cbd3a8e406, type: 3}
+  m_Sprite: {fileID: 1129140447, guid: d711583b5a31910408d1c02b805525e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
